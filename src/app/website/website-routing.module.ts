@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
+import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
 import { LayoutComponent } from './components/layout/layout.component';
 
 const routes: Routes = [
   {path:'',component:LayoutComponent,children:[
-    // {path:'',redirectTo:'/home',pathMatch:'full'},
-    // {path:'home',component:HomeComponent},
+    {path:'',redirectTo:'/home',pathMatch:'full'},
+    {path:'home',component:HomeComponent},
+    {path:'artist/:id',component:ArtistbyidComponent},
+    {path:'album/:id',component:AlbumbyidComponent},
+
     // {
     //   path: 'category',
     //   loadChildren: () => import('./pages/category/category.module').then(m => m.CategoryModule),

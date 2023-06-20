@@ -1,0 +1,13 @@
+<main>
+    <section *ngIf="artistByIdData">
+        <div *ngIf="artistByIdData.images && artistByIdData.images.length > 0" [style.background-image]="'url(' + artistByIdData.images[0].url + ')'" class="flexColumn imgCoverArtist">
+            <div class="overlay"> 
+                <span class="nameArtistspan">
+                    <h1 class="nameArtisth1">{{artistByIdData.name}}</h1>
+                </span>
+                <span>{{artistByIdData.followers.total| number: '1.0-0' }} Seguidores</span>
+           </div>
+        </div>
+       
+</section>
+</main>

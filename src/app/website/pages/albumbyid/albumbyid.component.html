@@ -1,0 +1,28 @@
+<main>
+    <section *ngIf="albumByIdData">
+        <div *ngIf="albumByIdData.images && albumByIdData.images.length > 0"class="flexColumn imgCoverArtist">
+            <!-- <div class="overlay"> 
+                <span class="nameArtistspan">
+                    <h1 class="nameArtisth1">{{albumByIdData.name}}</h1>
+                </span>
+           </div> -->
+           <div class="wh100 contInfoAlbum">
+                <div>
+                    <img class="wh100 imgAlbum" src="{{albumByIdData.images[0].url}}" alt="">
+                </div>
+                <div>
+                    <div>
+                        <span>{{albumByIdData.type | titlecase}}</span>
+                    </div>
+                    <div>
+                        <span>{{albumByIdData.name}}</span>
+                    </div>
+                    <div>
+                        <span [routerLink]="['/artist',albumByIdData.artists[0].id]" class="nameArtistspan">{{albumByIdData.artists[0].name }}</span>
+                    </div>
+                </div>
+           </div>
+        </div>
+       
+</section>
+</main>
