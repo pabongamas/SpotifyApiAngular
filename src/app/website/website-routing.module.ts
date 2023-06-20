@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
 import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
+import { NewReleasesAlbumComponent } from './pages/albums/new-releases-album/new-releases-album.component';
 import { LayoutComponent } from './components/layout/layout.component';
 
 const routes: Routes = [
@@ -11,7 +12,10 @@ const routes: Routes = [
     {path:'home',component:HomeComponent},
     {path:'artist/:id',component:ArtistbyidComponent},
     {path:'album/:id',component:AlbumbyidComponent},
+    {path:'newRealeses',component:NewReleasesAlbumComponent},
 
+    
+    
     // {
     //   path: 'category',
     //   loadChildren: () => import('./pages/category/category.module').then(m => m.CategoryModule),

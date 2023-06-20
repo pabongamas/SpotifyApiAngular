@@ -25,10 +25,4 @@ export class NavComponent {
     //   this.Router.navigate(['/profile']);
     // });
   }
-  newRealeses(){
-    this.AuthSpotifyService.newRealese()
-    .subscribe((data)=>{
-      console.log(data);
-     });
-  }
 }

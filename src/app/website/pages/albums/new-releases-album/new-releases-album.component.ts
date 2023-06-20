@@ -11,8 +11,10 @@ export class NewReleasesAlbumComponent implements OnInit {
     private AuthSpotifyService:AuthSpotifyService,
   ) { }
   newRealeses:[]=[];
+  offset=0;
+  limit=10;
   ngOnInit(): void {
-    this.AuthSpotifyService.newRealese().subscribe((data) => {
+    this.AuthSpotifyService.newRealese(this.offset,this.limit).subscribe((data) => {
           this.newRealeses = data.albums.items;
         });
   }

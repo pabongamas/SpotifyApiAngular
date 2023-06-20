@@ -1,0 +1,53 @@
+.headerMain{
+    display: flex;
+    font-size: 14px;
+    line-height: 1.5;
+    position: sticky;
+    top: 0;
+}
+.Header-item{
+    width: 100%;
+}
+nav {
+    background-color: #121212;
+    padding: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav li {
+    margin-right: 10px;
+    color: white;
+    margin-block: 0px;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Aplicar estilos diferentes para pantallas pequeñas */
+  @media (max-width: 768px) {
+    nav {
+      padding: 10px 10px;
+    }
+    
+    nav ul {
+      flex-direction: column;
+    }
+    
+    nav li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }

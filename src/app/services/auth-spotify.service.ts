@@ -11,12 +11,12 @@ export class AuthSpotifyService {
     private http: HttpClient,
   ) { }
 
-   bearerToken="Bearer BQBBKpnV2ovEF5WEHnWRCgXM7bxKnhQEmBdN7Lm3S67i1Ed-4jzTMyqbj0Kzhf39t9BmhUnR9B8BsJ7ek4n1RuuMse3fZgwp7tHeLKjyCjc3STutvXU";
-  newRealese(){
+   bearerToken="Bearer BQD4GZwiJBT3Ap8JoDKVpEQfRTBboz_qT2T4se5DyduNvZATT3rQx3sCij7xBBL14qyrevD5lrOcGR9mWMdUIVzUPe7mB99C1rTJE3R3KtLLRD6lcjI";
+  newRealese(offset:number,limit:number){
     const headers=new HttpHeaders({
-      "Authorization":this.bearerToken
+      "Authorization":this.bearerToken,
     });
-    return this.http.get<any>("https://api.spotify.com/v1/browse/new-releases",{headers});
+    return this.http.get<any>("https://api.spotify.com/v1/browse/new-releases?offset="+offset+"&limit="+limit,{headers});
   }
 
   getArtistsById(idArtist:any){

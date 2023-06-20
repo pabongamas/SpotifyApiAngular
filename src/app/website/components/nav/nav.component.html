@@ -1,8 +1,12 @@
-<nav >
-    <ul>
-        <li (click)="newRealeses();onCargarAlbumsClick();">Nuevos lanzamientos</li>
-        <li>Artistas</li>
-        <li>Albums</li>
-        <li (click)="login()">Iniciar Sesion</li>
-    </ul>
-  </nav>
+<header class="headerMain">
+    <div class="Header-item">
+        <nav class="navMain">
+            <ul>
+                <li [routerLink]="['/newRealeses']">Nuevos lanzamientos</li>
+                <li>Artistas</li>
+                <li>Albums</li>
+                <li>Iniciar Sesion</li>
+            </ul>
+          </nav>
+    </div>
+</header>
