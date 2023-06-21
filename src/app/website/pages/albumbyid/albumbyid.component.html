@@ -1,28 +1,27 @@
-<main>
+<main class="mainAlbumById">
     <section *ngIf="albumByIdData">
         <div *ngIf="albumByIdData.images && albumByIdData.images.length > 0"class="flexColumn imgCoverArtist">
-            <!-- <div class="overlay"> 
-                <span class="nameArtistspan">
-                    <h1 class="nameArtisth1">{{albumByIdData.name}}</h1>
-                </span>
-           </div> -->
-           <div class="wh100 contInfoAlbum">
+           <div class="h100 contInfoAlbum">
                 <div>
                     <img class="wh100 imgAlbum" src="{{albumByIdData.images[0].url}}" alt="">
                 </div>
-                <div>
+                <div class="descAlbum">
                     <div>
-                        <span>{{albumByIdData.type | titlecase}}</span>
+                        <span class="Title">{{albumByIdData.type | titlecase}}</span>
                     </div>
                     <div>
-                        <span>{{albumByIdData.name}}</span>
+                        <span class="boldTitle Title fzbig">{{albumByIdData.name}}</span>
                     </div>
                     <div>
                         <span [routerLink]="['/artist',albumByIdData.artists[0].id]" class="nameArtistspan">{{albumByIdData.artists[0].name }}</span>
+                        <span class="Title infoYear">{{albumByIdData.release_date| date:'yyyy'}}</span>
+                        <span class="Title infoYear">{{albumByIdData.total_tracks}} Canciones</span>
                     </div>
                 </div>
            </div>
         </div>
-       
 </section>
+<div>
+    <app-tracks [dataTracks]="albumByIdData.tracks"></app-tracks>
+</div>
 </main>

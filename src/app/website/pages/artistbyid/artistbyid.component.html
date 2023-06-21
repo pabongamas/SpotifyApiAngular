@@ -1,4 +1,4 @@
-<main>
+<main class="mainArtistById">
     <section *ngIf="artistByIdData">
         <div *ngIf="artistByIdData.images && artistByIdData.images.length > 0" [style.background-image]="'url(' + artistByIdData.images[0].url + ')'" class="flexColumn imgCoverArtist">
             <div class="overlay"> 
@@ -10,4 +10,5 @@
         </div>
        
 </section>
+<app-albums [dataalbums]="albumsByArtistData.items"></app-albums>
 </main>

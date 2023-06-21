@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class AlbumsComponent implements OnInit {
 
-  @Input() dataalbums: any;
+  @Input() dataalbums:any[]=[];
+  @Input() totalElementsData:any;
   constructor(
     private AuthSpotifyService: AuthSpotifyService,
     private Router: Router
@@ -17,9 +18,9 @@ export class AlbumsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // newRealeseAlbum() {
-  //   this.AuthSpotifyService.newRealese().subscribe((data) => {
-  //     this.newRealeses = data.albums.items;
-  //   });
-  // }
+  @Output() eventEmitNewRealeses: EventEmitter<any> = new EventEmitter();
+
+  loadMoreNewRealeses() {
+    this.eventEmitNewRealeses.emit();
+  }
 }

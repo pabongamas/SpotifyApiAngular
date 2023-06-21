@@ -13,6 +13,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { NewReleasesAlbumComponent } from './pages/albums/new-releases-album/new-releases-album.component';
 import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
 import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
+import { TracksComponent } from './components/tracks/tracks.component';
+import { TrackComponent } from './components/track/track.component';
 
 
 
@@ -25,7 +27,9 @@ import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
     HomeComponent,
     NewReleasesAlbumComponent,
     ArtistbyidComponent,
-    AlbumbyidComponent
+    AlbumbyidComponent,
+    TracksComponent,
+    TrackComponent
   ],
   imports: [
     CommonModule,

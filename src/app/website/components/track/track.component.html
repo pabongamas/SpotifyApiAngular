@@ -1,0 +1,19 @@
+<div class="contTrack mainColorTrack">
+    <div class="flexAlignCenter">
+        <div>
+            <span>{{track.track_number}}</span>
+        </div>
+    </div>
+    <div class="flexAlignCenter">
+        <div class="flexDirCol">
+            <a class="viewTrack" href="">{{track.name}}</a>
+            <span class="viewArtist" [routerLink]="['/artist',track.artists[0].id]" >{{track.artists[0].name}}</span>
+        </div>
+    </div>
+    <div>
+        <div>
+            <span>{{track.duration_ms}}</span>
+        </div>
+    </div>
+</div>
+

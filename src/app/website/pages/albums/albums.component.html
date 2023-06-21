@@ -1,4 +1,7 @@
 <div class="albums--grid">
-    <!-- <app-album-page [album]="album" *ngFor="let album of dataalbums"></app-album-page> -->
     <app-album-page [album]="album" *ngFor="let album of dataalbums"></app-album-page>
 </div>
+<div class="divBtnLoadMoreNewRealeses"  *ngIf="dataalbums!==undefined&&dataalbums.length>0 && dataalbums.length<totalElementsData">
+    <button (click)="loadMoreNewRealeses()">Cargar mas</button>
+</div>
+

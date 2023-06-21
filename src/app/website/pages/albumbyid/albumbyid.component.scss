@@ -6,8 +6,6 @@
     background-position: 50% 25%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 40vh;
-    min-height: 340px;
 }
 .overlay{
     display: flex;
@@ -31,13 +29,20 @@
     grid-gap: 15px;
 }
 
-.nameArtisth1{
+.Title{
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     margin-block: 0px;
-    font-size: 3.5rem;
-    font-weight: 900;
     color:#fff;
+}
+.boldTitle{
+    font-weight: 900;
+}
+.fzbig{
+    font-size: 1.5rem;
+}
+.h100{
+    height: 100%;
 }
 .wh100{
     width: 100%;
@@ -49,11 +54,20 @@
     justify-content: left;
     grid-gap: 30px;
     background-color: #121212;
+
 }
 .imgAlbum{
-    webkit-box-shadow: 0 4px 60px rgba(0,0,0,.5);
-    box-shadow: 0 4px 60px #ebe4e43d;
+    webkit-box-shadow: 0 4px 20px rgba(235, 228, 228, 0.2392156863);
+    box-shadow: 0 4px 20px rgba(235, 228, 228, 0.2392156863);
     border-radius: 10px;
+}
+.descAlbum{
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+    flex-direction: column;
+    grid-gap: 15px;
+
 }
 .nameArtistspan{
     color: #b3b3b3;
@@ -64,3 +78,24 @@
 .nameArtistspan:hover{
     text-decoration: underline;
 }
+.infoYear::before{
+    content: "•";
+    margin: 0px 4px;
+}
+.mainAlbumById{
+    background-color: #121212;
+}
+
+@media screen and (max-width: 40em){
+    .contInfoAlbum{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media screen and (min-width: 40em){
+    .contInfoAlbum{
+        height: 192px;
+    }
+}
+    
+        

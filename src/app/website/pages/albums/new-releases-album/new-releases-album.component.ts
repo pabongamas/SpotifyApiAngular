@@ -1,4 +1,4 @@
-import { Component, OnInit,NgModule,Input } from '@angular/core';
+import { Component, OnInit,NgModule,Input,HostListener } from '@angular/core';
 import { AuthSpotifyService } from '../../../../services/auth-spotify.service';
 
 @Component({
@@ -10,14 +10,24 @@ export class NewReleasesAlbumComponent implements OnInit {
   constructor(
     private AuthSpotifyService:AuthSpotifyService,
   ) { }
-  newRealeses:[]=[];
+  newRealeses:any[]=[];
   offset=0;
-  limit=10;
+  limit=40;
+  totalElements:number=0;
   ngOnInit(): void {
-    this.AuthSpotifyService.newRealese(this.offset,this.limit).subscribe((data) => {
-          this.newRealeses = data.albums.items;
-        });
+   this.loadNewRealeses();
   }
   
+loadNewRealeses(){
+  this.AuthSpotifyService.newRealese(this.offset,this.limit).subscribe((data) => {
+    this.newRealeses = this.newRealeses.concat(data.albums.items);
+    this.offset += this.limit;
+    this.totalElements=data.albums.total;
+  });
+
+}
+loadMoreNewRealeses(){
+ this.loadNewRealeses();
+}
 
 }

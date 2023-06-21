@@ -2,3 +2,14 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body{
+    background-color: #121212;
+}
+.flexAlignCenter{
+    display: flex;
+    align-items: center;
+}
+.flexDirCol{
+    display: flex;
+    flex-direction: column;
+}

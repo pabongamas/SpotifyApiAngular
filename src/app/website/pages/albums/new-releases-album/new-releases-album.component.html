@@ -2,5 +2,6 @@
     <div class="title">
         <span>Nuevos lanzamientos</span>
     </div>
-    <app-albums [dataalbums]="newRealeses"></app-albums>
+    <app-albums (eventEmitNewRealeses)="loadMoreNewRealeses()" [totalElementsData]="totalElements" [dataalbums]="newRealeses"></app-albums>
+    
 </div>

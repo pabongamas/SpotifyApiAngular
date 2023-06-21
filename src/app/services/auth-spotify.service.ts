@@ -11,7 +11,7 @@ export class AuthSpotifyService {
     private http: HttpClient,
   ) { }
 
-   bearerToken="Bearer BQD4GZwiJBT3Ap8JoDKVpEQfRTBboz_qT2T4se5DyduNvZATT3rQx3sCij7xBBL14qyrevD5lrOcGR9mWMdUIVzUPe7mB99C1rTJE3R3KtLLRD6lcjI";
+   bearerToken="Bearer BQDMLeYPfNd08tY42etDtITOQWF7TPOdtVZJFrekesHui61-rbq2AJRqABefYh6g_luzmVDzIe0MlE0kvsw8x0cqxXhLWVqgh4WLE16W8wpNR3d4QtE";
   newRealese(offset:number,limit:number){
     const headers=new HttpHeaders({
       "Authorization":this.bearerToken,
@@ -30,6 +30,12 @@ export class AuthSpotifyService {
       "Authorization":this.bearerToken
     });
     return this.http.get<any>(`https://api.spotify.com/v1/albums/${idAlbum}`,{headers})
+  }
+  getAlbumsByArtistId(idArtist:any){
+    const headers=new HttpHeaders({
+      "Authorization":this.bearerToken
+    });
+    return this.http.get<any>(`https://api.spotify.com/v1/artists/${idArtist}/albums`,{headers})
   }
 
 }

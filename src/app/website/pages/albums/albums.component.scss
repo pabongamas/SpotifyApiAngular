@@ -5,7 +5,10 @@
     padding: 15px;
     background-color: #121212;
 }
+.divBtnLoadMoreNewRealeses{
+    background-color: #121212;
 
+}
 // tablets
 @media screen and (min-width: 40em) and (max-width: 63.9em){
     .albums--grid{
@@ -19,7 +22,7 @@
 @media screen and (min-width: 64em){
     .albums--grid{
         display: grid;
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: repeat(7,1fr);
         grid-gap: 15px;
     }
 }
