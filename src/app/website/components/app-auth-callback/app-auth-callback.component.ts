@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { environment } from '../../../../environments/environment';
+import { TokenAuthServiceService} from '../../../services/token-auth-service.service'
 
 @Component({
   selector: 'app-app-auth-callback',
@@ -7,15 +8,15 @@ import { environment } from '../../../../environments/environment';
   styleUrls: ['./app-auth-callback.component.scss']
 })
 export class AppAuthCallbackComponent implements OnInit {
-
-  constructor() { }
+  constructor(
+    private TokenAuthServiceService:TokenAuthServiceService
+  ) { }
 
   ngOnInit(): void {
     const url = window.location.href;
     const accessToken = this.extractAccessTokenFromUrl(url);
-    
+    this.TokenAuthServiceService.saveToken(accessToken);
     // Utiliza el token de acceso en tus solicitudes a la API de Spotify
-    localStorage.setItem('accessToken', accessToken);
     window.location.href = environment.domain+"/home"
   }
 

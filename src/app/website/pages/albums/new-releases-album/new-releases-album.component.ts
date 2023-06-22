@@ -1,5 +1,7 @@
 import { Component, OnInit,NgModule,Input,HostListener } from '@angular/core';
 import { AuthSpotifyService } from '../../../../services/auth-spotify.service';
+import { TokenAuthServiceService } from '../../../../services/token-auth-service.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-new-releases-album',
@@ -9,13 +11,17 @@ import { AuthSpotifyService } from '../../../../services/auth-spotify.service';
 export class NewReleasesAlbumComponent implements OnInit {
   constructor(
     private AuthSpotifyService:AuthSpotifyService,
+    private TokenAuthServiceService:TokenAuthServiceService,
+    private location: Location
   ) { }
   newRealeses:any[]=[];
   offset=0;
   limit=40;
   totalElements:number=0;
   ngOnInit(): void {
+  if(this.TokenAuthServiceService.getToken()!==null){
    this.loadNewRealeses();
+  }
   }
   
 loadNewRealeses(){

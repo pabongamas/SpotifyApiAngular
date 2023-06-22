@@ -6,9 +6,14 @@
                 <li>Artistas</li>
                 <li>Albums</li>
             </ul>
-            <ul>
+            <ul *ngIf="tokenNav==null;else elseBlock">
                 <li (click)="authorizeWithSpotifyEvent()">Iniciar Sesion</li>
             </ul>
+            <ng-template #elseBlock>
+                <ul >
+                    <li (click)="logout()">Cerrar Sesion</li>
+                </ul>
+              </ng-template>
           </nav>
     </div>
 </header>

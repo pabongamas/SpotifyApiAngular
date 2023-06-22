@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders} from '@angular/common/http';
-import { switchMap, tap,BehaviorSubject } from 'rxjs';
+import { HttpClient,HttpHeaders,HttpParams,HttpErrorResponse,HttpStatusCode} from '@angular/common/http';
+import { switchMap, tap,BehaviorSubject,throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { retry,catchError,map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,21 @@ export class AuthSpotifyService {
     const headers=new HttpHeaders({
       "Authorization":this.bearerToken,
     });
-    return this.http.get<any>(this.urlApi+"/browse/new-releases?country="+this.country+"&offset="+offset+"&limit="+limit,{headers});
+    return this.http.get<any>(this.urlApi+"/browse/new-releases?country="+this.country+"&offset="+offset+"&limit="+limit,{headers})
+    .pipe(
+      catchError((error: HttpErrorResponse) => {
+        // if (error.status === HttpStatusCode.Conflict) {
+        //   return throwError('Algo esta fallando en el server');
+        // }
+        // if (error.status === HttpStatusCode.NotFound) {
+        //   return throwError('El producto no existe');
+        // }
+        // if (error.status === HttpStatusCode.Unauthorized) {
+          // this.authorizeWithSpotify();
+        // }
+        return throwError('Ups algo salio mal');
+      })
+    )
   }
 
   getArtistsById(idArtist:any){
