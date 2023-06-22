@@ -1,11 +1,13 @@
 <header class="headerMain">
     <div class="Header-item">
-        <nav class="navMain">
-            <ul>
+        <nav class="navMain flexBetweenCenter">
+            <ul class="">
                 <li [routerLink]="['/newRealeses']">Nuevos lanzamientos</li>
                 <li>Artistas</li>
                 <li>Albums</li>
-                <li>Iniciar Sesion</li>
+            </ul>
+            <ul>
+                <li (click)="authorizeWithSpotifyEvent()">Iniciar Sesion</li>
             </ul>
           </nav>
     </div>

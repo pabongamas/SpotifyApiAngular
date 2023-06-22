@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { switchMap ,map} from 'rxjs';
+import { switchMap ,map,forkJoin,of } from 'rxjs';
 import { AuthSpotifyService } from '../../../services/auth-spotify.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class ArtistbyidComponent implements OnInit {
   artistId:string|null=null;
   artistByIdData:any=[];
   albumsByArtistData:any=[];
+  topTracksByArtistData:any=[];
   totalElements:number=0;
   ngOnInit(): void {
     this.route.paramMap
@@ -27,19 +28,22 @@ export class ArtistbyidComponent implements OnInit {
       }),
       switchMap((requestAlbumsByArtist) => {
         return this.AuthSpotifyService.getAlbumsByArtistId(this.artistId).pipe(
-          map((albums) => {
-            return {
-              artist: requestAlbumsByArtist,
-              albums: albums
-            };
+          switchMap((albums) => {
+            return forkJoin({
+              artist: of(requestAlbumsByArtist),
+              albums: of(albums),
+              topTracks: this.AuthSpotifyService.getTopTracksXArtist(this.artistId)
+            });
           })
         );
       })
+     
     )
     .subscribe((data) => {
       this.artistByIdData = data.artist;
       this.albumsByArtistData=data.albums;
       this.totalElements=data.albums.total;
+      this.topTracksByArtistData=data.topTracks.tracks;
     });
 
   }

@@ -10,5 +10,8 @@
         </div>
        
 </section>
+<div class="contTopTracksArtist">
+    <app-artists-top-tracks  *ngIf="artistByIdData"  [topTracksByArtistData]="topTracksByArtistData"></app-artists-top-tracks>
+</div>
 <app-albums [dataalbums]="albumsByArtistData.items"></app-albums>
 </main>

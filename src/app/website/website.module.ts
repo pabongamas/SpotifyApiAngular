@@ -15,6 +15,8 @@ import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
 import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
 import { TracksComponent } from './components/tracks/tracks.component';
 import { TrackComponent } from './components/track/track.component';
+import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artists-top-tracks.component';
+import { AppAuthCallbackComponent } from './components/app-auth-callback/app-auth-callback.component';
 
 
 
@@ -29,7 +31,9 @@ import { TrackComponent } from './components/track/track.component';
     ArtistbyidComponent,
     AlbumbyidComponent,
     TracksComponent,
-    TrackComponent
+    TrackComponent,
+    ArtistsTopTracksComponent,
+    AppAuthCallbackComponent
   ],
   imports: [
     CommonModule,

@@ -18,11 +18,7 @@ export class NavComponent {
   onCargarAlbumsClick() {
     this.cargarAlbumsClick.emit();
   }
-  login(){
-    // console.log("aca entra" );
-    // this.AuthSpotifyService.Authorization()
-    // .subscribe(()=>{
-    //   this.Router.navigate(['/profile']);
-    // });
+  authorizeWithSpotifyEvent(){
+    this.AuthSpotifyService.authorizeWithSpotify();
   }
 }
