@@ -6,6 +6,8 @@ import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
 import { NewReleasesAlbumComponent } from './pages/albums/new-releases-album/new-releases-album.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AppAuthCallbackComponent } from './components/app-auth-callback/app-auth-callback.component';
+import { UserComponent } from './components/user/user.component';
+
 
 
 const routes: Routes = [
@@ -15,7 +17,9 @@ const routes: Routes = [
     {path:'artist/:id',component:ArtistbyidComponent},
     {path:'album/:id',component:AlbumbyidComponent},
     {path:'newRealeses',component:NewReleasesAlbumComponent},
-    { path: 'callbackAuth', component: AppAuthCallbackComponent }
+    { path: 'callbackAuth', component: AppAuthCallbackComponent },
+    { path: 'user/:id', component: UserComponent },
+    
 
     
     

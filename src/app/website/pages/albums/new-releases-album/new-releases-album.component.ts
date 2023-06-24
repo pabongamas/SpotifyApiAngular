@@ -29,7 +29,11 @@ loadNewRealeses(){
     this.newRealeses = this.newRealeses.concat(data.albums.items);
     this.offset += this.limit;
     this.totalElements=data.albums.total;
-  });
+  },
+  (error) => {
+    this.TokenAuthServiceService.removeToken();
+  }
+  )
 
 }
 loadMoreNewRealeses(){

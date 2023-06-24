@@ -17,6 +17,10 @@ import { TracksComponent } from './components/tracks/tracks.component';
 import { TrackComponent } from './components/track/track.component';
 import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artists-top-tracks.component';
 import { AppAuthCallbackComponent } from './components/app-auth-callback/app-auth-callback.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
+import { UserComponent } from './components/user/user.component';
+
 
 
 
@@ -33,11 +37,12 @@ import { AppAuthCallbackComponent } from './components/app-auth-callback/app-aut
     TracksComponent,
     TrackComponent,
     ArtistsTopTracksComponent,
-    AppAuthCallbackComponent
+    AppAuthCallbackComponent,
+    UserComponent
   ],
   imports: [
     CommonModule,
-    WebsiteRoutingModule,MatSlideToggleModule,MatToolbarModule,MatListModule
+    WebsiteRoutingModule,MatSlideToggleModule,MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule
   ]
 })
 export class WebsiteModule { }

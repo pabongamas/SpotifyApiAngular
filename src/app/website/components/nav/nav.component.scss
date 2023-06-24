@@ -3,15 +3,20 @@
     font-size: 14px;
     line-height: 1.5;
     position: sticky;
-    top: 0;    
+    top: 0;
     z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .Header-item{
     width: 100%;
 }
 nav {
-    background-color: #121212;
+    
+    background-color: rgb(83, 83, 83);
     padding: 10px;
     height: 50px;
     display: flex;
@@ -25,9 +30,15 @@ nav {
     display: flex;
   }
   
-  nav li {
+  nav li:not(.logoApp){
     margin-right: 10px;
     color: white;
+    margin-block: 0px;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .logoApp{
+    margin-right: 10px;
     margin-block: 0px;
     font-size: 1rem;
     font-weight: 700;
@@ -37,7 +48,35 @@ nav {
     color: #fff;
     text-decoration: none;
   }
+  .figureProfile{
+   width: 24px;
+   height: 24px;   
+   border-radius: 50%;
+   -o-object-fit: cover;
+   object-fit: cover;
   
+  }
+  .contFirstFigureProfile:hover{
+    transform: scale(1.04);
+  }
+  .contFirstFigureProfile{
+    border: 0px;
+    border-radius: 500px;
+    cursor: pointer;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition-duration: 33ms;
+    background-color: rgba(0,0,0,.54);
+    margin: 4px;
+  }
+  .m4{
+    margin: 4px;
+  }
+  .LogoutBtn{
+    border-top:  1px solid #fff;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
   /* Aplicar estilos diferentes para pantallas pequeñas */
   @media (max-width: 768px) {
     nav {

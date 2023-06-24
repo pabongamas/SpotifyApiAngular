@@ -75,4 +75,12 @@ export class AuthSpotifyService {
     window.location.href = authorizationUrl;
   }
 
+  getCurrentUserProfile(){
+    console.log("egrssdfds");
+    const headers=new HttpHeaders({
+      "Authorization":this.bearerToken
+    });
+
+    return this.http.get<any>(`${this.urlApi}/me`,{headers})
+  }
 }

@@ -1,6 +1,6 @@
 <div class="contNewRelease" *ngIf="newRealeses.length>0">
     <div class="title">
-        <span>Nuevos lanzamientos</span>
+        <span class="font-sans">Nuevos lanzamientos</span>
     </div>
     <app-albums (eventEmitNewRealeses)="loadMoreNewRealeses()" [totalElementsData]="totalElements" [dataalbums]="newRealeses"></app-albums>
     

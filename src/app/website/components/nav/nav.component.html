@@ -1,18 +1,32 @@
 <header class="headerMain">
     <div class="Header-item">
         <nav class="navMain flexBetweenCenter">
-            <ul class="">
+            <ul class="font-sans">
+                <div class="flex" *ngIf="tokenNav!=null;else elseNavBlock">
+                <li class="text-ColorSpot logoApp" [routerLink]="['/home']">SpotifyAPI</li>
                 <li [routerLink]="['/newRealeses']">Nuevos lanzamientos</li>
-                <li>Artistas</li>
+                <li >Artistas</li>
                 <li>Albums</li>
+                </div>
             </ul>
             <ul *ngIf="tokenNav==null;else elseBlock">
                 <li (click)="authorizeWithSpotifyEvent()">Iniciar Sesion</li>
             </ul>
             <ng-template #elseBlock>
-                <ul >
-                    <li (click)="logout()">Cerrar Sesion</li>
-                </ul>
+                <div mat-icon-button [matMenuTriggerFor]="menu" *ngIf="profile!==null" class="flexAlignCenter contFirstFigureProfile">
+                    <div  mat-icon-button matTooltip={{profile.display_name}} >
+                        <figure class="flexAlignCenter m4">
+                            <img class="figureProfile m4"  [src]="profile.images[0].url">
+                        </figure>
+                    </div>
+                </div>
+                <mat-menu #menu="matMenu">
+                    <span [routerLink]="['/user',profile?.id]" class="font-sans" mat-menu-item>Perfil</span>
+                    <span class="LogoutBtn" (click)="logout()" class="font-sans" mat-menu-item>Cerrar Sesi&oacute;n</span>
+                  </mat-menu>
+              </ng-template>
+              <ng-template #elseNavBlock>
+                <li class="text-ColorSpot logoApp" [routerLink]="['/home']">SpotifyAPI</li>
               </ng-template>
           </nav>
     </div>

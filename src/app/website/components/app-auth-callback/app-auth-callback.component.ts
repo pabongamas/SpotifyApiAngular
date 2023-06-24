@@ -1,6 +1,7 @@
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { TokenAuthServiceService} from '../../../services/token-auth-service.service'
+import{AuthSpotifyService} from '../../../services/auth-spotify.service';
 
 @Component({
   selector: 'app-app-auth-callback',
@@ -9,7 +10,8 @@ import { TokenAuthServiceService} from '../../../services/token-auth-service.ser
 })
 export class AppAuthCallbackComponent implements OnInit {
   constructor(
-    private TokenAuthServiceService:TokenAuthServiceService
+    private TokenAuthServiceService:TokenAuthServiceService,
+    private AuthSpotifyService:AuthSpotifyService
   ) { }
 
   ngOnInit(): void {
@@ -25,4 +27,5 @@ export class AppAuthCallbackComponent implements OnInit {
     const match = url.match(accessTokenRegex);
     return match ? match[1] : '';
   }
+
 }
