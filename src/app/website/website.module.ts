@@ -20,6 +20,7 @@ import { AppAuthCallbackComponent } from './components/app-auth-callback/app-aut
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatMenuModule} from '@angular/material/menu';
 import { UserComponent } from './components/user/user.component';
+import { PipeMsToMinutesPipe } from './pipes/pipe-ms-to-minutes.pipe';
 
 
 
@@ -38,7 +39,8 @@ import { UserComponent } from './components/user/user.component';
     TrackComponent,
     ArtistsTopTracksComponent,
     AppAuthCallbackComponent,
-    UserComponent
+    UserComponent,
+    PipeMsToMinutesPipe,
   ],
   imports: [
     CommonModule,

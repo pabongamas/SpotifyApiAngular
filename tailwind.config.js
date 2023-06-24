@@ -14,6 +14,9 @@ module.exports = {
       fontFamily: {
         'sans': ['Proxima Nova', ...defaultTheme.fontFamily.sans],
       },
+      padding: {
+        '15': '15px',
+      }
     },
   },
   plugins: [],

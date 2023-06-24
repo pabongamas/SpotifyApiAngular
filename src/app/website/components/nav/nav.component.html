@@ -10,7 +10,7 @@
                 </div>
             </ul>
             <ul *ngIf="tokenNav==null;else elseBlock">
-                <li (click)="authorizeWithSpotifyEvent()">Iniciar Sesion</li>
+                <li class="cursor-pointer" (click)="authorizeWithSpotifyEvent()">Iniciar Sesion</li>
             </ul>
             <ng-template #elseBlock>
                 <div mat-icon-button [matMenuTriggerFor]="menu" *ngIf="profile!==null" class="flexAlignCenter contFirstFigureProfile">

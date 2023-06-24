@@ -27,7 +27,12 @@ export class ArtistbyidComponent implements OnInit {
         return this.AuthSpotifyService.getArtistsById(this.artistId);
       }),
       switchMap((requestAlbumsByArtist) => {
-        return this.AuthSpotifyService.getAlbumsByArtistId(this.artistId).pipe(
+        const parametros={
+          "include_groups":"album,single",
+          "offset":0,
+          "limit":7
+      };
+        return this.AuthSpotifyService.getAlbumsByArtistId(this.artistId,parametros).pipe(
           switchMap((albums) => {
             return forkJoin({
               artist: of(requestAlbumsByArtist),
