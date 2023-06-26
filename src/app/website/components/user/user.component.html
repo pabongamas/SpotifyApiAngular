@@ -1,23 +1,23 @@
-<!-- <main class="mainAlbumById font-sans">
-    <section *ngIf="albumByIdData">
-        <div *ngIf="albumByIdData.images && albumByIdData.images.length > 0"class="flexColumn imgCoverArtist">
+<main class="mainAlbumById font-sans" *ngIf="userByIdData!=null">
+    <section >
+        <div class="flexColumn imgCoverArtist">
            <div class="h100 contInfoAlbum">
                 <div>
-                    <img class="wh100 imgAlbum" src="{{albumByIdData.images[0].url}}" alt="">
+                    <img class="wh100 imgUser" *ngIf="userByIdData.images!=undefined" src="{{userByIdData.images[0].url}}" alt="">
                 </div>
                 <div class="descAlbum">
                     <div>
-                        <span class="Title">{{albumByIdData.type | titlecase}}</span>
+                        <span class="Title">{{userByIdData.type | titlecase}}</span>
                     </div>
                     <div>
-                        <span class="boldTitle Title fzbig  ">{{albumByIdData.name}}</span>
+                        <span  mat-icon-button matTooltip="Ir al perfil en Spotify" 
+                         (click)="goToProfile(userByIdData.external_urls.spotify)" class="boldTitle Title fzbig cursor-pointer
+                        ">{{userByIdData.display_name}}</span>
                     </div>
-                    <div>
-                        <span [routerLink]="['/artist',albumByIdData.artists[0].id]" class="nameArtistspan">{{albumByIdData.artists[0].name }}</span>
-                        <span class="Title infoYear">{{albumByIdData.release_date| date:'yyyy'}}</span>
-                        <span class="Title infoYear">{{albumByIdData.total_tracks}} Canciones</span>
+                    <div *ngIf="userByIdData.followers!=undefined">
+                        <span class="Title">{{userByIdData.followers.total}} Seguidores</span>
                     </div>
                 </div>
            </div>
         </div>
-</section> -->
+</section>
