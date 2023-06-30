@@ -1,0 +1,12 @@
+<div [routerLink]="['/categorie',categorie.id]" class="categorieContFull">
+    <div>
+        <img class="imgCategorie" src="{{categorie.icons[0].url}}">
+    </div>
+    <div class="descCategorie mt-2">
+        <span class="nameCategorie ">{{categorie.name}}</span>
+    </div>
+    <div class="descArtist">
+        <!-- <a [routerLink]="['/artist',album.artists[0].id]" class="nameArtist" *ngIf="album.artists.length>0">{{album.artists[0].name}}</a> -->
+        <!-- *ngIf="product.images.length>0" [img]="product.images[0]" -->
+    </div>
+</div>

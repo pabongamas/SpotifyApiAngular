@@ -84,7 +84,6 @@ export class AuthSpotifyService {
   }
 
   getCurrentUserProfile(){
-    console.log("egrssdfds");
     const headers=new HttpHeaders({
       "Authorization":this.bearerToken
     });
@@ -112,4 +111,19 @@ export class AuthSpotifyService {
     });
     return this.http.get<any>(`${this.urlApi}/me/top/tracks${queryString}`,{headers})
   } 
+  getCategories(offset:number,limit:number){
+    const headers=new HttpHeaders({
+      "Authorization":this.bearerToken
+    });
+    return this.http.get<any>(`${this.urlApi}/browse/categories?country=${this.country}&offset=${offset}&limit=${limit}`,{headers})
+  }
+  getCategorieById(idCategorie:any){
+    const headers=new HttpHeaders({
+      "Authorization":this.bearerToken
+    });
+    return this.http.get<any>(`${this.urlApi}/browse/categories/${idCategorie}?country=${this.country}`,{headers})
+  }
+  getPlaylistByCategorie(idArtist:any,parametros:any|null){
+
+  }
 }

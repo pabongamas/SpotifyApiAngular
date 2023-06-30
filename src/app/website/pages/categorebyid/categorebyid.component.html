@@ -1,0 +1,28 @@
+<main class="mainCategorieById font-sans">
+    <section *ngIf="categorieByIdData">
+        <div *ngIf="categorieByIdData.icons && categorieByIdData.icons.length > 0"class="flexColumn imgCoverCategorie">
+           <div class="h100 contInfoCategorie" [attr.style]="categorieByIdData.icons[0].url | colorByImage:'background-color'">
+            
+                <div>
+                    <img class="wh100 imgCategorie" src="{{categorieByIdData.icons[0].url}}" alt="">
+                </div>
+                <div class="descCategorie">
+                    <div>
+                        <!-- <span class="Title">{{albumByIdData.type | titlecase}}</span> -->
+                    </div>
+                    <div>
+                        <span class="boldTitle Title fzbig  ">{{categorieByIdData.name}}</span>
+                    </div>
+                    <div>
+                        <!-- <span [routerLink]="['/artist',albumByIdData.artists[0].id]" class="nameArtistspan">{{albumByIdData.artists[0].name }}</span> -->
+                        <!-- <span class="Title infoYear">{{albumByIdData.release_date| date:'yyyy'}}</span> -->
+                        <!-- <span class="Title infoYear">{{albumByIdData.total_tracks}} Canciones</span> -->
+                    </div>
+                </div>
+           </div>
+        </div>
+</section>
+<div>
+    <!-- <app-tracks [dataTracks]="albumByIdData.tracks"></app-tracks> -->
+</div>
+</main>

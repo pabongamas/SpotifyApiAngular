@@ -13,7 +13,7 @@
 <div class="contTopTracksArtist">
     <app-artists-top-tracks  *ngIf="artistByIdData"  [topTracksByArtistData]="topTracksByArtistData"></app-artists-top-tracks>
 </div>
-<div class="p-15">
+<div class="p-15" *ngIf="albumsByArtistData.items!=undefined">
     <h2 class="text-PrimaryColor">Discografia</h2>
     <app-albums [dataalbums]="albumsByArtistData.items"></app-albums>
 </div>

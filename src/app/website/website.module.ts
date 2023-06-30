@@ -21,6 +21,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatMenuModule} from '@angular/material/menu';
 import { UserComponent } from './components/user/user.component';
 import { PipeMsToMinutesPipe } from './pipes/pipe-ms-to-minutes.pipe';
+import { ColorByImagePipe } from './pipes/color-by-image.pipe';
+import { CategoriasAllComponent } from './components/categorias-all/categorias-all.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { CategorieComponent } from './components/categorie/categorie.component';
+import { CategorebyidComponent } from './pages/categorebyid/categorebyid.component';
 
 
 
@@ -41,6 +46,11 @@ import { PipeMsToMinutesPipe } from './pipes/pipe-ms-to-minutes.pipe';
     AppAuthCallbackComponent,
     UserComponent,
     PipeMsToMinutesPipe,
+    ColorByImagePipe,
+    CategoriasAllComponent,
+    CategoriesComponent,
+    CategorieComponent,
+    CategorebyidComponent,
   ],
   imports: [
     CommonModule,

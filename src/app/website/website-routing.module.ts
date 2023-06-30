@@ -7,6 +7,10 @@ import { NewReleasesAlbumComponent } from './pages/albums/new-releases-album/new
 import { LayoutComponent } from './components/layout/layout.component';
 import { AppAuthCallbackComponent } from './components/app-auth-callback/app-auth-callback.component';
 import { UserComponent } from './components/user/user.component';
+import { CategoriasAllComponent } from './components/categorias-all/categorias-all.component';
+import { CategorebyidComponent } from './pages/categorebyid/categorebyid.component';
+
+
 
 
 
@@ -19,6 +23,9 @@ const routes: Routes = [
     {path:'newRealeses',component:NewReleasesAlbumComponent},
     { path: 'callbackAuth', component: AppAuthCallbackComponent },
     { path: 'user/:id', component: UserComponent },
+    {path:'Categories',component:CategoriasAllComponent},
+    { path: 'categorie/:id', component: CategorebyidComponent },
+
     
 
     

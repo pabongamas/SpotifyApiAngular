@@ -1,7 +1,8 @@
 <main class="mainAlbumById font-sans">
     <section *ngIf="albumByIdData">
         <div *ngIf="albumByIdData.images && albumByIdData.images.length > 0"class="flexColumn imgCoverArtist">
-           <div class="h100 contInfoAlbum">
+           <div class="h100 contInfoAlbum" [attr.style]="albumByIdData.images[0].url | colorByImage:'background-color'">
+            
                 <div>
                     <img class="wh100 imgAlbum" src="{{albumByIdData.images[0].url}}" alt="">
                 </div>

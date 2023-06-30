@@ -1,0 +1,40 @@
+.imgCategorie{
+    max-width: 100%;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 225px;
+}
+.categorieContFull{
+    background-color: #181818;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color .3s ease;
+    grid-gap: 5px;
+}
+.categorieContFull:hover{
+    background: #282828;
+    cursor:pointer;
+}
+.descCategorie .nameCategorie{
+    color: white;
+    margin-block: 0px;
+    font-size: 1rem;
+    font-weight: 700;
+    // font-family: "Helvetica Neue,helvetica,arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic";
+}
+.nameArtist{
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+.nameArtist:hover{
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 20em) and (max-width: 30em){
+   .categorieContFull{
+    padding: 30px;
+   }  
+}

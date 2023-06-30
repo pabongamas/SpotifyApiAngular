@@ -1,0 +1,6 @@
+<div class="categories--grid">    
+    <app-categorie [categorie]="categorie" *ngFor="let categorie of datacategories"></app-categorie>
+</div>
+<div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="datacategories!==undefined&&datacategories.length>0 && datacategories.length<totalElementsData">
+    <button class="rounded-full bg-ColorSpot p-15" (click)="loadMoreCategories()">Cargar mas</button>
+</div>
