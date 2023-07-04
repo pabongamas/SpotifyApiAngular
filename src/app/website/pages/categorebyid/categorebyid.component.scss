@@ -87,13 +87,13 @@
 }
 
 @media screen and (max-width: 40em){
-    .contInfoAlbum{
+    .contInfoCategorie{
         display: flex;
         flex-direction: column;
     }
 }
 @media screen and (min-width: 40em){
-    .contInfoAlbum{
+    .contInfoCategorie{
         height: 192px;
     }
 }
