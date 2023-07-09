@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,Output,EventEmitter  } from '@angular/core';
 
 @Component({
   selector: 'app-playlists',
@@ -7,5 +7,15 @@ import { Component,Input } from '@angular/core';
 })
 export class PlaylistsComponent {
   @Input() playlists:any;
+  @Input() totalElements:any;
+  @Output() eventEmitPlaylists: EventEmitter<any> = new EventEmitter();
 
+ 
+
+  loadMorePlaylists() {
+    this.eventEmitPlaylists.emit();
+  }
 }
+
+
+

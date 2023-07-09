@@ -21,6 +21,8 @@ export class CategorebyidComponent implements OnInit {
   // albumsByArtistData:any=[];
   // topTracksByArtistData:any=[];
   totalElements:number=0;
+  offset=0;
+  limit=21;
   ngOnInit(): void {
     this.route.paramMap
     .pipe(
@@ -30,8 +32,8 @@ export class CategorebyidComponent implements OnInit {
       }),
       switchMap((requestCategorieById) => {
         const parametros={
-          "offset":0,
-          "limit":14
+          "offset":this.offset,
+          "limit":this.limit
       };
         return this.AuthSpotifyService.getPlaylistByCategorieId(this.categorieId,parametros).pipe(
           switchMap((playlists) => {
@@ -42,13 +44,23 @@ export class CategorebyidComponent implements OnInit {
           })
         );
       })
-     
     )
     .subscribe((data) => {
       this.playlistBydIdData = data.playlist.playlists;
       this.categorieByIdData=data.categorie;
       this.totalElements=this.playlistBydIdData.total;
     });
-
   }
+  loadMorePlaylists(){
+    this.offset += this.limit;
+    const parametros={
+      "offset":this.offset,
+      "limit":this.limit
+    };
+    this.AuthSpotifyService.getPlaylistByCategorieId(this.categorieId,parametros).subscribe((data) => {
+      this.playlistBydIdData.items = this.playlistBydIdData.items.concat(data.playlists.items);
+      // this.totalElements=data.categories.total;
+    }
+    )
+   }
 }

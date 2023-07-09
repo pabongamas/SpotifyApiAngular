@@ -23,6 +23,6 @@
         </div>
 </section>
 <div>
-    <app-playlist-all [dataPlaylist]="playlistBydIdData"></app-playlist-all>
+    <app-playlist-all (eventEmitPlaylistsAll)="loadMorePlaylists()" [totalElements]="totalElements" [dataPlaylist]="playlistBydIdData"></app-playlist-all>
 </div>
 </main>

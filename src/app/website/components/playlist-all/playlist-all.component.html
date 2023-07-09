@@ -1,1 +1,1 @@
-<app-playlists [playlists]="dataPlaylist"></app-playlists>
+<app-playlists (eventEmitPlaylists)="loadMorePlaylists()"  [totalElements]="totalElements" [playlists]="dataPlaylist"></app-playlists>

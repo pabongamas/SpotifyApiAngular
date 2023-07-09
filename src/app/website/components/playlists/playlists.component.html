@@ -1,3 +1,11 @@
-<div class="playlist--grid" *ngIf="playlists!=undefined">    
+<!-- >    
     <app-playlist [playlist]="playlist" *ngFor="let playlist of playlists.items"></app-playlist>
+</div> -->
+<div class="playlist--grid"  *ngIf="playlists!=undefined">
+<ng-container *ngFor="let playlist of playlists.items">
+    <app-playlist [playlist]="playlist" *ngIf="playlist !== null"></app-playlist>
+  </ng-container>
+</div>
+<div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="playlists.items!==undefined&&playlists.items.length>0 && playlists.items.length<totalElements">
+    <button class="rounded-full bg-ColorSpot p-15" (click)="loadMorePlaylists()" >Cargar mas Play</button>
 </div>
