@@ -1,0 +1,25 @@
+.playlist--grid{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 15px;
+    padding: 15px;
+    background-color: #121212;
+}
+
+// tablets
+@media screen and (min-width: 40em) and (max-width: 63.9em){
+    .playlist--grid{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 15px;
+    }
+}
+// web
+@media screen and (min-width: 64em){
+    .playlist--grid{
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+        grid-gap: 15px;
+    }
+}
+    

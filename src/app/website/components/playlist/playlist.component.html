@@ -1,0 +1,11 @@
+<div [routerLink]="['/playlist',playlist.id]" class="playlistContFull">
+    <div>
+        <img class="imgPlaylist" src="{{playlist.images[0].url}}">
+    </div>
+    <div class="descPlaylist">
+        <span class="namePlaylist ">{{playlist.name}}</span>
+    </div>
+    <div class="descPlaylistP">
+       <p>{{playlist.description}}</p>
+    </div>
+</div>

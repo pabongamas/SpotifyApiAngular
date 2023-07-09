@@ -17,6 +17,7 @@ export class CategorebyidComponent implements OnInit {
 
   categorieId:string|null=null;
   categorieByIdData:any=[];
+  playlistBydIdData:any={};
   // albumsByArtistData:any=[];
   // topTracksByArtistData:any=[];
   totalElements:number=0;
@@ -27,29 +28,26 @@ export class CategorebyidComponent implements OnInit {
         this.categorieId = params.get('id');
         return this.AuthSpotifyService.getCategorieById(this.categorieId);
       }),
-      // switchMap((requestAlbumsByArtist) => {
-      //   const parametros={
-      //     "include_groups":"album,single",
-      //     "offset":0,
-      //     "limit":7
-      // };
-      //   return this.AuthSpotifyService.getAlbumsByArtistId(this.artistId,parametros).pipe(
-      //     switchMap((albums) => {
-      //       return forkJoin({
-      //         artist: of(requestAlbumsByArtist),
-      //         albums: of(albums),
-      //         topTracks: this.AuthSpotifyService.getTopTracksXArtist(this.artistId)
-      //       });
-      //     })
-      //   );
-      // })
+      switchMap((requestCategorieById) => {
+        const parametros={
+          "offset":0,
+          "limit":7
+      };
+        return this.AuthSpotifyService.getPlaylistByCategorieId(this.categorieId,parametros).pipe(
+          switchMap((playlists) => {
+            return forkJoin({
+              playlist: of(playlists),
+              categorie: of(requestCategorieById),
+            });
+          })
+        );
+      })
      
     )
     .subscribe((data) => {
-      // this.artistByIdData = data.artist;
-      this.categorieByIdData=data;
-      // this.totalElements=data.albums.total;
-      // this.topTracksByArtistData=data.topTracks.tracks;
+      this.playlistBydIdData = data.playlist.playlists;
+      this.categorieByIdData=data.categorie;
+      this.totalElements=this.playlistBydIdData.total;
     });
 
   }

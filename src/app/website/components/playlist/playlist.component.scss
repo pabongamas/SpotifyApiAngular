@@ -1,0 +1,43 @@
+.imgPlaylist{
+    max-width: 100%;
+    border-radius: 10px;
+}
+.playlistContFull{
+    background-color: #181818;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color .3s ease;
+    grid-gap: 5px;
+}
+.playlistContFull:hover{
+    background: #282828;
+    cursor:pointer;
+}
+.descPlaylist .namePlaylist{
+    color: white;
+    margin-block: 0px;
+    font-size: 1rem;
+    font-weight: 700;
+    // font-family: "Helvetica Neue,helvetica,arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic";
+}
+.namePlaylist{
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+.namePlaylist:hover{
+    text-decoration: underline;
+}
+.descPlaylistP{
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+@media screen and (min-width: 20em) and (max-width: 30em){
+   .playlistContFull{
+    padding: 30px;
+   }  
+}

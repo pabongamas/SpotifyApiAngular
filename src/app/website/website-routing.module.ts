@@ -9,6 +9,7 @@ import { AppAuthCallbackComponent } from './components/app-auth-callback/app-aut
 import { UserComponent } from './components/user/user.component';
 import { CategoriasAllComponent } from './components/categorias-all/categorias-all.component';
 import { CategorebyidComponent } from './pages/categorebyid/categorebyid.component';
+import {PlaylistByIdComponent} from './pages/playlist-by-id/playlist-by-id.component';
 
 
 
@@ -25,6 +26,8 @@ const routes: Routes = [
     { path: 'user/:id', component: UserComponent },
     {path:'Categories',component:CategoriasAllComponent},
     { path: 'categorie/:id', component: CategorebyidComponent },
+    {path:'playlist/:id',component:PlaylistByIdComponent},
+
 
     
 

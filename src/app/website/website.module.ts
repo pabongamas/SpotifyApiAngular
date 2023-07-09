@@ -26,6 +26,10 @@ import { CategoriasAllComponent } from './components/categorias-all/categorias-a
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategorieComponent } from './components/categorie/categorie.component';
 import { CategorebyidComponent } from './pages/categorebyid/categorebyid.component';
+import { PlaylistAllComponent } from './components/playlist-all/playlist-all.component';
+import { PlaylistsComponent } from './components/playlists/playlists.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
+import { PlaylistByIdComponent } from './pages/playlist-by-id/playlist-by-id.component';
 
 
 
@@ -51,6 +55,10 @@ import { CategorebyidComponent } from './pages/categorebyid/categorebyid.compone
     CategoriesComponent,
     CategorieComponent,
     CategorebyidComponent,
+    PlaylistAllComponent,
+    PlaylistsComponent,
+    PlaylistComponent,
+    PlaylistByIdComponent,
   ],
   imports: [
     CommonModule,

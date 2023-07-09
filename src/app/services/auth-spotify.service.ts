@@ -123,7 +123,17 @@ export class AuthSpotifyService {
     });
     return this.http.get<any>(`${this.urlApi}/browse/categories/${idCategorie}?country=${this.country}`,{headers})
   }
-  getPlaylistByCategorie(idArtist:any,parametros:any|null){
-
+  getPlaylistByCategorieId(idCategorie:any,parametros:any|null){
+    var queryString="";
+    if(parametros!==null){
+       queryString = Object.entries(parametros)
+        .map(([key, value]) => `${key}=${value}`)
+        .join('&');
+        queryString="?"+queryString;
+    }
+    const headers=new HttpHeaders({
+      "Authorization":this.bearerToken
+    });
+    return this.http.get<any>(`${this.urlApi}/browse/categories/${idCategorie}/playlists${queryString}`,{headers})
   }
 }
