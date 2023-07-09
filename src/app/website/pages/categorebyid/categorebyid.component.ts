@@ -31,7 +31,7 @@ export class CategorebyidComponent implements OnInit {
       switchMap((requestCategorieById) => {
         const parametros={
           "offset":0,
-          "limit":7
+          "limit":14
       };
         return this.AuthSpotifyService.getPlaylistByCategorieId(this.categorieId,parametros).pipe(
           switchMap((playlists) => {
