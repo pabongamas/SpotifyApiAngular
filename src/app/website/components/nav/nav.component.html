@@ -17,7 +17,7 @@
                 <div mat-icon-button [matMenuTriggerFor]="menu" *ngIf="profile!==null" class="flexAlignCenter contFirstFigureProfile">
                     <div  mat-icon-button matTooltip={{profile.display_name}} >
                         <figure class="flexAlignCenter m4">
-                            <img class="figureProfile m4"  [src]="profile.images[0].url">
+                            <img class="figureProfile m4" *ngIf="profile.images.length>0;else elseBlockImgurl" [src]="profile.images[0].url">
                         </figure>
                     </div>
                 </div>
@@ -29,6 +29,11 @@
               <ng-template #elseNavBlock>
                 <li class="text-ColorSpot logoApp" [routerLink]="['/home']">SpotifyAPI</li>
               </ng-template>
+              <ng-template #elseBlockImgurl>
+                <img class="figureProfile m4">
+              </ng-template>
+
+
           </nav>
     </div>
 </header>
