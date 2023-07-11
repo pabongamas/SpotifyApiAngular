@@ -1,19 +1,42 @@
-<div class="contTrack mainColorTrack">
-    <div class="flexAlignCenter">
-        <div>
-            <span>{{track.track_number}}</span>
+<ng-container *ngIf="!esPlaylist;else blockTrackPlaylist">
+    <div class="contTrack mainColorTrack">
+        <div class="flexAlignCenter">
+            <div>
+                <span>{{track.track_number}}</span>
+            </div>
+        </div>
+        <div class="flexAlignCenter">
+            <div class="flexDirCol">
+                <a class="viewTrack" href="">{{track.name}}</a>
+                <span class="viewArtist" [routerLink]="['/artist',track.artists[0].id]" >{{track.artists[0].name}}</span>
+            </div>
+        </div>
+        <div class="flexAlignCenter justifyCenter">
+            <div>
+                <span class="">{{track.duration_ms| pipeMsToMinutes}}</span>
+            </div>
         </div>
     </div>
-    <div class="flexAlignCenter">
-        <div class="flexDirCol">
-            <a class="viewTrack" href="">{{track.name}}</a>
-            <span class="viewArtist" [routerLink]="['/artist',track.artists[0].id]" >{{track.artists[0].name}}</span>
-        </div>
-    </div>
-    <div class="flexAlignCenter justifyCenter">
-        <div>
-            <span class="">{{track.duration_ms| pipeMsToMinutes}}</span>
-        </div>
-    </div>
-</div>
+    
+</ng-container>
 
+<ng-template #blockTrackPlaylist>
+    <div class="contTrack mainColorTrack">
+        <div class="flexAlignCenter">
+            <div>
+                <span>{{track.track.track_number}}</span>
+            </div>
+        </div>
+        <div class="flexAlignCenter">
+            <div class="flexDirCol">
+                <a class="viewTrack" href="">{{track.track.name}}</a>
+                <span class="viewArtist" [routerLink]="['/artist',track.track.artists[0].id]" >{{track.track.artists[0].name}}</span>
+            </div>
+        </div>
+        <div class="flexAlignCenter justifyCenter">
+            <div>
+                <span class="">{{track.track.duration_ms| pipeMsToMinutes}}</span>
+            </div>
+        </div>
+    </div>
+  </ng-template>

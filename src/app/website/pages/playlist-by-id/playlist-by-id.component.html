@@ -1,1 +1,24 @@
-<p>playlist-by-id works!</p>
+<main class="mainAlbumById font-sans">
+    <section *ngIf="playlistByIdData">
+        <div *ngIf="playlistByIdData.images && playlistByIdData.images.length > 0"class="flexColumn imgCoverArtist">
+           <div class="h100 contInfoAlbum" [attr.style]="playlistByIdData.images[0].url | colorByImage:'background-color'">
+            
+                <div>
+                    <img class="wh100 imgAlbum" src="{{playlistByIdData.images[0].url}}" alt="">
+                </div>
+                <div class="descAlbum">
+                    <div>
+                        <span class="Title">{{playlistByIdData.type | titlecase}}</span>
+                    </div>
+                    <div>
+                        <span class="boldTitle Title fzbig  ">{{playlistByIdData.name}}</span>
+                    </div>
+           
+                </div>
+           </div>
+        </div>
+</section>
+<div>
+    <app-tracks [esPlaylist]="true" [dataTracks]="playlistByIdData.tracks"></app-tracks>
+</div>
+</main>

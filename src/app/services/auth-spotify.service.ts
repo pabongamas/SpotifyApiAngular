@@ -136,4 +136,10 @@ export class AuthSpotifyService {
     });
     return this.http.get<any>(`${this.urlApi}/browse/categories/${idCategorie}/playlists${queryString}`,{headers})
   }
+  getPlaylistById(idAlbum:any){
+    const headers=new HttpHeaders({
+      "Authorization":this.bearerToken
+    });
+    return this.http.get<any>(`${this.urlApi}/playlists/${idAlbum}?market=${this.country}`,{headers})
+  }
 }

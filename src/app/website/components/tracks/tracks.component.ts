@@ -7,6 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class TracksComponent implements OnInit {
   @Input() dataTracks:any;
+  @Input() esPlaylist:boolean=false;
   constructor() { }
 
   ngOnInit(): void {
