@@ -2,7 +2,7 @@
     display: flex;
     font-size: 14px;
     line-height: 1.5;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 999999;
     display: flex;
@@ -91,6 +91,5 @@ nav {
     
     nav li {
       margin-right: 0;
-      margin-bottom: 10px;
     }
   }

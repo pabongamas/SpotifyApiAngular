@@ -1,4 +1,4 @@
-<main class="mainAlbumById font-sans">
+<main class="mainPlaylistById font-sans">
     <section *ngIf="playlistByIdData">
         <div *ngIf="playlistByIdData.images && playlistByIdData.images.length > 0"class="flexColumn imgCoverArtist">
            <div class="h100 contInfoAlbum" [attr.style]="playlistByIdData.images[0].url | colorByImage:'background-color'">
@@ -6,14 +6,19 @@
                 <div>
                     <img class="wh100 imgAlbum" src="{{playlistByIdData.images[0].url}}" alt="">
                 </div>
-                <div class="descAlbum">
+                <div class="descPlaylist">
                     <div>
                         <span class="Title">{{playlistByIdData.type | titlecase}}</span>
                     </div>
                     <div>
                         <span class="boldTitle Title fzbig  ">{{playlistByIdData.name}}</span>
                     </div>
-           
+                    <div>
+                        <span class="TitleDescPlaylist">{{playlistByIdData.description | titlecase}}</span>
+                    </div>
+                    <div>
+                        <span [routerLink]="['/user',playlistByIdData.owner.id]" class="TitleDescPlaylist nameuserspan">{{playlistByIdData.owner.display_name}}</span>
+                    </div>
                 </div>
            </div>
         </div>

@@ -11,7 +11,20 @@
     transition: background-color 0.3s ease;
     grid-gap: 15px;
 }
-.contTrack:hover{
+.contTrackPlaylist{
+    display: flex;
+    grid-template-columns: [index] 16px [first] 3fr [second] 1fr [third] 1fr;
+    grid-gap: 16px;
+    display: grid;
+    padding: 15px;
+    // border: 1px solid #fff;
+    border-radius: 4px;
+    position: relative;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    grid-gap: 15px;
+}
+.contTrack:hover,.contTrackPlaylist:hover{
     background: #282828;
     cursor: pointer;
 }

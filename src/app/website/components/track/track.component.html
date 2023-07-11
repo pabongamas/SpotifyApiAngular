@@ -21,7 +21,7 @@
 </ng-container>
 
 <ng-template #blockTrackPlaylist>
-    <div class="contTrack mainColorTrack">
+    <div class="contTrackPlaylist  mainColorTrack">
         <div class="flexAlignCenter">
             <div>
                 <span>{{track.track.track_number}}</span>
@@ -31,6 +31,11 @@
             <div class="flexDirCol">
                 <a class="viewTrack" href="">{{track.track.name}}</a>
                 <span class="viewArtist" [routerLink]="['/artist',track.track.artists[0].id]" >{{track.track.artists[0].name}}</span>
+            </div>
+        </div>
+        <div class="flexAlignCenter">
+            <div class="flexDirCol">
+                <span class="viewArtist" [routerLink]="['/album',track.track.album.id]" >{{track.track.album.name}}</span>
             </div>
         </div>
         <div class="flexAlignCenter justifyCenter">

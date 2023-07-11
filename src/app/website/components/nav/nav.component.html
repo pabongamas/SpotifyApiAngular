@@ -2,12 +2,10 @@
     <div class="Header-item">
         <nav class="navMain flexBetweenCenter">
             <ul class="font-sans">
-                <div class="flex" *ngIf="tokenNav!=null;else elseNavBlock">
+                <div class="flex alignCenter gridGap5" *ngIf="tokenNav!=null;else elseNavBlock">
                 <li class="text-ColorSpot logoApp" [routerLink]="['/home']">SpotifyAPI</li>
                 <li [routerLink]="['/newRealeses']">Nuevos lanzamientos</li>
                 <li [routerLink]="['/Categories']">Categorias</li>
-                <li >Artistas</li>
-                <li>Albums</li>
                 </div>
             </ul>
             <ul *ngIf="tokenNav==null;else elseBlock">
@@ -32,8 +30,6 @@
               <ng-template #elseBlockImgurl>
                 <img class="figureProfile m4">
               </ng-template>
-
-
           </nav>
     </div>
 </header>

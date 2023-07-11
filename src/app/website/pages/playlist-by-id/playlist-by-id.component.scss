@@ -61,29 +61,35 @@
     box-shadow: 0 4px 20px rgba(235, 228, 228, 0.2392156863);
     border-radius: 10px;
 }
-.descAlbum{
+.descPlaylist{
     display: flex;
     justify-content: end;
     align-items: baseline;
     flex-direction: column;
-    grid-gap: 15px;
+    grid-gap: 5px;
 
 }
-.nameArtistspan{
+.nameuserspan{
     color: #b3b3b3;
     text-decoration: none;
     font-size: 0.875rem;
     cursor: pointer;
 }
-.nameArtistspan:hover{
+.TitleDescPlaylist{
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+.nameuserspan:hover{
     text-decoration: underline;
 }
 .infoYear::before{
     content: "•";
     margin: 0px 4px;
 }
-.mainAlbumById{
+.mainPlaylistById{
     background-color: #121212;
+    margin-top: 50px;
 }
 
 @media screen and (max-width: 40em){
