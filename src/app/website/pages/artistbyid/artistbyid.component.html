@@ -15,6 +15,33 @@
 </div>
 <div class="p-15" *ngIf="albumsByArtistData.items!=undefined">
     <h2 class="text-PrimaryColor">Discografia</h2>
+    <div class="flex contButtonSelOption flexBetweenCenter">
+        <div class="flex flexBetweenCenter">
+            <div>
+                <button  class="rounded-roundedMainOption bg-activeButtonOption p-3 text-sm" 
+                [ngClass]="{'bg-activeButtonOption': activeButton === 'popular','hover:bg-hoverButtonOptionInactive': activeButton !== 'popular', 'text-PrimaryColor': activeButton !== 'popular'}"(click)="loadTypeWork('popular')">Titulos Populares</button>
+            </div>
+            <div>
+                <button   class="transition duration-150 ease-out md:ease-in 
+                rounded-roundedMainOption  text-PrimaryColor
+                 p-3 text-sm" [ngClass]="{'bg-activeButtonOption': activeButton === 'album','hover:bg-hoverButtonOptionInactive': activeButton !== 'album', 'text-PrimaryColor': activeButton !== 'album'}" (click)="loadTypeWork('album')">Álbumes</button>
+            </div>
+            <div>
+                <button   class="transition duration-150 ease-out md:ease-in 
+                 rounded-roundedMainOption  text-PrimaryColor
+                  p-3 text-sm" [ngClass]="{'bg-activeButtonOption': activeButton === 'single','hover:bg-hoverButtonOptionInactive': activeButton !== 'single', 'text-PrimaryColor': activeButton !== 'single'}" (click)="loadTypeWork('single')">Sencillos y EP</button>
+            </div>
+            <div>
+                <button class="transition duration-150 ease-out md:ease-in 
+                rounded-roundedMainOption text-PrimaryColor
+                 p-3 text-sm " [ngClass]="{'bg-activeButtonOption': activeButton === 'compilation','hover:bg-hoverButtonOptionInactive': activeButton !== 'compilation', 'text-PrimaryColor': activeButton !== 'compilation'}" (click)="loadTypeWork('compilation')">Recopilatorios</button>
+            </div>
+        </div>
+        <div class="flex flexAlignCenter">
+            <label class="text-PrimaryColor hover:underline cursor-pointer ">Mostrar todos</label>
+        </div>
+       
+    </div>
     <app-albums [dataalbums]="albumsByArtistData.items"></app-albums>
 </div>
 </main>
