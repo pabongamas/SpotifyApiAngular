@@ -10,6 +10,7 @@ import { UserComponent } from './components/user/user.component';
 import { CategoriasAllComponent } from './components/categorias-all/categorias-all.component';
 import { CategorebyidComponent } from './pages/categorebyid/categorebyid.component';
 import {PlaylistByIdComponent} from './pages/playlist-by-id/playlist-by-id.component';
+import {DiscographyArtistByIDComponent} from './pages/discography-artist-by-id/discography-artist-by-id.component'
 
 
 
@@ -27,6 +28,7 @@ const routes: Routes = [
     {path:'Categories',component:CategoriasAllComponent},
     { path: 'categorie/:id', component: CategorebyidComponent },
     {path:'playlist/:id',component:PlaylistByIdComponent},
+    {path:'artist/:id/discography/:type', component: DiscographyArtistByIDComponent }
 
 
     

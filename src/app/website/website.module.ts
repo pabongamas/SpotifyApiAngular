@@ -30,6 +30,7 @@ import { PlaylistAllComponent } from './components/playlist-all/playlist-all.com
 import { PlaylistsComponent } from './components/playlists/playlists.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { PlaylistByIdComponent } from './pages/playlist-by-id/playlist-by-id.component';
+import { DiscographyArtistByIDComponent } from './pages/discography-artist-by-id/discography-artist-by-id.component';
 
 
 
@@ -59,6 +60,7 @@ import { PlaylistByIdComponent } from './pages/playlist-by-id/playlist-by-id.com
     PlaylistsComponent,
     PlaylistComponent,
     PlaylistByIdComponent,
+    DiscographyArtistByIDComponent,
   ],
   imports: [
     CommonModule,

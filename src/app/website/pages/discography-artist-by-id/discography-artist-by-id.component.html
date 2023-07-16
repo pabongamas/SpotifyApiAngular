@@ -1,0 +1,10 @@
+
+<div class="contNewRelease" *ngIf="albumsByArtistData.items!==undefined&&albumsByArtistData.items.length>0">
+    <div class="title">
+        <span class="font-sans">{{type}}</span>
+    </div>
+    <app-albums [dataalbums]="albumsByArtistData.items"></app-albums>
+</div>
+<div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="albumsByArtistData.items!==undefined&&albumsByArtistData.items.length>0 && totalElements>albumsByArtistData.items.length">
+    <button class="rounded-full bg-ColorSpot p-15" (click)="loadMoreAlbums()">Cargar mas</button>
+</div>
