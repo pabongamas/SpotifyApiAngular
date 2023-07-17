@@ -14,7 +14,13 @@
     <app-artists-top-tracks  *ngIf="artistByIdData"  [topTracksByArtistData]="topTracksByArtistData"></app-artists-top-tracks>
 </div>
 <div class="p-15" *ngIf="albumsByArtistData.items!=undefined">
-    <h2 class="text-PrimaryColor">Discografia</h2>
+    <div class="flex flexBetweenCenter">
+        <h2 class="text-PrimaryColor">Discografia</h2>
+        <div class="flex flexAlignCenter">
+            <label [routerLink]="['/artist',artistId, 'discography',activeButton]" class="text-PrimaryColor hover:underline cursor-pointer ">Mostrar todos</label>
+        </div>
+    </div>
+    
     <div class="flex contButtonSelOption flexBetweenCenter">
         <div class="flex flexBetweenCenter">
             <div>
@@ -37,9 +43,7 @@
                  p-3 text-sm " [ngClass]="{'bg-activeButtonOption': activeButton === 'compilation','hover:bg-hoverButtonOptionInactive': activeButton !== 'compilation', 'text-PrimaryColor': activeButton !== 'compilation'}" (click)="loadTypeWork('compilation')">Recopilatorios</button>
             </div>
         </div>
-        <div class="flex flexAlignCenter">
-            <label [routerLink]="['/artist',artistId, 'discography',activeButton]" class="text-PrimaryColor hover:underline cursor-pointer ">Mostrar todos</label>
-        </div>
+       
        
     </div>
     <app-albums [dataalbums]="albumsByArtistData.items"></app-albums>
