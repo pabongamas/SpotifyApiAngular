@@ -13,14 +13,16 @@ export class DiscographyArtistByIDComponent {
     private route: ActivatedRoute,
     private AuthSpotifyService: AuthSpotifyService
   ) {}
+  dataArtist:any;
   artistId: string | null = null;
   type: string | null = null;
   albumsByArtistData: any = [];
   offset:number=0;
   limit:number=21;
   totalElements: number = 0;
-
+  activeBadge: string = '';
   ngOnInit(): void {
+    this.activeBadge='widgets';
     this.route.paramMap
       .pipe(
         switchMap((params) => {
@@ -38,11 +40,29 @@ export class DiscographyArtistByIDComponent {
             this.artistId,
             parametros
           );
+        }),
+        switchMap((requestALbum) => {
+          const parametros = {
+            include_groups: 'album',
+            offset: 0,
+            limit: 7,
+          };
+          return this.AuthSpotifyService.getArtistsById(
+            this.artistId,
+          ).pipe(
+            switchMap((artista) => {
+              return forkJoin({
+                artist: of(artista),
+                albums: of(requestALbum),
+              });
+            })
+          );
         })
       )
       .subscribe((data) => {
-        this.albumsByArtistData = data;
-        this.totalElements=data.total;
+        this.dataArtist=data.artist;
+        this.albumsByArtistData = data.albums;
+        this.totalElements=data.albums.total;
         this.offset+=this.limit;
       });
   }
@@ -57,5 +77,8 @@ export class DiscographyArtistByIDComponent {
       this.albumsByArtistData.items = this.albumsByArtistData.items.concat(data.items);
       this.offset += this.limit;
     });
+  }
+  loadTypeWork(tipo:string){
+    this.activeBadge=tipo;
   }
 }

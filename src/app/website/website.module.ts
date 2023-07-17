@@ -18,6 +18,7 @@ import { TrackComponent } from './components/track/track.component';
 import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artists-top-tracks.component';
 import { AppAuthCallbackComponent } from './components/app-auth-callback/app-auth-callback.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import { UserComponent } from './components/user/user.component';
 import { PipeMsToMinutesPipe } from './pipes/pipe-ms-to-minutes.pipe';
@@ -64,7 +65,7 @@ import { DiscographyArtistByIDComponent } from './pages/discography-artist-by-id
   ],
   imports: [
     CommonModule,
-    WebsiteRoutingModule,MatSlideToggleModule,MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule
+    WebsiteRoutingModule,MatSlideToggleModule,MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule,MatIconModule
   ]
 })
 export class WebsiteModule { }

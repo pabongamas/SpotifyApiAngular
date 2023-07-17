@@ -11,6 +11,7 @@ export class AlbumsComponent implements OnInit {
 
   @Input() dataalbums:any[]=[];
   @Input() totalElementsData:any;
+  @Input() viewDiscography:any=false;
   constructor(
     private AuthSpotifyService: AuthSpotifyService,
     private Router: Router

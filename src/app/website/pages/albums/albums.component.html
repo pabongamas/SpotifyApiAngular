@@ -1,5 +1,5 @@
 <div class="albums--grid">    
-    <app-album-page [album]="album" *ngFor="let album of dataalbums"></app-album-page>
+    <app-album-page [viewDiscography]="viewDiscography" [album]="album" *ngFor="let album of dataalbums"></app-album-page>
 </div>
 <div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="dataalbums!==undefined&&dataalbums.length>0 && dataalbums.length<totalElementsData">
     <button class="rounded-full bg-ColorSpot p-15" (click)="loadMoreNewRealeses()">Cargar mas</button>

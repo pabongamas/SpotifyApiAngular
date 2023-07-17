@@ -6,6 +6,7 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./album.component.scss']
 })
 export class AlbumComponent implements OnInit {
+  @Input() viewDiscography:any=false;
   // @Input() product:Product={
   //   id:'',
   //   price:0,

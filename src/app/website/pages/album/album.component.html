@@ -5,8 +5,17 @@
     <div class="descAlbum">
         <span class="nameAlbum ">{{album.name}}</span>
     </div>
-    <div class="descArtist">
-        <a [routerLink]="['/artist',album.artists[0].id]" class="nameArtist" *ngIf="album.artists.length>0">{{album.artists[0].name}}</a>
-        <!-- *ngIf="product.images.length>0" [img]="product.images[0]" -->
-    </div>
+    <ng-container *ngIf="viewDiscography===false;else blockViewDiscography">
+        <div class="descArtist">
+            <a [routerLink]="['/artist',album.artists[0].id]" class="nameArtist" *ngIf="album.artists.length>0">{{album.artists[0].name}}</a>
+            <!-- *ngIf="product.images.length>0" [img]="product.images[0]" -->
+        </div>
+    </ng-container>
+    <ng-template #blockViewDiscography>
+        <div class="descArtist">
+            <span class="year">{{album.release_date|date:'yyyy'}}</span>
+            <span class="type">{{album.type|titlecase}}</span>
+        </div>
+    </ng-template>
+    
 </div>

@@ -1,9 +1,35 @@
 
 <div class="contNewRelease" *ngIf="albumsByArtistData.items!==undefined&&albumsByArtistData.items.length>0">
-    <div class="title">
-        <span class="font-sans">{{type}}</span>
+    <div class="title mt-8">
+        <div class="flex flexBetweenCenter">
+            <div>
+                <span class="font-sans">{{dataArtist.name}}</span>
+            </div>
+            <div class="flex flexAlignCenter" >
+                <div class="flex flexAlignCenter gap-4">
+                  <div>
+                    <label for="">Todos</label>
+                  </div>
+                  <div class="flexAlignCenter">
+                    <button  mat-icon-button matTooltip="Ver modo Lista" (click)="loadTypeWork('list')" class="flex" [ngClass]="{'activeBadge': activeBadge === 'list'}">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
+                    </button>
+                  </div>
+                  <div class="flexAlignCenter">
+                    <button mat-icon-button matTooltip="Ver modo Albums" (click)="loadTypeWork('widgets')" class="flex" [ngClass]="{'activeBadge': activeBadge === 'widgets'}">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="widgets"></mat-icon>
+                    </button>
+                  </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <app-albums [dataalbums]="albumsByArtistData.items"></app-albums>
+    <ng-container *ngIf="activeBadge==='widgets';else blockList">
+        <app-albums [viewDiscography]="true" [dataalbums]="albumsByArtistData.items"></app-albums>
+    </ng-container>
+    <ng-template #blockList>
+        <app-albumbyid [album]="album" [esAlbumForEach]="true" *ngFor="let album of albumsByArtistData.items"></app-albumbyid>
+    </ng-template>
 </div>
 <div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="albumsByArtistData.items!==undefined&&albumsByArtistData.items.length>0 && totalElements>albumsByArtistData.items.length">
     <button class="rounded-full bg-ColorSpot p-15" (click)="loadMoreAlbums()">Cargar mas</button>
