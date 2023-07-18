@@ -7,8 +7,9 @@
             </div>
             <div class="flex flexAlignCenter" >
                 <div class="flex flexAlignCenter gap-4">
-                  <div>
-                    <label for="">Todos</label>
+                  <div class="flexAlignCenter" mat-icon-button [matMenuTriggerFor]="menuOptionDiscography">
+                    <label for="">{{optionMenuActive}}</label>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="expand_more"></mat-icon>
                   </div>
                   <div class="flexAlignCenter">
                     <button  mat-icon-button matTooltip="Ver modo Lista" (click)="loadTypeWork('list')" class="flex" [ngClass]="{'activeBadge': activeBadge === 'list'}">
@@ -34,3 +35,10 @@
 <div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="albumsByArtistData.items!==undefined&&albumsByArtistData.items.length>0 && totalElements>albumsByArtistData.items.length">
     <button class="rounded-full bg-ColorSpot p-15" (click)="loadMoreAlbums()">Cargar mas</button>
 </div>
+
+<mat-menu #menuOptionDiscography="matMenu">
+    <span  class="font-sans" (click)="switchOption('all')" mat-menu-item>Todos</span>
+    <span  class="font-sans" (click)="switchOption('album')" mat-menu-item>Albums</span>
+    <span  class="font-sans" (click)="switchOption('single')" mat-menu-item>Sencillos y EP</span>
+    <span  class="font-sans" (click)="switchOption('compilation')" mat-menu-item>Recopilatorios</span>
+  </mat-menu>
