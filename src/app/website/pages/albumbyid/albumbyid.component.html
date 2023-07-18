@@ -13,8 +13,14 @@
                     <div>
                         <span class="boldTitle Title fzbig  ">{{albumByIdData.name}}</span>
                     </div>
-                    <div>
-                        <span [routerLink]="['/artist',albumByIdData.artists[0].id]" class="nameArtistspan">{{albumByIdData.artists[0].name }}</span>
+                    <div class="flex">
+                        <div class=" gap-1">
+                            <ng-container  *ngFor="let artist of albumByIdData.artists;let last = last">
+                                <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
+                                <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
+                            </ng-container>
+                        </div>
+                        <!-- <span [routerLink]="['/artist',albumByIdData.artists[0].id]" class="nameArtistspan">{{albumByIdData.artists[0].name }}</span> -->
                         <span class="Title infoYear">{{albumByIdData.release_date| date:'yyyy'}}</span>
                         <span class="Title infoYear">{{albumByIdData.total_tracks}} Canciones</span>
                     </div>

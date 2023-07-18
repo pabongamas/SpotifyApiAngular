@@ -8,7 +8,12 @@
         <div class="flexAlignCenter">
             <div class="flexDirCol">
                 <a class="viewTrack" href="">{{track.name}}</a>
-                <span class="viewArtist" [routerLink]="['/artist',track.artists[0].id]" >{{track.artists[0].name}}</span>
+                <div class="gap-1">
+                    <ng-container class="" *ngFor="let artist of track.artists;let last = last">
+                        <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
+                        <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
+                    </ng-container>
+                </div>            
             </div>
         </div>
         <div class="flexAlignCenter justifyCenter">
@@ -30,7 +35,13 @@
         <div class="flexAlignCenter">
             <div class="flexDirCol">
                 <a class="viewTrack" href="">{{track.track.name}}</a>
-                <span class="viewArtist" [routerLink]="['/artist',track.track.artists[0].id]" >{{track.track.artists[0].name}}</span>
+                <div class="gap-1">
+                    <ng-container class="" *ngFor="let artist of track.track.artists;let last = last">
+                        <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
+                        <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
+                    </ng-container>
+                </div> 
+                <!-- <span class="viewArtist" [routerLink]="['/artist',track.track.artists[0].id]" >{{track.track.artists[0].name}}</span> -->
             </div>
         </div>
         <div class="flexAlignCenter">

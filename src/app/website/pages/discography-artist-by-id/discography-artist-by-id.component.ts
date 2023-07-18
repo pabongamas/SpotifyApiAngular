@@ -47,7 +47,7 @@ export class DiscographyArtistByIDComponent {
           const parametros = {
             include_groups: 'album',
             offset: 0,
-            limit: 7,
+            limit: 21,
           };
           return this.AuthSpotifyService.getArtistsById(this.artistId).pipe(
             switchMap((artista) => {
@@ -65,6 +65,7 @@ export class DiscographyArtistByIDComponent {
         this.totalElements = data.albums.total;
         this.offset += this.limit;
       });
+      console.log(this.type);
     switch (this.type) {
       case 'single':
         this.optionMenuActive = 'Sencillos y EP';
@@ -76,6 +77,7 @@ export class DiscographyArtistByIDComponent {
         this.optionMenuActive = 'Recopilatorios';
         break;
       default:
+        this.optionMenuActive = 'Todos';
         break;
     }
   }
@@ -122,8 +124,8 @@ export class DiscographyArtistByIDComponent {
     
     const parametros = {
       include_groups: this.type,
+      offset:this.offset,
       limit: this.limit,
-      offset:this.offset
     };
     this.AuthSpotifyService.getAlbumsByArtistId(
       this.artistId,

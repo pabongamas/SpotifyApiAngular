@@ -7,7 +7,13 @@
     </div>
     <ng-container *ngIf="viewDiscography===false;else blockViewDiscography">
         <div class="descArtist">
-            <a [routerLink]="['/artist',album.artists[0].id]" class="nameArtist" *ngIf="album.artists.length>0">{{album.artists[0].name}}</a>
+            <div class=" gap-1">
+                <ng-container  *ngFor="let artist of album.artists;let last = last">
+                    <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
+                    <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
+                </ng-container>
+            </div>
+            <!-- <a [routerLink]="['/artist',album.artists[0].id]" class="nameArtist" *ngIf="album.artists.length>0">{{album.artists[0].name}}</a> -->
             <!-- *ngIf="product.images.length>0" [img]="product.images[0]" -->
         </div>
     </ng-container>
