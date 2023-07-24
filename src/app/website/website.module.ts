@@ -32,6 +32,7 @@ import { PlaylistsComponent } from './components/playlists/playlists.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { PlaylistByIdComponent } from './pages/playlist-by-id/playlist-by-id.component';
 import { DiscographyArtistByIDComponent } from './pages/discography-artist-by-id/discography-artist-by-id.component';
+import { TopTracksUserComponent } from './components/top-tracks-user/top-tracks-user.component';
 
 
 
@@ -62,6 +63,7 @@ import { DiscographyArtistByIDComponent } from './pages/discography-artist-by-id
     PlaylistComponent,
     PlaylistByIdComponent,
     DiscographyArtistByIDComponent,
+    TopTracksUserComponent,
   ],
   imports: [
     CommonModule,

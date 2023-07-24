@@ -76,7 +76,7 @@ export class AuthSpotifyService {
     const clientId = 'b5a10ef1d9b04aedaf0993b8b8d416d9'; // Reemplaza con tu Client ID de Spotify
     const redirectUri = domain+'/callbackAuth'; // Reemplaza con tu Redirect URI registrado en Spotify
   
-    const scopes = 'user-read-private user-read-email'; // Reemplaza con los alcances (scopes) necesarios, separados por espacios
+    const scopes = 'user-read-private user-read-email user-top-read'; // Reemplaza con los alcances (scopes) necesarios, separados por espacios
   
     const authorizationUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes}&response_type=token`;
   

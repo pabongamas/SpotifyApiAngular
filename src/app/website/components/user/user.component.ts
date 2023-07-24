@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { switchMap } from 'rxjs';
+import { switchMap, map, forkJoin, of  } from 'rxjs';
 import { AuthSpotifyService } from '../../../services/auth-spotify.service';
 
 @Component({
@@ -25,17 +25,25 @@ export class UserComponent implements OnInit {
         this.userId = params.get('id');
         return this.AuthSpotifyService.getProfileUser(this.userId);
       }),
-    // switchMap((requestTopTracks) => {
-    //   const parametros={
-    //     "limit":10,
-    //     "time_range":"short_term",
+    switchMap((requestUser) => {
+      const parametros={
+        "limit":10,
+        "time_range":"short_term",
       
-    // };
-    //   return this.AuthSpotifyService.getTopTracksByUser(parametros)
-    //   .pipe()
-    // })
+    };
+      return this.AuthSpotifyService.getTopTracksByUser(parametros)
+      .pipe(
+        switchMap((topTracksUser) => {
+          return forkJoin({
+            user: of(requestUser),
+            topTracksUser: of(topTracksUser),
+          });
+        })
+      )
+    })
     )
     .subscribe((data) => {
+      console.log(data);
       this.userByIdData = data;
     });
   }
