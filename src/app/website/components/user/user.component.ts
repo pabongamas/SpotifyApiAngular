@@ -16,6 +16,14 @@ export class UserComponent implements OnInit {
   ) { }
   userId:string|null=null;
   userByIdData:any|null=[];
+  topTracksUser:{
+    items:[]|any
+  }={
+    items:[]
+  };
+  limit:number=10;
+  offset:number=0;
+  topTracksUserTotal:number=0;
 
   ngOnInit(): void {
     console.log(this.userByIdData);
@@ -27,10 +35,10 @@ export class UserComponent implements OnInit {
       }),
     switchMap((requestUser) => {
       const parametros={
-        "limit":10,
+        "limit":this.limit,
+        "offset":this.offset,
         "time_range":"short_term",
-      
-    };
+      };
       return this.AuthSpotifyService.getTopTracksByUser(parametros)
       .pipe(
         switchMap((topTracksUser) => {
@@ -43,9 +51,25 @@ export class UserComponent implements OnInit {
     })
     )
     .subscribe((data) => {
-      console.log(data);
-      this.userByIdData = data;
+      this.userByIdData = data.user;
+      this.topTracksUser=data.topTracksUser;
+      this.topTracksUserTotal=data.topTracksUser.total;
+      this.offset+=this.limit;
     });
+  }
+  loadMoreTracksByUser(){
+    const parametros={
+      "limit":this.limit,
+      "offset":this.offset,
+      "time_range":"short_term",
+    };
+    this.AuthSpotifyService.getTopTracksByUser(parametros)
+    .subscribe((data)=>{
+      this.topTracksUser.items=this.topTracksUser.items.concat(data.items);
+      console.log(this.topTracksUser.items)
+      this.offset+=this.limit;
+    })
+    
   }
   goToProfile(url:string){
     window.open(url);

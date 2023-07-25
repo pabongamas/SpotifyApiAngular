@@ -1,5 +1,66 @@
-<ng-container *ngIf="!esPlaylist;else blockTrackPlaylist">
-    <div class="contTrack mainColorTrack">
+<ng-container *ngIf="!isTrackByUser;else blockIsByUser">
+    <ng-container *ngIf="!esPlaylist;else blockTrackPlaylist">
+        <div class="contTrack mainColorTrack">
+            <div class="flexAlignCenter">
+                <div>
+                    <span>{{track.track_number}}</span>
+                </div>
+            </div>
+            <div class="flexAlignCenter">
+                <div class="flexDirCol">
+                    <a class="viewTrack" href="">{{track.name}}</a>
+                    <div class="gap-1">
+                        <ng-container class="" *ngFor="let artist of track.artists;let last = last">
+                            <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
+                            <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
+                        </ng-container>
+                    </div>            
+                </div>
+            </div>
+            <div class="flexAlignCenter justifyCenter">
+                <div>
+                    <span class="">{{track.duration_ms| pipeMsToMinutes}}</span>
+                </div>
+            </div>
+        </div>
+        
+    </ng-container>
+    
+    <ng-template #blockTrackPlaylist>
+        <div class="contTrackPlaylist  mainColorTrack">
+            <div class="flexAlignCenter">
+                <div>
+                    <span>{{track.track.track_number}}</span>
+                </div>
+            </div>
+            <div class="flexAlignCenter">
+                <div class="flexDirCol">
+                    <a class="viewTrack" href="">{{track.track.name}}</a>
+                    <div class="gap-1">
+                        <ng-container class="" *ngFor="let artist of track.track.artists;let last = last">
+                            <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
+                            <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
+                        </ng-container>
+                    </div> 
+                    <!-- <span class="viewArtist" [routerLink]="['/artist',track.track.artists[0].id]" >{{track.track.artists[0].name}}</span> -->
+                </div>
+            </div>
+            <div class="flexAlignCenter">
+                <div class="flexDirCol">
+                    <span class="viewArtist" [routerLink]="['/album',track.track.album.id]" >{{track.track.album.name}}</span>
+                </div>
+            </div>
+            <div class="flexAlignCenter justifyCenter">
+                <div>
+                    <span class="">{{track.track.duration_ms| pipeMsToMinutes}}</span>
+                </div>
+            </div>
+        </div>
+      </ng-template>
+</ng-container>
+
+  <ng-template #blockIsByUser>
+    <div class="contTrackPlaylist  mainColorTrack">
         <div class="flexAlignCenter">
             <div>
                 <span>{{track.track_number}}</span>
@@ -13,45 +74,18 @@
                         <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
                         <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
                     </ng-container>
-                </div>            
-            </div>
-        </div>
-        <div class="flexAlignCenter justifyCenter">
-            <div>
-                <span class="">{{track.duration_ms| pipeMsToMinutes}}</span>
-            </div>
-        </div>
-    </div>
-    
-</ng-container>
-
-<ng-template #blockTrackPlaylist>
-    <div class="contTrackPlaylist  mainColorTrack">
-        <div class="flexAlignCenter">
-            <div>
-                <span>{{track.track.track_number}}</span>
-            </div>
-        </div>
-        <div class="flexAlignCenter">
-            <div class="flexDirCol">
-                <a class="viewTrack" href="">{{track.track.name}}</a>
-                <div class="gap-1">
-                    <ng-container class="" *ngFor="let artist of track.track.artists;let last = last">
-                        <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
-                        <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
-                    </ng-container>
                 </div> 
                 <!-- <span class="viewArtist" [routerLink]="['/artist',track.track.artists[0].id]" >{{track.track.artists[0].name}}</span> -->
             </div>
         </div>
         <div class="flexAlignCenter">
             <div class="flexDirCol">
-                <span class="viewArtist" [routerLink]="['/album',track.track.album.id]" >{{track.track.album.name}}</span>
+                <span class="viewArtist" [routerLink]="['/album',track.album.id]" >{{track.album.name}}</span>
             </div>
         </div>
         <div class="flexAlignCenter justifyCenter">
             <div>
-                <span class="">{{track.track.duration_ms| pipeMsToMinutes}}</span>
+                <span class="">{{track.duration_ms| pipeMsToMinutes}}</span>
             </div>
         </div>
     </div>
