@@ -75,6 +75,7 @@ export class UserComponent implements OnInit {
       this.topTracksUserTotal=data.topTracksUser.total;
       this.topArtistsUserTotal=data.topArtistUser.total;
       this.offset+=this.limit;
+      this.offsetArtist+=this.limitArtist;
     });
   }
   loadMoreTracksByUser(){
@@ -87,6 +88,19 @@ export class UserComponent implements OnInit {
     .subscribe((data)=>{
       this.topTracksUser.items=this.topTracksUser.items.concat(data.items);
       this.offset+=this.limit;
+    })
+    
+  }
+  loadMoreArtistByUser(){
+    const parametros={
+      "limit":this.limitArtist,
+      "offset":this.offsetArtist,
+      "time_range":"short_term",
+    };
+    this.AuthSpotifyService.getTopArtistByUser(parametros)
+    .subscribe((data)=>{
+      this.topArtistUser.items=this.topArtistUser.items.concat(data.items);
+      this.offsetArtist+=this.limitArtist;
     })
     
   }

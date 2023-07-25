@@ -45,7 +45,7 @@
   
     <app-top-artists-user [topArtistsUser]="topArtistUser" [topArtistsUserTotal]="topArtistsUserTotal"></app-top-artists-user>
     <div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="topArtistUser!==undefined&&topArtistUser.items.length>0 && topArtistUser.items.length<topArtistsUserTotal">
-        <button class="rounded-full bg-ColorSpot p-15" (click)="loadMoreTracksByUser()">Cargar mas</button>
+        <button class="rounded-full bg-ColorSpot p-15" (click)="loadMoreArtistByUser()">Cargar mas</button>
     </div>
 </div>
 

@@ -37,6 +37,7 @@ import { TopTrackUserViewComponent } from './pages/top-track-user-view/top-track
 import { TopArtistsUserComponent } from './components/top-artists-user/top-artists-user.component';
 import { ArtistsComponent } from './components/artists/artists.component';
 import { ArtistComponent } from './components/artist/artist.component';
+import { TopArtistUserViewComponent } from './pages/top-artist-user-view/top-artist-user-view.component';
 
 
 
@@ -72,6 +73,7 @@ import { ArtistComponent } from './components/artist/artist.component';
     TopArtistsUserComponent,
     ArtistsComponent,
     ArtistComponent,
+    TopArtistUserViewComponent,
   ],
   imports: [
     CommonModule,

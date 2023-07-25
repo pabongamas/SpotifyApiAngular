@@ -1,0 +1,32 @@
+
+<div class="contNewRelease" >
+    <div class="title mt-8">
+        <div class="flex flexBetweenCenter">
+            <!-- <div>
+                <span class="font-sans">{{dataArtist.name}}</span>
+            </div>
+            <div class="flex flexAlignCenter" >
+                <div class="flex flexAlignCenter gap-4">
+                  <div class="flexAlignCenter" mat-icon-button [matMenuTriggerFor]="menuOptionDiscography">
+                    <label for="">{{optionMenuActive}}</label>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="expand_more"></mat-icon>
+                  </div>
+                  <div class="flexAlignCenter">
+                    <button  mat-icon-button matTooltip="Ver modo Lista" (click)="loadTypeWork('list')" class="flex" [ngClass]="{'activeBadge': activeBadge === 'list'}">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
+                    </button>
+                  </div>
+                  <div class="flexAlignCenter">
+                    <button mat-icon-button matTooltip="Ver modo Albums" (click)="loadTypeWork('widgets')" class="flex" [ngClass]="{'activeBadge': activeBadge === 'widgets'}">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="widgets"></mat-icon>
+                    </button>
+                  </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <!-- <app-top-tracks-user ></app-top-tracks-user> -->
+    <div class="p-4">
+        <app-top-artists-user [topArtistsUser]="topArtistUser" ></app-top-artists-user>
+    </div>
+</div>

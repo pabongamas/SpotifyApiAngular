@@ -13,6 +13,8 @@
     border-radius: 10px;
     transition: background-color .3s ease;
     grid-gap: 5px;
+    justify-content: center;
+    align-items: center;
 }
 .artistContFull:hover{
     background: #282828;
