@@ -21,19 +21,25 @@ export class UserComponent implements OnInit {
   }={
     items:[]
   };
-  limit:number=10;
+  topArtistUser:{
+    items:[]|any
+  }={
+    items:[]
+  };
+  limit:number=5;
   offset:number=0;
+  limitArtist:number=7;
+  offsetArtist:number=0;
   topTracksUserTotal:number=0;
-
+  topArtistsUserTotal:number=0;
   ngOnInit(): void {
-    console.log(this.userByIdData);
     this.route.paramMap
     .pipe(
       switchMap((params) => {
         this.userId = params.get('id');
         return this.AuthSpotifyService.getProfileUser(this.userId);
       }),
-    switchMap((requestUser) => {
+      switchMap((requestUser) => {
       const parametros={
         "limit":this.limit,
         "offset":this.offset,
@@ -42,18 +48,32 @@ export class UserComponent implements OnInit {
       return this.AuthSpotifyService.getTopTracksByUser(parametros)
       .pipe(
         switchMap((topTracksUser) => {
-          return forkJoin({
-            user: of(requestUser),
-            topTracksUser: of(topTracksUser),
-          });
+          const parametros={
+            "limit":this.limitArtist,
+            "offset":this.offsetArtist,
+            "time_range":"short_term",
+          };
+          return this.AuthSpotifyService.getTopArtistByUser(parametros)
+          .pipe(
+            switchMap((topArtistUser) => {
+              return forkJoin({
+                user: of(requestUser),
+                topTracksUser: of(topTracksUser),
+                topArtistUser:of(topArtistUser)
+              });
+            })
+          )
         })
-      )
-    })
+      );
+      
+    }),
     )
     .subscribe((data) => {
       this.userByIdData = data.user;
       this.topTracksUser=data.topTracksUser;
+      this.topArtistUser=data.topArtistUser;
       this.topTracksUserTotal=data.topTracksUser.total;
+      this.topArtistsUserTotal=data.topArtistUser.total;
       this.offset+=this.limit;
     });
   }
@@ -66,7 +86,6 @@ export class UserComponent implements OnInit {
     this.AuthSpotifyService.getTopTracksByUser(parametros)
     .subscribe((data)=>{
       this.topTracksUser.items=this.topTracksUser.items.concat(data.items);
-      console.log(this.topTracksUser.items)
       this.offset+=this.limit;
     })
     

@@ -33,6 +33,10 @@ import { PlaylistComponent } from './components/playlist/playlist.component';
 import { PlaylistByIdComponent } from './pages/playlist-by-id/playlist-by-id.component';
 import { DiscographyArtistByIDComponent } from './pages/discography-artist-by-id/discography-artist-by-id.component';
 import { TopTracksUserComponent } from './components/top-tracks-user/top-tracks-user.component';
+import { TopTrackUserViewComponent } from './pages/top-track-user-view/top-track-user-view.component';
+import { TopArtistsUserComponent } from './components/top-artists-user/top-artists-user.component';
+import { ArtistsComponent } from './components/artists/artists.component';
+import { ArtistComponent } from './components/artist/artist.component';
 
 
 
@@ -64,6 +68,10 @@ import { TopTracksUserComponent } from './components/top-tracks-user/top-tracks-
     PlaylistByIdComponent,
     DiscographyArtistByIDComponent,
     TopTracksUserComponent,
+    TopTrackUserViewComponent,
+    TopArtistsUserComponent,
+    ArtistsComponent,
+    ArtistComponent,
   ],
   imports: [
     CommonModule,

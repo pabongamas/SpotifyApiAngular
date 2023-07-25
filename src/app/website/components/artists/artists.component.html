@@ -1,0 +1,5 @@
+    <div  class="artists--grid" *ngIf="dataArtist!==undefined && dataArtist.items!==undefined;">
+      <app-artist [artist]="artist" *ngFor="let artist of dataArtist.items"></app-artist>
+    </div>
+ 
+

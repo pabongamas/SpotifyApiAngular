@@ -21,10 +21,33 @@
            </div>
         </div>
 </section>
-<div>
+
+<div class="p-15" *ngIf="topTracksUser.items!=undefined">
+    <div class="flex flexBetweenCenter pb-4">
+        <h2 class="text-PrimaryColor flexAlignCenter margin0 ">Canciones mas escuchadas este mes </h2>
+        <div class="flex flexAlignCenter">
+            <label [routerLink]="['/user',userByIdData.id, 'top','tracks','time_range','short_term']" class="text-PrimaryColor hover:underline cursor-pointer ">Mostrar todos</label>
+        </div>
+    </div>
+  
     <app-top-tracks-user [topTracksUser]="topTracksUser" [totalTopTracksUser]="topTracksUserTotal"></app-top-tracks-user>
+    <div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="topTracksUser!==undefined&&topTracksUser.items.length>0 && topTracksUser.items.length<topTracksUserTotal">
+        <button class="rounded-full bg-ColorSpot p-15" (click)="loadMoreTracksByUser()">Cargar mas</button>
+    </div>
 </div>
-<div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="topTracksUser!==undefined&&topTracksUser.items.length>0 && topTracksUser.items.length<topTracksUserTotal">
-    <button class="rounded-full bg-ColorSpot p-15" (click)="loadMoreTracksByUser()">Cargar mas</button>
+<div class="p-15" *ngIf="topArtistUser.items!=undefined">
+    <div class="flex flexBetweenCenter pb-4">
+        <h2 class="text-PrimaryColor flexAlignCenter margin0 ">Artistas mas escuchados este mes </h2>
+        <div class="flex flexAlignCenter">
+            <label [routerLink]="['/user',userByIdData.id, 'top','artists','time_range','short_term']" class="text-PrimaryColor hover:underline cursor-pointer ">Mostrar todos</label>
+        </div>
+    </div>
+  
+    <app-top-artists-user [topArtistsUser]="topArtistUser" [topArtistsUserTotal]="topArtistsUserTotal"></app-top-artists-user>
+    <div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="topArtistUser!==undefined&&topArtistUser.items.length>0 && topArtistUser.items.length<topArtistsUserTotal">
+        <button class="rounded-full bg-ColorSpot p-15" (click)="loadMoreTracksByUser()">Cargar mas</button>
+    </div>
 </div>
+
+
 </main>

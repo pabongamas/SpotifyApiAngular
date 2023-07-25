@@ -1,0 +1,26 @@
+<div [routerLink]="['/artist',artist.id]" class="artistContFull">
+    <div class="contImgArtist">
+        <img class="imgArtist" src="{{artist.images[0].url}}">
+    </div>
+    <div class="descArtist pt-3">
+        <span class="nameArtist ">{{artist.name}}</span>
+    </div>
+    <!-- <ng-container *ngIf="viewDiscography===false;else blockViewDiscography">
+        <div class="descArtist">
+            <div class=" gap-1">
+                <ng-container  *ngFor="let artist of album.artists;let last = last">
+                    <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
+                    <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
+                </ng-container>
+            </div>
+       
+        </div>
+    </ng-container> -->
+    <!-- <ng-template #blockViewDiscography>
+        <div class="descArtist">
+            <span class="year">{{album.release_date|date:'yyyy'}}</span>
+            <span class="type">{{album.type|titlecase}}</span>
+        </div>
+    </ng-template> -->
+    
+</div>

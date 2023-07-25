@@ -19,7 +19,7 @@
 </ng-container>
 
   <ng-template #blockIsTrackByUser>
-    <div class="contTracks" *ngIf="dataTracks!==undefined && dataTracks.items!==undefined;">
+    <div *ngIf="dataTracks!==undefined && dataTracks.items!==undefined;">
       <app-track [isTrackByUser]="true" [track]="track" *ngFor="let track of dataTracks.items"></app-track>
     </div>
   </ng-template>

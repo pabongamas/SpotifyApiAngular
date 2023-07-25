@@ -11,6 +11,8 @@ import { CategoriasAllComponent } from './components/categorias-all/categorias-a
 import { CategorebyidComponent } from './pages/categorebyid/categorebyid.component';
 import {PlaylistByIdComponent} from './pages/playlist-by-id/playlist-by-id.component';
 import {DiscographyArtistByIDComponent} from './pages/discography-artist-by-id/discography-artist-by-id.component'
+import {TopTrackUserViewComponent} from './pages/top-track-user-view/top-track-user-view.component'
+
 
 
 
@@ -28,7 +30,9 @@ const routes: Routes = [
     {path:'Categories',component:CategoriasAllComponent},
     { path: 'categorie/:id', component: CategorebyidComponent },
     {path:'playlist/:id',component:PlaylistByIdComponent},
-    {path:'artist/:id/discography/:type', component: DiscographyArtistByIDComponent }
+    {path:'artist/:id/discography/:type', component: DiscographyArtistByIDComponent },
+    {path:'user/:id/top/:type/time_range/:range', component: TopTrackUserViewComponent }
+
 
 
     

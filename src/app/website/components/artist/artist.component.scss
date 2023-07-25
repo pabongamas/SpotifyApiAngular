@@ -1,0 +1,32 @@
+.imgArtist{
+    max-width: 100%;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.artistContFull{
+    background-color: #181818;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color .3s ease;
+    grid-gap: 5px;
+}
+.artistContFull:hover{
+    background: #282828;
+    cursor:pointer;
+}
+.descArtist .nameArtist{
+    color: white;
+    margin-block: 0px;
+    font-size: 1rem;
+    font-weight: 700;
+    // font-family: "Helvetica Neue,helvetica,arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic";
+}
+@media screen and (min-width: 20em) and (max-width: 30em){
+   .artistContFull{
+    padding: 30px;
+   }  
+}
