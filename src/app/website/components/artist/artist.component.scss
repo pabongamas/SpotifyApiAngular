@@ -4,6 +4,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
 }
 .artistContFull{
     background-color: #181818;
@@ -26,6 +30,11 @@
     font-size: 1rem;
     font-weight: 700;
     // font-family: "Helvetica Neue,helvetica,arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic";
+}
+.contImgArtist{
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
 }
 @media screen and (min-width: 20em) and (max-width: 30em){
    .artistContFull{

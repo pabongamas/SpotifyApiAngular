@@ -1,6 +1,14 @@
 .imgPlaylist{
     max-width: 100%;
     border-radius: 10px;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
 }
 .playlistContFull{
     background-color: #181818;
@@ -34,6 +42,19 @@
     color: #b3b3b3;
     text-decoration: none;
     font-size: 0.875rem;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    margin-top: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    white-space: normal;
+}
+.contImgPlaylist{
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
 }
 
 @media screen and (min-width: 20em) and (max-width: 30em){
