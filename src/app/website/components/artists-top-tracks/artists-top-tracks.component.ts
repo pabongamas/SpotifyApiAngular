@@ -11,13 +11,15 @@ export class ArtistsTopTracksComponent implements OnInit {
     private AuthSpotifyService:AuthSpotifyService
   ) { }
   @Input() topTracksByArtistData:any[]=[];
+  @Input() pageArtist:boolean=false;
+
 
   ngOnInit(): void {
     console.log(this.topTracksByArtistData);
   }
 
-  
 
 
-   
+
+
 }

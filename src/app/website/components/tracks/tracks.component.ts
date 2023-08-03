@@ -9,6 +9,7 @@ export class TracksComponent implements OnInit {
   @Input() dataTracks:any;
   @Input() esPlaylist:boolean=false;
   @Input() isTrackByUser:boolean=false;
+  @Input() pageArtist:boolean=false;
   constructor() { }
 
   ngOnInit(): void {

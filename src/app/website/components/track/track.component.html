@@ -3,7 +3,10 @@
         <div class="contTrack mainColorTrack">
             <div class="flexAlignCenter">
                 <div>
-                    <span>{{track.track_number}}</span>
+                  <span *ngIf="indexTrack==null;else elsetrack">{{track.track_number}}</span>
+                  <ng-template #elsetrack>
+                    <span>{{indexTrack}}</span>
+                  </ng-template>
                 </div>
             </div>
             <div class="flexAlignCenter">
@@ -14,7 +17,7 @@
                             <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
                             <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
                         </ng-container>
-                    </div>            
+                    </div>
                 </div>
             </div>
             <div class="flexAlignCenter justifyCenter">
@@ -23,15 +26,18 @@
                 </div>
             </div>
         </div>
-        
+
     </ng-container>
-    
+
     <ng-template #blockTrackPlaylist>
         <div class="contTrackPlaylist  mainColorTrack">
             <div class="flexAlignCenter">
                 <div>
-                    <span>{{track.track.track_number}}</span>
-                </div>
+                    <span *ngIf="indexTrack==null;else elsetrack">{{track.track.track_number}}</span>
+                    <ng-template #elsetrack>
+                      <span>{{indexTrack}}</span>
+                    </ng-template>
+                  </div>
             </div>
             <div class="flexAlignCenter">
                 <div class="flexDirCol">
@@ -41,7 +47,7 @@
                             <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
                             <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
                         </ng-container>
-                    </div> 
+                    </div>
                     <!-- <span class="viewArtist" [routerLink]="['/artist',track.track.artists[0].id]" >{{track.track.artists[0].name}}</span> -->
                 </div>
             </div>
@@ -63,7 +69,10 @@
     <div class="contTrackPlaylist  mainColorTrack">
         <div class="flexAlignCenter">
             <div>
-                <span>{{track.track_number}}</span>
+              <span *ngIf="indexTrack==null;else elsetrack">{{track.track_number}}</span>
+              <ng-template #elsetrack>
+                <span>{{indexTrack}}</span>
+              </ng-template>
             </div>
         </div>
         <div class="flexAlignCenter">
@@ -74,7 +83,7 @@
                         <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
                         <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
                     </ng-container>
-                </div> 
+                </div>
                 <!-- <span class="viewArtist" [routerLink]="['/artist',track.track.artists[0].id]" >{{track.track.artists[0].name}}</span> -->
             </div>
         </div>

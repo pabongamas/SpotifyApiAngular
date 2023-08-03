@@ -1,4 +1,4 @@
 <div class="albums--grid" *ngIf="topTracksByArtistData.length>0">
     <h2 class="text-PrimaryColor">Populares</h2>
-    <app-tracks [dataTracks]="topTracksByArtistData"></app-tracks>
+    <app-tracks [pageArtist]="pageArtist" [dataTracks]="topTracksByArtistData"></app-tracks>
 </div>

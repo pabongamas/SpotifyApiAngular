@@ -3,23 +3,23 @@
     <div class="contTracks" *ngIf="dataTracks!==undefined && dataTracks.items!==undefined;else elseBlock">
         <app-track [track]="track" *ngFor="let track of dataTracks.items"></app-track>
     </div>
-    <!-- esto es para cuando las canciones se envien directamente en el array y no toda la coolecion e informacion del artista , se puede entender 
+    <!-- esto es para cuando las canciones se envien directamente en el array y no toda la coolecion e informacion del artista , se puede entender
     con el funcionamiento de los componentes de album por artista ,que utiliza el dataTracks.item porque se envia toda la data del artista, y la de solo
     dataTracks se envia solo las canciones -->
     <ng-template #elseBlock>
-        <app-track [track]="track" *ngFor="let track of dataTracks"></app-track>
+        <app-track [indexTrack]="k+1" [tracksInViewArtist]="pageArtist" [track]="track" *ngFor="let track of dataTracks; let k = index"></app-track>
       </ng-template>
   </ng-container>
 
   <ng-template  #blockPlaylist >
     <div class="contTracks" *ngIf="dataTracks!==undefined &&dataTracks.items!==undefined">
-    <app-track [esPlaylist]="true" [track]="track" *ngFor="let track of dataTracks.items"></app-track>
+    <app-track [indexTrack]="i+1" [esPlaylist]="true" [track]="track" *ngFor="let track of dataTracks.items; let i = index"></app-track>
     </div>
   </ng-template>
 </ng-container>
 
   <ng-template #blockIsTrackByUser>
     <div *ngIf="dataTracks!==undefined && dataTracks.items!==undefined;">
-      <app-track [isTrackByUser]="true" [track]="track" *ngFor="let track of dataTracks.items"></app-track>
+      <app-track [indexTrack]="j+1" [isTrackByUser]="true" [track]="track" *ngFor="let track of dataTracks.items;let j = index"></app-track>
     </div>
   </ng-template>
