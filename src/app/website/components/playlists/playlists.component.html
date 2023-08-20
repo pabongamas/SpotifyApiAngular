@@ -1,11 +1,34 @@
 <!-- >    
     <app-playlist [playlist]="playlist" *ngFor="let playlist of playlists.items"></app-playlist>
 </div> -->
-<div class="playlist--grid"  *ngIf="playlists!=undefined">
-<ng-container *ngFor="let playlist of playlists.items">
-    <app-playlist [playlist]="playlist" *ngIf="playlist !== null"></app-playlist>
+<div class="playlist--grid" *ngIf="playlists != undefined">
+  <ng-container *ngIf="isDataSource else noDataSource">
+    <ng-container *ngFor="let playlist of playlists">
+        <app-playlist
+          [playlist]="playlist"
+          *ngIf="playlist !== null"
+        ></app-playlist>
+      </ng-container>
   </ng-container>
+  <ng-template #noDataSource>
+    <ng-container *ngFor="let playlist of playlists.items">
+        <app-playlist
+          [playlist]="playlist"
+          *ngIf="playlist !== null"
+        ></app-playlist>
+      </ng-container>
+  </ng-template>
+  
 </div>
-<div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="playlists.items!==undefined&&playlists.items.length>0 && playlists.items.length<totalElements">
-    <button class="rounded-full bg-ColorSpot p-15" (click)="loadMorePlaylists()" >Cargar mas Play</button>
+<div
+  class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"
+  *ngIf="
+    playlists.items !== undefined &&
+    playlists.items.length > 0 &&
+    playlists.items.length < totalElements
+  "
+>
+  <button class="rounded-full bg-ColorSpot p-15" (click)="loadMorePlaylists()">
+    Cargar mas Play
+  </button>
 </div>

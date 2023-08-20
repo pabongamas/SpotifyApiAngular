@@ -13,7 +13,7 @@ import {PlaylistByIdComponent} from './pages/playlist-by-id/playlist-by-id.compo
 import {DiscographyArtistByIDComponent} from './pages/discography-artist-by-id/discography-artist-by-id.component'
 import {TopTrackUserViewComponent} from './pages/top-track-user-view/top-track-user-view.component'
 import { TopArtistUserViewComponent } from './pages/top-artist-user-view/top-artist-user-view.component';
-
+import {PlaylistByUserComponent} from './pages/playlist-by-user/playlist-by-user.component';
 
 
 
@@ -33,8 +33,9 @@ const routes: Routes = [
     {path:'playlist/:id',component:PlaylistByIdComponent},
     {path:'artist/:id/discography/:type', component: DiscographyArtistByIDComponent },
     {path:'user/:id/top/tracks/time_range/:range', component: TopTrackUserViewComponent },
-    {path:'user/:id/top/artists/time_range/:range', component: TopArtistUserViewComponent }
-
+    {path:'user/:id/top/artists/time_range/:range', component: TopArtistUserViewComponent },
+    {path:'user/:id/playlists', component: PlaylistByUserComponent}
+    
 
 
     

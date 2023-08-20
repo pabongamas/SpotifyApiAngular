@@ -26,12 +26,19 @@ export class UserComponent implements OnInit {
   }={
     items:[]
   };
+  playlistUser:{
+    items:[]|any
+  }={
+    items:[]
+  };
   limit:number=5;
   offset:number=0;
   limitArtist:number=7;
   offsetArtist:number=0;
   topTracksUserTotal:number=0;
   topArtistsUserTotal:number=0;
+  limitPlaylist:number=7;
+  offsetPlaylist:number=0;
   ngOnInit(): void {
     this.route.paramMap
     .pipe(
@@ -56,11 +63,21 @@ export class UserComponent implements OnInit {
           return this.AuthSpotifyService.getTopArtistByUser(parametros)
           .pipe(
             switchMap((topArtistUser) => {
-              return forkJoin({
-                user: of(requestUser),
-                topTracksUser: of(topTracksUser),
-                topArtistUser:of(topArtistUser)
-              });
+             
+              const parametros={
+                "limit":this.limitPlaylist,
+                "offset":this.offsetPlaylist,
+              };
+              return this.AuthSpotifyService.getPlaylistByUser(this.userId,parametros)
+              .pipe(
+                switchMap((playlistsByUser) => {
+                   return forkJoin({
+                     user: of(requestUser),
+                     topTracksUser: of(topTracksUser),
+                     topArtistUser: of(topArtistUser),
+                     playlistsByUser:of(playlistsByUser)
+                   });
+                }));
             })
           )
         })
@@ -76,6 +93,7 @@ export class UserComponent implements OnInit {
       this.topArtistsUserTotal=data.topArtistUser.total;
       this.offset+=this.limit;
       this.offsetArtist+=this.limitArtist;
+      this.playlistUser=data.playlistsByUser;
     });
   }
   loadMoreTracksByUser(){

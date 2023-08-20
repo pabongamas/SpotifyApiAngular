@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { WebsiteRoutingModule } from './website-routing.module';
 import { AlbumsComponent } from './pages/albums/albums.component';
@@ -38,6 +39,7 @@ import { TopArtistsUserComponent } from './components/top-artists-user/top-artis
 import { ArtistsComponent } from './components/artists/artists.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { TopArtistUserViewComponent } from './pages/top-artist-user-view/top-artist-user-view.component';
+import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-user.component';
 
 
 
@@ -74,10 +76,12 @@ import { TopArtistUserViewComponent } from './pages/top-artist-user-view/top-art
     ArtistsComponent,
     ArtistComponent,
     TopArtistUserViewComponent,
+    PlaylistByUserComponent,
   ],
   imports: [
-    CommonModule,
-    WebsiteRoutingModule,MatSlideToggleModule,MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule,MatIconModule
+    CommonModule,FormsModule, ReactiveFormsModule,
+    WebsiteRoutingModule,MatSlideToggleModule,
+    MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule,MatIconModule
   ]
 })
 export class WebsiteModule { }

@@ -9,6 +9,7 @@ export class PlaylistAllComponent {
 
   @Input() dataPlaylist:any;
   @Input() totalElements:any;
+  @Input() isDataSource:boolean=false;
   @Output() eventEmitPlaylistsAll: EventEmitter<any> = new EventEmitter();
 
 

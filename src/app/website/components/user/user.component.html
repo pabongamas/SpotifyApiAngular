@@ -49,5 +49,15 @@
     </div>
 </div>
 
+<div class="p-15" *ngIf="playlistUser.items!=undefined">
+    <div class="flex flexBetweenCenter pb-4">
+        <h2 class="text-PrimaryColor flexAlignCenter margin0 ">Playlists </h2>
+        <div class="flex flexAlignCenter">
+            <label [routerLink]="['/user',userByIdData.id, 'playlists']"  class="text-PrimaryColor hover:underline cursor-pointer ">Mostrar todos</label>
+        </div>
+    </div>
+    <app-playlist-all [dataPlaylist]="playlistUser"></app-playlist-all>
+   
+</div>
 
 </main>

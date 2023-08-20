@@ -8,6 +8,7 @@ import { Component,Input,Output,EventEmitter  } from '@angular/core';
 export class PlaylistsComponent {
   @Input() playlists:any;
   @Input() totalElements:any;
+  @Input() isDataSource:boolean=false;
   @Output() eventEmitPlaylists: EventEmitter<any> = new EventEmitter();
 
  

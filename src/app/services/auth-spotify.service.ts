@@ -125,6 +125,20 @@ export class AuthSpotifyService {
     });
     return this.http.get<any>(`${this.urlApi}/me/top/artists${queryString}`,{headers})
   } 
+  getPlaylistByUser(idUser:string|null,parametros:any|null){
+    var queryString="";
+    if(parametros!==null){
+       queryString = Object.entries(parametros)
+        .map(([key, value]) => `${key}=${value}`)
+        .join('&');
+        queryString="?"+queryString;
+    }
+    
+    const headers=new HttpHeaders({
+      "Authorization":this.bearerToken
+    });
+    return this.http.get<any>(`${this.urlApi}/users/${idUser}/playlists/${queryString}`,{headers})
+  } 
   getCategories(offset:number,limit:number){
     const headers=new HttpHeaders({
       "Authorization":this.bearerToken
