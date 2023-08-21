@@ -12,7 +12,8 @@ module.exports = {
         'ColorSpot':'#1ed760',
         'activeButtonOption':'#fff',
         'inactiveButtonOption':'#181818',
-        'hoverButtonOptionInactive':'#282828'
+        'hoverButtonOptionInactive':'#282828',
+        'buttonSearch':'#242424'
       },
       fontFamily: {
         'sans': ['Proxima Nova', ...defaultTheme.fontFamily.sans],
@@ -22,7 +23,7 @@ module.exports = {
       },
       borderRadius:{
         'roundedMainOption':'32px',
-        
+        '500Br':'500px'
       }
     },
   },

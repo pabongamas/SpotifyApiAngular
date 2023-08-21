@@ -18,7 +18,11 @@ export class DataSourcePlaylistByUser extends DataSource<playlistsObjetModel> {
     return PlaylistByUserComponentData;
   }
   findPlaylists(query: string) {
-    const newProducts = this.originalData.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
+    const newProducts = this.originalData.filter(
+      (item) =>
+        item.name.toLowerCase().includes(query.toLowerCase()) ||
+        item.description.toLowerCase().includes(query.toLowerCase())
+    );
     this.data.next(newProducts);
   }
 

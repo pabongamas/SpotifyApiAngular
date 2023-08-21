@@ -22,7 +22,7 @@
         </div>
 </section>
 
-<div class="p-15" *ngIf="topTracksUser.items!=undefined">
+<div class="p-15" *ngIf="topTracksUser.items!=undefined && idUserLogin===userId">
     <div class="flex flexBetweenCenter pb-4">
         <h2 class="text-PrimaryColor flexAlignCenter margin0 ">Canciones mas escuchadas este mes </h2>
         <div class="flex flexAlignCenter">
@@ -35,7 +35,7 @@
         <button class="rounded-full bg-ColorSpot p-15" (click)="loadMoreTracksByUser()">Cargar mas</button>
     </div>
 </div>
-<div class="p-15" *ngIf="topArtistUser.items!=undefined">
+<div class="p-15" *ngIf="topArtistUser.items!=undefined && idUserLogin===userId">
     <div class="flex flexBetweenCenter pb-4">
         <h2 class="text-PrimaryColor flexAlignCenter margin0 ">Artistas mas escuchados este mes </h2>
         <div class="flex flexAlignCenter">

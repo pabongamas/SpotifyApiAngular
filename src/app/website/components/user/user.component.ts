@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { switchMap, map, forkJoin, of  } from 'rxjs';
 import { AuthSpotifyService } from '../../../services/auth-spotify.service';
+import { TokenAuthServiceService } from '../../../services/token-auth-service.service';
+
 
 @Component({
   selector: 'app-user',
@@ -12,7 +14,8 @@ export class UserComponent implements OnInit {
 
   constructor(
     private route:ActivatedRoute,
-    private AuthSpotifyService:AuthSpotifyService
+    private AuthSpotifyService:AuthSpotifyService,
+    private TokenAuthServiceService:TokenAuthServiceService
   ) { }
   userId:string|null=null;
   userByIdData:any|null=[];
@@ -39,6 +42,7 @@ export class UserComponent implements OnInit {
   topArtistsUserTotal:number=0;
   limitPlaylist:number=7;
   offsetPlaylist:number=0;
+  idUserLogin:string|null=null;
   ngOnInit(): void {
     this.route.paramMap
     .pipe(
@@ -95,6 +99,7 @@ export class UserComponent implements OnInit {
       this.offsetArtist+=this.limitArtist;
       this.playlistUser=data.playlistsByUser;
     });
+    this.idUserLogin=this.TokenAuthServiceService.getIdUserLoggin();
   }
   loadMoreTracksByUser(){
     const parametros={
