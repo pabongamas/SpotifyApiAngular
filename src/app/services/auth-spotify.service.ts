@@ -3,6 +3,7 @@ import { HttpClient,HttpHeaders,HttpParams,HttpErrorResponse,HttpStatusCode} fro
 import { switchMap, tap,BehaviorSubject,throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { retry,catchError,map } from 'rxjs/operators';
+import {TokenAuthServiceService} from '../services/token-auth-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,13 @@ export class AuthSpotifyService {
 
   constructor(
     private http: HttpClient,
+    private tokenAuthServiceService:TokenAuthServiceService
   ) { }
-   accessToken = localStorage.getItem('accessToken');
+   accessToken = this.tokenAuthServiceService.getToken();
    bearerToken="Bearer "+this.accessToken;
    country="CO";
    urlApi="https://api.spotify.com/v1";
-   
+
   newRealese(offset:number,limit:number){
     const headers=new HttpHeaders({
       "Authorization":this.bearerToken,
@@ -58,7 +60,7 @@ export class AuthSpotifyService {
         .join('&');
         queryString="?"+queryString;
     }
-    
+
     const headers=new HttpHeaders({
       "Authorization":this.bearerToken
     });
@@ -75,11 +77,11 @@ export class AuthSpotifyService {
     var domain=environment.domain;
     const clientId = 'b5a10ef1d9b04aedaf0993b8b8d416d9'; // Reemplaza con tu Client ID de Spotify
     const redirectUri = domain+'/callbackAuth'; // Reemplaza con tu Redirect URI registrado en Spotify
-  
+
     const scopes = 'user-read-private user-read-email user-top-read'; // Reemplaza con los alcances (scopes) necesarios, separados por espacios
-  
+
     const authorizationUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes}&response_type=token`;
-  
+
     window.location.href = authorizationUrl;
   }
 
@@ -105,12 +107,12 @@ export class AuthSpotifyService {
         .join('&');
         queryString="?"+queryString;
     }
-    
+
     const headers=new HttpHeaders({
       "Authorization":this.bearerToken
     });
     return this.http.get<any>(`${this.urlApi}/me/top/tracks${queryString}`,{headers})
-  } 
+  }
   getTopArtistByUser(parametros:any|null){
     var queryString="";
     if(parametros!==null){
@@ -119,12 +121,12 @@ export class AuthSpotifyService {
         .join('&');
         queryString="?"+queryString;
     }
-    
+
     const headers=new HttpHeaders({
       "Authorization":this.bearerToken
     });
     return this.http.get<any>(`${this.urlApi}/me/top/artists${queryString}`,{headers})
-  } 
+  }
   getPlaylistByUser(idUser:string|null,parametros:any|null){
     var queryString="";
     if(parametros!==null){
@@ -133,12 +135,12 @@ export class AuthSpotifyService {
         .join('&');
         queryString="?"+queryString;
     }
-    
+
     const headers=new HttpHeaders({
       "Authorization":this.bearerToken
     });
     return this.http.get<any>(`${this.urlApi}/users/${idUser}/playlists/${queryString}`,{headers})
-  } 
+  }
   getCategories(offset:number,limit:number){
     const headers=new HttpHeaders({
       "Authorization":this.bearerToken

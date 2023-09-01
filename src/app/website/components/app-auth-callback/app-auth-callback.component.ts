@@ -19,7 +19,7 @@ export class AppAuthCallbackComponent implements OnInit {
     const accessToken = this.extractAccessTokenFromUrl(url);
     this.TokenAuthServiceService.saveToken(accessToken);
     // Utiliza el token de acceso en tus solicitudes a la API de Spotify
-    window.location.href = environment.domain+"/home"
+    window.location.href = environment.domain+"/newRealeses"
   }
 
   private extractAccessTokenFromUrl(url: string): string {

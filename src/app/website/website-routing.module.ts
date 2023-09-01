@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import {authGuard} from './../guards/auth.guard';
+
 import { HomeComponent } from './pages/home/home.component';
 import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
 import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
@@ -21,9 +24,9 @@ import {PlaylistByUserComponent} from './pages/playlist-by-user/playlist-by-user
 
 const routes: Routes = [
   {path:'',component:LayoutComponent,children:[
-    {path:'',redirectTo:'/home',pathMatch:'full'},
+    {path:'',redirectTo:'/newRealeses',pathMatch:'full'},
     {path:'home',component:HomeComponent},
-    {path:'artist/:id',component:ArtistbyidComponent},
+    {path:'artist/:id',component:ArtistbyidComponent, canActivate:[authGuard]},
     {path:'album/:id',component:AlbumbyidComponent},
     {path:'newRealeses',component:NewReleasesAlbumComponent},
     { path: 'callbackAuth', component: AppAuthCallbackComponent },
@@ -35,13 +38,13 @@ const routes: Routes = [
     {path:'user/:id/top/tracks/time_range/:range', component: TopTrackUserViewComponent },
     {path:'user/:id/top/artists/time_range/:range', component: TopArtistUserViewComponent },
     {path:'user/:id/playlists', component: PlaylistByUserComponent}
-    
 
 
-    
 
-    
-    
+
+
+
+
     // {
     //   path: 'category',
     //   loadChildren: () => import('./pages/category/category.module').then(m => m.CategoryModule),

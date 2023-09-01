@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class NavComponent {
   @Output() cargarAlbumsClick: EventEmitter<void> = new EventEmitter<void>();
-  tokenNav: string | null = null;
+  tokenNav: string | null|undefined = null;
   profile: any | null = null;
   constructor(
     private AuthSpotifyService: AuthSpotifyService,
@@ -36,7 +36,7 @@ export class NavComponent {
 
   logout() {
     this.TokenAuthServiceService.removeToken();
-    this.location.go('/');
+    this.location.go('/home');
     location.reload();
   }
   loadProfile() {
