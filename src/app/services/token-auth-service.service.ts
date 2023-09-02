@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {getCookie,setCookie,removeCookie} from 'typescript-cookie'
-import jwt_decode,{JwtPayload} from 'jwt-decode';
+import { getCookie, setCookie, removeCookie } from 'typescript-cookie';
+import jwt_decode, { JwtPayload } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
@@ -11,27 +11,44 @@ export class TokenAuthServiceService {
   saveIdUserLoggin(id: string) {
     localStorage.setItem('userLogin', id);
   }
-  getIdUserLoggin(){
+  getIdUserLoggin() {
     const token = localStorage.getItem('userLogin');
     return token;
   }
 
-  saveToken(token:string){
-    setCookie('accessToken',token,{expires:365,path:'/'})
+  saveToken(token: string) {
+    setCookie('accessToken', token, { expires: 365, path: '/' });
   }
-  getToken(){
-    const token=getCookie('accessToken');
+  saveTokenExpire(expire: string) {
+    // Obtener la hora actual
+    var fechaActualMod = new Date();
+
+    var expirevalue = parseFloat(expire);
+    // Sumar una hora (3600 segundos)
+    fechaActualMod.setSeconds(fechaActualMod.getSeconds() + expirevalue);
+    setCookie('expiresAccessToken', fechaActualMod.getTime());
+  }
+  getToken() {
+    const token = getCookie('accessToken');
     return token;
   }
-  removeToken(){
-    removeCookie('accessToken')
+  getTokenExpire(): string | null | undefined {
+    const TokenExpire = getCookie('expiresAccessToken');
+    return TokenExpire;
+  }
+  removeToken() {
+    removeCookie('accessToken');
+    removeCookie('expiresAccessToken');
   }
 
   isValidToken() {
+    var fechaActualInThisMoment = new Date();
     const token = this.getToken();
     console.log(token);
     if (!token) {
       return false;
+    } else {
+      // this.getTokenExpire()>fechaActualInThisMoment.getTime;
     }
     return true;
     // const decodeToken = jwt_decode<JwtPayload>(token);

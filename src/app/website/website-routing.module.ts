@@ -24,20 +24,20 @@ import {PlaylistByUserComponent} from './pages/playlist-by-user/playlist-by-user
 
 const routes: Routes = [
   {path:'',component:LayoutComponent,children:[
-    {path:'',redirectTo:'/newRealeses',pathMatch:'full'},
+    {path:'',redirectTo:'/home',pathMatch:'full'},
     {path:'home',component:HomeComponent},
     {path:'artist/:id',component:ArtistbyidComponent, canActivate:[authGuard]},
-    {path:'album/:id',component:AlbumbyidComponent},
-    {path:'newRealeses',component:NewReleasesAlbumComponent},
+    {path:'album/:id',component:AlbumbyidComponent, canActivate:[authGuard]},
+    {path:'newRealeses',component:NewReleasesAlbumComponent,canActivate:[authGuard]},
     { path: 'callbackAuth', component: AppAuthCallbackComponent },
-    { path: 'user/:id', component: UserComponent },
-    {path:'Categories',component:CategoriasAllComponent},
-    { path: 'categorie/:id', component: CategorebyidComponent },
-    {path:'playlist/:id',component:PlaylistByIdComponent},
-    {path:'artist/:id/discography/:type', component: DiscographyArtistByIDComponent },
-    {path:'user/:id/top/tracks/time_range/:range', component: TopTrackUserViewComponent },
-    {path:'user/:id/top/artists/time_range/:range', component: TopArtistUserViewComponent },
-    {path:'user/:id/playlists', component: PlaylistByUserComponent}
+    { path: 'user/:id', component: UserComponent,canActivate:[authGuard] },
+    {path:'Categories',component:CategoriasAllComponent,canActivate:[authGuard]},
+    { path: 'categorie/:id', component: CategorebyidComponent,canActivate:[authGuard] },
+    {path:'playlist/:id',component:PlaylistByIdComponent,canActivate:[authGuard]},
+    {path:'artist/:id/discography/:type', component: DiscographyArtistByIDComponent,canActivate:[authGuard] },
+    {path:'user/:id/top/tracks/time_range/:range', component: TopTrackUserViewComponent,canActivate:[authGuard] },
+    {path:'user/:id/top/artists/time_range/:range', component: TopArtistUserViewComponent,canActivate:[authGuard] },
+    {path:'user/:id/playlists', component: PlaylistByUserComponent,canActivate:[authGuard]}
 
 
 

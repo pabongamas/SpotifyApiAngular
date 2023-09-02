@@ -17,13 +17,21 @@ export class AppAuthCallbackComponent implements OnInit {
   ngOnInit(): void {
     const url = window.location.href;
     const accessToken = this.extractAccessTokenFromUrl(url);
+    const tokenExpire = this.extractExpiresFromUrl(url);
     this.TokenAuthServiceService.saveToken(accessToken);
+    this.TokenAuthServiceService.saveTokenExpire(tokenExpire);
     // Utiliza el token de acceso en tus solicitudes a la API de Spotify
     window.location.href = environment.domain+"/newRealeses"
   }
 
   private extractAccessTokenFromUrl(url: string): string {
     const accessTokenRegex = /access_token=([^&]+)/;
+    const match = url.match(accessTokenRegex);
+    return match ? match[1] : '';
+  }
+
+  private extractExpiresFromUrl(url: string): string {
+    const accessTokenRegex = /expires_in=([^&]+)/;
     const match = url.match(accessTokenRegex);
     return match ? match[1] : '';
   }
