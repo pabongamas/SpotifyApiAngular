@@ -9,11 +9,14 @@ export class TokenAuthServiceService {
   token: string | null = null;
   constructor() {}
   saveIdUserLoggin(id: string) {
-    localStorage.setItem('userLogin', id);
+    // localStorage.setItem('userLogin', id);
+    setCookie('userLogin', id, { expires: 365, path: '/' });
   }
   getIdUserLoggin() {
-    const token = localStorage.getItem('userLogin');
-    return token;
+    // const token = localStorage.getItem('userLogin');
+    // return token;
+    const idUser = getCookie('userLogin');
+    return idUser;
   }
 
   saveToken(token: string) {
@@ -39,26 +42,24 @@ export class TokenAuthServiceService {
   removeToken() {
     removeCookie('accessToken');
     removeCookie('expiresAccessToken');
+    removeCookie('userLogin');
   }
 
   isValidToken() {
-    var fechaActualInThisMoment = new Date();
+    const expireToken = this.getTokenExpire();
+    const fechaActualInThisMoment = new Date();
+    const dateActual = fechaActualInThisMoment.getTime();
     const token = this.getToken();
-    console.log(token);
     if (!token) {
       return false;
     } else {
-      // this.getTokenExpire()>fechaActualInThisMoment.getTime;
+      if (expireToken !== null && expireToken !== undefined) {
+        const dateExpire = parseFloat(expireToken);
+        if (dateExpire < dateActual) {
+          return false;
+        }
+      }
     }
     return true;
-    // const decodeToken = jwt_decode<JwtPayload>(token);
-    // console.log(decodeToken);
-    // if (decodeToken && decodeToken?.exp) {
-    //   const tokenDate = new Date(0);
-    //   tokenDate.setUTCSeconds(decodeToken.exp);
-    //   const today = new Date();
-    //   return tokenDate.getTime() > today.getTime();
-    // }
-    // return false;
   }
 }

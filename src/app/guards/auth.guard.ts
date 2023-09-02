@@ -7,7 +7,6 @@ export const authGuard: CanActivateFn = ( route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot) => {
 
     const isValidToken = inject(TokenAuthServiceService).isValidToken();
-    console.log('isValidToken from AuthGuard ', isValidToken);
     if (!isValidToken) {
       inject(Router).navigate(['/home']);
       return false;
