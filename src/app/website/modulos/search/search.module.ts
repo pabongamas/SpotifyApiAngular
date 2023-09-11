@@ -1,4 +1,4 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -17,8 +17,7 @@ import {AlbumsComponent } from './../../pages/albums/albums.component';
   ],
   imports: [
     CommonModule,FormsModule, ReactiveFormsModule,
-    RouterModule,SearchRoutingModule,MatIconModule,
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Agrega esta línea
+    RouterModule,SearchRoutingModule,MatIconModule
+  ]
 })
 export class SearchModule { }
