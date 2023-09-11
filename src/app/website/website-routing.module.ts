@@ -37,7 +37,12 @@ const routes: Routes = [
     {path:'artist/:id/discography/:type', component: DiscographyArtistByIDComponent,canActivate:[authGuard] },
     {path:'user/:id/top/tracks/time_range/:range', component: TopTrackUserViewComponent,canActivate:[authGuard] },
     {path:'user/:id/top/artists/time_range/:range', component: TopArtistUserViewComponent,canActivate:[authGuard] },
-    {path:'user/:id/playlists', component: PlaylistByUserComponent,canActivate:[authGuard]}
+    {path:'user/:id/playlists', component: PlaylistByUserComponent,canActivate:[authGuard]},
+    {
+      path: 'search', // Ruta relativa al módulo principal
+      loadChildren: () =>
+        import('./modulos/search/search.module').then((m) => m.SearchModule), // Lazy loading del módulo
+    },
 
 
 

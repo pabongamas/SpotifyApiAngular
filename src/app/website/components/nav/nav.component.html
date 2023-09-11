@@ -15,8 +15,8 @@
       </ul>
       <div class="flex items-center justify-center">
         <div *ngIf="profile !== null">
-          <div>
-            <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+          <div class="p-4">
+            <fa-icon class="text-xl cursor-pointer" [ngClass]="{ 'text-gray-300': !isActive('/search') }"  routerLinkActive="text-white transition duration-500 ease-in-out" [routerLink]="['/search']"  [icon]="faMagnifyingGlass"  matTooltip="Realizar Busqueda"></fa-icon>
           </div>
         </div>
         <ul *ngIf="tokenNav == null; else elseBlock">

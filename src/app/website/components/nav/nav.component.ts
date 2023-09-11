@@ -54,4 +54,7 @@ export class NavComponent {
       }
     );
   }
+  isActive(route: string): boolean {
+    return this.Router.isActive(route, true);
+  }
 }

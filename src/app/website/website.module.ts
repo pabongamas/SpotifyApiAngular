@@ -41,6 +41,8 @@ import { ArtistsComponent } from './components/artists/artists.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { TopArtistUserViewComponent } from './pages/top-artist-user-view/top-artist-user-view.component';
 import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-user.component';
+import {SearchModule} from './modulos/search/search.module';
+
 
 
 
@@ -82,7 +84,10 @@ import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-us
   imports: [
     CommonModule,FormsModule, ReactiveFormsModule,
     WebsiteRoutingModule,MatSlideToggleModule,
-    MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule,MatIconModule,FontAwesomeModule
+    MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule,MatIconModule,FontAwesomeModule,SearchModule
+  ]
+  ,exports:[
+    AlbumsComponent,AlbumComponent
   ]
 })
 export class WebsiteModule { }

@@ -17,6 +17,7 @@ export class AlbumsComponent implements OnInit {
     private Router: Router
   ) {}
   ngOnInit(): void {
+    console.log("llego");
   }
 
   @Output() eventEmitNewRealeses: EventEmitter<any> = new EventEmitter();
