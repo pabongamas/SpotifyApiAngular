@@ -3,6 +3,7 @@ import { AuthSpotifyService } from '../../../services/auth-spotify.service';
 import { Router } from '@angular/router';
 import { TokenAuthServiceService } from '../../../services/token-auth-service.service';
 import { Location } from '@angular/common';
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav',
@@ -13,6 +14,7 @@ export class NavComponent {
   @Output() cargarAlbumsClick: EventEmitter<void> = new EventEmitter<void>();
   tokenNav: string | null|undefined = null;
   profile: any | null = null;
+  faMagnifyingGlass = faMagnifyingGlass;
   constructor(
     private AuthSpotifyService: AuthSpotifyService,
     private Router: Router,

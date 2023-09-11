@@ -4,6 +4,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { WebsiteRoutingModule } from './website-routing.module';
 import { AlbumsComponent } from './pages/albums/albums.component';
@@ -81,7 +82,7 @@ import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-us
   imports: [
     CommonModule,FormsModule, ReactiveFormsModule,
     WebsiteRoutingModule,MatSlideToggleModule,
-    MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule,MatIconModule
+    MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule,MatIconModule,FontAwesomeModule
   ]
 })
 export class WebsiteModule { }
