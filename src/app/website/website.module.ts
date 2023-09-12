@@ -22,15 +22,15 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import { UserComponent } from './components/user/user.component';
-import { PipeMsToMinutesPipe } from './pipes/pipe-ms-to-minutes.pipe';
-import { ColorByImagePipe } from './pipes/color-by-image.pipe';
+// import { PipeMsToMinutesPipe } from './modulos/shared/pipes/pipes/pipe-ms-to-minutes.pipe';
+// import { ColorByImagePipe } from './modulos/shared/pipes/pipes/color-by-image.pipe';
 // import { CategoriasAllComponent } from './pages/categorias-all/categorias-all.component';
 // import { CategoriesComponent } from './components/categories/categories.component';
 // import { CategorieComponent } from './modulos/shared/components/categorie/categorie.component';
-import { CategorebyidComponent } from './pages/categorebyid/categorebyid.component';
-import { PlaylistAllComponent } from './components/playlist-all/playlist-all.component';
-import { PlaylistsComponent } from './components/playlists/playlists.component';
-import { PlaylistComponent } from './components/playlist/playlist.component';
+// import { CategorebyidComponent } from './pages/categorebyid/categorebyid.component';
+// import { PlaylistAllComponent } from './modulos/shared/components/playlist-all/playlist-all.component';
+// import { PlaylistsComponent } from './modulos/shared/components/playlists/playlists.component';
+// import { PlaylistComponent } from './modulos/shared/components/playlist/playlist.component';
 import { PlaylistByIdComponent } from './pages/playlist-by-id/playlist-by-id.component';
 import { DiscographyArtistByIDComponent } from './pages/discography-artist-by-id/discography-artist-by-id.component';
 import { TopTracksUserComponent } from './components/top-tracks-user/top-tracks-user.component';
@@ -57,15 +57,15 @@ import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-us
     ArtistsTopTracksComponent,
     AppAuthCallbackComponent,
     UserComponent,
-    PipeMsToMinutesPipe,
-    ColorByImagePipe,
+    // PipeMsToMinutesPipe,
+    // ColorByImagePipe,
     // CategoriasAllComponent,
     // CategoriesComponent,
     // CategorieComponent,
-    CategorebyidComponent,
-    PlaylistAllComponent,
-    PlaylistsComponent,
-    PlaylistComponent,
+    // CategorebyidComponent,
+    // PlaylistAllComponent,
+    // PlaylistsComponent,
+    // PlaylistComponent,
     PlaylistByIdComponent,
     DiscographyArtistByIDComponent,
     TopTracksUserComponent,

@@ -31,9 +31,10 @@ const routes: Routes = [
       },
       {
         path: 'search',
-        canActivate: [authGuard], // Ruta relativa al módulo principal
+
         loadChildren: () =>
-          import('./pages/search/search.module').then((m) => m.SearchModule), // Lazy loading del módulo
+          import('./pages/search/search.module').then((m) => m.SearchModule),
+        canActivate: [authGuard],
       },
       {
         path: 'Categories',
@@ -46,9 +47,9 @@ const routes: Routes = [
       {
         path: 'newRealeses',
         loadChildren: () =>
-        import('./pages/new-releases-album/new-releases-album.module').then(
-          (m) => m.NewReleasesAlbumModule
-        ),
+          import('./pages/new-releases-album/new-releases-album.module').then(
+            (m) => m.NewReleasesAlbumModule
+          ),
         canActivate: [authGuard],
       },
       {
@@ -64,11 +65,17 @@ const routes: Routes = [
 
       { path: 'callbackAuth', component: AppAuthCallbackComponent },
       { path: 'user/:id', component: UserComponent, canActivate: [authGuard] },
-
-
+      // {
+      //   path: 'categorie/:id',
+      //   component: CategorebyidComponent,
+      //   canActivate: [authGuard],
+      // },
       {
-        path: 'categorie/:id',
-        component: CategorebyidComponent,
+        path: 'categorie',
+        loadChildren: () =>
+          import('./pages/categorebyid/categorebyid.module').then(
+            (m) => m.CategorebyidModule
+          ),
         canActivate: [authGuard],
       },
       {

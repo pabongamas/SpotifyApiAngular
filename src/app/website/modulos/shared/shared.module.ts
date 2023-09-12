@@ -2,37 +2,41 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
-// import { SearchModule } from '../../pages/search/search.module';
-// import { SearchComponent } from '../../pages/search/search.component';
 import { AlbumComponent } from './components/album/album.component';
 import { AlbumsComponent } from './components/albums/albums.component';
-// import { NewReleasesAlbumComponent } from '../../pages/new-releases-album/new-releases-album.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategorieComponent } from './components/categorie/categorie.component';
+import { PlaylistAllComponent } from './components/playlist-all/playlist-all.component';
+import { PlaylistsComponent } from './components/playlists/playlists.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
+import { PipeMsToMinutesPipe } from './pipes/pipes/pipe-ms-to-minutes.pipe';
+import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
 
 @NgModule({
   declarations: [
-    // SearchComponent,
     AlbumComponent,
     AlbumsComponent,
-    // NewReleasesAlbumComponent,
     CategoriesComponent,
     CategorieComponent,
+    PlaylistAllComponent,
+    PlaylistsComponent,
+    PlaylistComponent,
+    PipeMsToMinutesPipe,
+    ColorByImagePipe
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
-    // SearchModule,
-    // MatIconModule,
-    // FormsModule,
-    // ReactiveFormsModule,
   ],
   exports: [
-    // SearchComponent,
     AlbumsComponent,
-    // NewReleasesAlbumComponent,
     CategoriesComponent,
     CategorieComponent,
+    PlaylistAllComponent,
+    PlaylistsComponent,
+    PlaylistComponent,
+    PipeMsToMinutesPipe,
+    ColorByImagePipe
   ],
 })
 export class SharedModule {}
