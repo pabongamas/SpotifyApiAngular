@@ -1,6 +1,6 @@
 import { Component, OnInit,NgModule,Input,HostListener } from '@angular/core';
-import { AuthSpotifyService } from '../../../../../../services/auth-spotify.service';
-import { TokenAuthServiceService } from '../../../../../../services/token-auth-service.service';
+import { AuthSpotifyService } from '../../../services/auth-spotify.service';
+import { TokenAuthServiceService } from '../../../services/token-auth-service.service';
 import { Location } from '@angular/common';
 
 @Component({
