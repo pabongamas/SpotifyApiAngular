@@ -6,7 +6,7 @@ import {authGuard} from './../guards/auth.guard';
 import { HomeComponent } from './pages/home/home.component';
 import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
 import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
-import { NewReleasesAlbumComponent } from './pages/albums/new-releases-album/new-releases-album.component';
+import { NewReleasesAlbumComponent } from './modulos/shared/components/albums/new-releases-album/new-releases-album.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AppAuthCallbackComponent } from './components/app-auth-callback/app-auth-callback.component';
 import { UserComponent } from './components/user/user.component';

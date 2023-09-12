@@ -1,5 +1,5 @@
 import { Component, OnInit,Input,Output,EventEmitter} from '@angular/core';
-import { AuthSpotifyService } from '../../../services/auth-spotify.service';
+import { AuthSpotifyService } from '../../../../../services/auth-spotify.service';
 import { Router } from '@angular/router';
 
 @Component({
