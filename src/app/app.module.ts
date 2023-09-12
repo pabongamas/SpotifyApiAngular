@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import{TokenInterceptor} from '../app/interceptors/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NewReleasesAlbumComponent } from './website/modulos/shared/components/albums/new-releases-album/new-releases-album.component';
+import { NewReleasesAlbumComponent } from '../app/website/pages/albums/new-releases-album/new-releases-album.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [

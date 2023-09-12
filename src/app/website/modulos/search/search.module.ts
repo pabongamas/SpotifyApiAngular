@@ -1,11 +1,13 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SearchRoutingModule } from './search-routing.module';
 
 import {MatIconModule} from '@angular/material/icon';
+import { WebsiteModule } from '../../website.module';
 import { SearchComponent } from './search.component';
+import {AlbumsComponent } from './../../pages/albums/albums.component';
 
 
 
@@ -16,7 +18,6 @@ import { SearchComponent } from './search.component';
   imports: [
     CommonModule,FormsModule, ReactiveFormsModule,
     RouterModule,SearchRoutingModule,MatIconModule
-  ],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  ]
 })
 export class SearchModule { }

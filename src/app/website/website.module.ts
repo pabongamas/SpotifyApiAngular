@@ -2,14 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatListModule } from '@angular/material/list';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { WebsiteRoutingModule } from './website-routing.module';
+import { AlbumsComponent } from './pages/albums/albums.component';
+import { AlbumComponent } from './pages/album/album.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './pages/home/home.component';
+import { NewReleasesAlbumComponent } from './pages/albums/new-releases-album/new-releases-album.component';
 import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
 import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
 import { TracksComponent } from './components/tracks/tracks.component';
@@ -17,8 +20,8 @@ import { TrackComponent } from './components/track/track.component';
 import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artists-top-tracks.component';
 import { AppAuthCallbackComponent } from './components/app-auth-callback/app-auth-callback.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
 import { UserComponent } from './components/user/user.component';
 import { PipeMsToMinutesPipe } from './pipes/pipe-ms-to-minutes.pipe';
 import { ColorByImagePipe } from './pipes/color-by-image.pipe';
@@ -38,13 +41,20 @@ import { ArtistsComponent } from './components/artists/artists.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { TopArtistUserViewComponent } from './pages/top-artist-user-view/top-artist-user-view.component';
 import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-user.component';
-import { SharedModule } from './modulos/shared/shared.module';
+import {SearchModule} from './modulos/search/search.module';
+
+
+
+
 
 @NgModule({
   declarations: [
+    AlbumsComponent,
+    AlbumComponent,
     LayoutComponent,
     NavComponent,
     HomeComponent,
+    NewReleasesAlbumComponent,
     ArtistbyidComponent,
     AlbumbyidComponent,
     TracksComponent,
@@ -72,21 +82,12 @@ import { SharedModule } from './modulos/shared/shared.module';
     PlaylistByUserComponent,
   ],
   imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    WebsiteRoutingModule,
-    MatSlideToggleModule,
-    MatToolbarModule,
-    MatListModule,
-    MatTooltipModule,
-    MatMenuModule,
-    MatIconModule,
-    FontAwesomeModule,
-    SharedModule,
-  ],
-  exports: [
-    // AlbumsComponent,AlbumComponent
-  ],
+    CommonModule,FormsModule, ReactiveFormsModule,
+    WebsiteRoutingModule,MatSlideToggleModule,
+    MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule,MatIconModule,FontAwesomeModule,SearchModule
+  ]
+  ,exports:[
+    AlbumsComponent,AlbumComponent
+  ]
 })
-export class WebsiteModule {}
+export class WebsiteModule { }
