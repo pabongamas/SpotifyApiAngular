@@ -63,7 +63,7 @@
 }
 .descAlbum{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: baseline;
     flex-direction: column;
     grid-gap: 15px;
@@ -113,5 +113,5 @@
 .viewArtist:hover{
     text-decoration: underline;
 }
-    
-        
+
+

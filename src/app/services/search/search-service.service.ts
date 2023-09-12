@@ -33,6 +33,7 @@ export class SearchServiceService {
     if(types){
       params+="&type="+types;
     }
+    console.log(checkToken());
     return this.http.get<searchModel>(`${this.urlApi}/search${params}`,  {
       context: checkToken(),
     });

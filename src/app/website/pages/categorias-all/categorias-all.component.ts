@@ -26,7 +26,7 @@ export class CategoriasAllComponent implements OnInit {
       this.totalElements=data.categories.total;
     }
     )
-  
+
   }
   loadMoreCategories(){
     this.loadCategories();

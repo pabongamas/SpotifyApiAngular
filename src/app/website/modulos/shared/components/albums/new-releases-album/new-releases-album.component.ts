@@ -1,6 +1,6 @@
 import { Component, OnInit,NgModule,Input,HostListener } from '@angular/core';
-import { AuthSpotifyService } from '../../../../services/auth-spotify.service';
-import { TokenAuthServiceService } from '../../../../services/token-auth-service.service';
+import { AuthSpotifyService } from '../../../../../../services/auth-spotify.service';
+import { TokenAuthServiceService } from '../../../../../../services/token-auth-service.service';
 import { Location } from '@angular/common';
 
 @Component({
@@ -23,7 +23,7 @@ export class NewReleasesAlbumComponent implements OnInit {
    this.loadNewRealeses();
   }
   }
-  
+
 loadNewRealeses(){
   this.AuthSpotifyService.newRealese(this.offset,this.limit).subscribe((data) => {
     this.newRealeses = this.newRealeses.concat(data.albums.items);
