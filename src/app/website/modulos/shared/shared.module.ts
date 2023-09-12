@@ -11,6 +11,7 @@ import { PlaylistsComponent } from './components/playlists/playlists.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { TracksComponent } from './components/tracks/tracks.component';
 import { TrackComponent } from './components/track/track.component';
+import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artists-top-tracks.component';
 import { PipeMsToMinutesPipe } from './pipes/pipes/pipe-ms-to-minutes.pipe';
 import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
 
@@ -25,6 +26,7 @@ import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
     PlaylistComponent,
     TracksComponent,
     TrackComponent,
+    ArtistsTopTracksComponent,
     PipeMsToMinutesPipe,
     ColorByImagePipe
   ],
@@ -41,6 +43,7 @@ import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
     PlaylistComponent,
     TracksComponent,
     TrackComponent,
+    ArtistsTopTracksComponent,
     PipeMsToMinutesPipe,
     ColorByImagePipe
   ],

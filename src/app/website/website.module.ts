@@ -12,11 +12,11 @@ import {SharedModule} from './modulos/shared/shared.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NavComponent } from './components/nav/nav.component';
 // import { HomeComponent } from './pages/home/home.component';
-import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
+// import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
 import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
 // import { TracksComponent } from './modulos/shared/components/tracks/tracks.component';
 // import { TrackComponent } from './modulos/shared/components/track/track.component';
-import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artists-top-tracks.component';
+// import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artists-top-tracks.component';
 import { AppAuthCallbackComponent } from './components/app-auth-callback/app-auth-callback.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatIconModule} from '@angular/material/icon';
@@ -50,11 +50,11 @@ import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-us
     LayoutComponent,
     NavComponent,
     // HomeComponent,
-    ArtistbyidComponent,
+    // ArtistbyidComponent,
     AlbumbyidComponent,
     // TracksComponent,
     // TrackComponent,
-    ArtistsTopTracksComponent,
+    // ArtistsTopTracksComponent,
     AppAuthCallbackComponent,
     UserComponent,
     // PipeMsToMinutesPipe,

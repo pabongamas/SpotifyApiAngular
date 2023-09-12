@@ -66,14 +66,21 @@ const routes: Routes = [
         import('./pages/playlist-by-id/playlist-by-id.module').then(
           (m) => m.PlaylistByIdModule
         ),
-        // component: PlaylistByIdComponent,
         canActivate: [authGuard],
       },
       {
-        path: 'artist/:id',
-        component: ArtistbyidComponent,
+        path: 'artist',
+        loadChildren: () =>
+        import('./pages/artistbyid/artistbyid.module').then(
+          (m) => m.ArtistbyidModule
+        ),
         canActivate: [authGuard],
       },
+      // {
+      //   path: 'artist/:id',
+      //   component: ArtistbyidComponent,
+      //   canActivate: [authGuard],
+      // },
       {
         path: 'album/:id',
         component: AlbumbyidComponent,

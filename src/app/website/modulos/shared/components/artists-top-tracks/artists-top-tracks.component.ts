@@ -1,5 +1,5 @@
 import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
-import { AuthSpotifyService } from '../../../services/auth-spotify.service';
+import { AuthSpotifyService } from '../../../../../services/auth-spotify.service';
 
 @Component({
   selector: 'app-artists-top-tracks',
