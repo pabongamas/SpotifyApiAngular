@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchServiceService } from './../../../services/search/search-service.service';
+import { SearchServiceService } from '../../../services/search/search-service.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { DataSourceAlbums } from './data-sourceAlbums';

@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
-import { SearchModule } from './../search/search.module';
-import { SearchComponent } from '../search/search.component';
-import { MatIconModule } from '@angular/material/icon';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { SearchModule } from '../../pages/search/search.module';
+// import { SearchComponent } from '../../pages/search/search.component';
 import { AlbumComponent } from './components/album/album.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 // import { NewReleasesAlbumComponent } from '../../pages/new-releases-album/new-releases-album.component';
@@ -14,7 +12,7 @@ import { CategorieComponent } from './components/categorie/categorie.component';
 
 @NgModule({
   declarations: [
-    SearchComponent,
+    // SearchComponent,
     AlbumComponent,
     AlbumsComponent,
     // NewReleasesAlbumComponent,
@@ -24,13 +22,13 @@ import { CategorieComponent } from './components/categorie/categorie.component';
   imports: [
     CommonModule,
     SharedRoutingModule,
-    SearchModule,
-    MatIconModule,
-    FormsModule,
-    ReactiveFormsModule,
+    // SearchModule,
+    // MatIconModule,
+    // FormsModule,
+    // ReactiveFormsModule,
   ],
   exports: [
-    SearchComponent,
+    // SearchComponent,
     AlbumsComponent,
     // NewReleasesAlbumComponent,
     CategoriesComponent,
