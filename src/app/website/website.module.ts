@@ -14,8 +14,8 @@ import { NavComponent } from './components/nav/nav.component';
 // import { HomeComponent } from './pages/home/home.component';
 import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
 import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
-import { TracksComponent } from './components/tracks/tracks.component';
-import { TrackComponent } from './components/track/track.component';
+// import { TracksComponent } from './modulos/shared/components/tracks/tracks.component';
+// import { TrackComponent } from './modulos/shared/components/track/track.component';
 import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artists-top-tracks.component';
 import { AppAuthCallbackComponent } from './components/app-auth-callback/app-auth-callback.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -52,8 +52,8 @@ import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-us
     // HomeComponent,
     ArtistbyidComponent,
     AlbumbyidComponent,
-    TracksComponent,
-    TrackComponent,
+    // TracksComponent,
+    // TrackComponent,
     ArtistsTopTracksComponent,
     AppAuthCallbackComponent,
     UserComponent,
@@ -66,7 +66,7 @@ import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-us
     // PlaylistAllComponent,
     // PlaylistsComponent,
     // PlaylistComponent,
-    PlaylistByIdComponent,
+    // PlaylistByIdComponent,
     DiscographyArtistByIDComponent,
     TopTracksUserComponent,
     TopTrackUserViewComponent,

@@ -12,7 +12,7 @@ import { AppAuthCallbackComponent } from './components/app-auth-callback/app-aut
 import { UserComponent } from './components/user/user.component';
 import { CategoriasAllComponent } from './pages/categorias-all/categorias-all.component';
 import { CategorebyidComponent } from './pages/categorebyid/categorebyid.component';
-import { PlaylistByIdComponent } from './pages/playlist-by-id/playlist-by-id.component';
+// import { PlaylistByIdComponent } from './pages/playlist-by-id/playlist-by-id.component';
 import { DiscographyArtistByIDComponent } from './pages/discography-artist-by-id/discography-artist-by-id.component';
 import { TopTrackUserViewComponent } from './pages/top-track-user-view/top-track-user-view.component';
 import { TopArtistUserViewComponent } from './pages/top-artist-user-view/top-artist-user-view.component';
@@ -53,6 +53,23 @@ const routes: Routes = [
         canActivate: [authGuard],
       },
       {
+        path: 'categorie',
+        loadChildren: () =>
+          import('./pages/categorebyid/categorebyid.module').then(
+            (m) => m.CategorebyidModule
+          ),
+        canActivate: [authGuard],
+      },
+      {
+        path: 'playlist',
+        loadChildren: () =>
+        import('./pages/playlist-by-id/playlist-by-id.module').then(
+          (m) => m.PlaylistByIdModule
+        ),
+        // component: PlaylistByIdComponent,
+        canActivate: [authGuard],
+      },
+      {
         path: 'artist/:id',
         component: ArtistbyidComponent,
         canActivate: [authGuard],
@@ -65,24 +82,7 @@ const routes: Routes = [
 
       { path: 'callbackAuth', component: AppAuthCallbackComponent },
       { path: 'user/:id', component: UserComponent, canActivate: [authGuard] },
-      // {
-      //   path: 'categorie/:id',
-      //   component: CategorebyidComponent,
-      //   canActivate: [authGuard],
-      // },
-      {
-        path: 'categorie',
-        loadChildren: () =>
-          import('./pages/categorebyid/categorebyid.module').then(
-            (m) => m.CategorebyidModule
-          ),
-        canActivate: [authGuard],
-      },
-      {
-        path: 'playlist/:id',
-        component: PlaylistByIdComponent,
-        canActivate: [authGuard],
-      },
+
       {
         path: 'artist/:id/discography/:type',
         component: DiscographyArtistByIDComponent,

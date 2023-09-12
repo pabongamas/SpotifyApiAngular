@@ -9,6 +9,8 @@ import { CategorieComponent } from './components/categorie/categorie.component';
 import { PlaylistAllComponent } from './components/playlist-all/playlist-all.component';
 import { PlaylistsComponent } from './components/playlists/playlists.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
+import { TracksComponent } from './components/tracks/tracks.component';
+import { TrackComponent } from './components/track/track.component';
 import { PipeMsToMinutesPipe } from './pipes/pipes/pipe-ms-to-minutes.pipe';
 import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
 
@@ -21,6 +23,8 @@ import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
     PlaylistAllComponent,
     PlaylistsComponent,
     PlaylistComponent,
+    TracksComponent,
+    TrackComponent,
     PipeMsToMinutesPipe,
     ColorByImagePipe
   ],
@@ -35,6 +39,8 @@ import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
     PlaylistAllComponent,
     PlaylistsComponent,
     PlaylistComponent,
+    TracksComponent,
+    TrackComponent,
     PipeMsToMinutesPipe,
     ColorByImagePipe
   ],
