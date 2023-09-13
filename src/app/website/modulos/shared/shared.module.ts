@@ -17,6 +17,7 @@ import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
 
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import {MatIconModule} from '@angular/material/icon';
     CommonModule,
     SharedRoutingModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,QuicklinkModule
   ],
   exports: [
     AlbumsComponent,

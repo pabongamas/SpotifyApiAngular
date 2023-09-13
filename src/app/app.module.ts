@@ -7,6 +7,7 @@ import{TokenInterceptor} from '../app/interceptors/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewReleasesAlbumComponent } from './website/pages/new-releases-album/new-releases-album.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { QuicklinkModule } from 'ngx-quicklink';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    QuicklinkModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}

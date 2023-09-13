@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 import { WebsiteRoutingModule } from './website-routing.module';
 import {SharedModule} from './modulos/shared/shared.module';
@@ -79,7 +80,7 @@ import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-us
   imports: [
     CommonModule,FormsModule, ReactiveFormsModule,
     WebsiteRoutingModule,MatSlideToggleModule,
-    MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule,MatIconModule,FontAwesomeModule,SharedModule
+    MatToolbarModule,MatListModule,MatTooltipModule,MatMenuModule,MatIconModule,FontAwesomeModule,SharedModule,QuicklinkModule
   ]
   ,exports:[
   ]

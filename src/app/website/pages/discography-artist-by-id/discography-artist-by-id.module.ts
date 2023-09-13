@@ -6,11 +6,13 @@ import { DiscographyArtistByIdRoutingModule } from './discography-artist-by-id-r
 import { DiscographyArtistByIDComponent } from './discography-artist-by-id.component';
 import { AlbumbyidComponent } from '../albumbyid/albumbyid.component';
 
+import { QuicklinkModule } from 'ngx-quicklink';
+
 @NgModule({
   declarations: [DiscographyArtistByIDComponent,AlbumbyidComponent],
   imports: [
     CommonModule,
-    DiscographyArtistByIdRoutingModule,SharedModule
+    DiscographyArtistByIdRoutingModule,SharedModule,QuicklinkModule
   ]
 })
 export class DiscographyArtistByIdModule { }
