@@ -92,7 +92,7 @@ const routes: Routes = [
           (m) => m.UserModule
         ),
         canActivate: [authGuard],
-      },
+      }
     ],
   },
 ];
