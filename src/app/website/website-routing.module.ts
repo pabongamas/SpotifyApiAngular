@@ -5,7 +5,7 @@ import { authGuard } from './../guards/auth.guard';
 
 import { LayoutComponent } from './components/layout/layout.component';
 import { AppAuthCallbackComponent } from './components/app-auth-callback/app-auth-callback.component';
-import { UserComponent } from './components/user/user.component';
+import { UserComponent } from './pages/user/user.component';
 import { TopTrackUserViewComponent } from './pages/top-track-user-view/top-track-user-view.component';
 import { TopArtistUserViewComponent } from './pages/top-artist-user-view/top-artist-user-view.component';
 import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-user.component';

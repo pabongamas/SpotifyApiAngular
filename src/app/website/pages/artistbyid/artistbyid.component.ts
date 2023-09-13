@@ -30,7 +30,7 @@ export class ArtistbyidComponent implements OnInit {
           const parametros = {
             include_groups: 'album',
             offset: 0,
-            limit: 7,
+            limit: 8,
           };
           return this.AuthSpotifyService.getAlbumsByArtistId(
             this.artistId,
@@ -65,9 +65,9 @@ export class ArtistbyidComponent implements OnInit {
     }
     const parametros = {
       include_groups: type,
-      limit: 7,
+      limit: 8,
       offset: 0,
-    
+
     };
     this.AuthSpotifyService.getAlbumsByArtistId(this.artistId, parametros)
     .subscribe((data) => {

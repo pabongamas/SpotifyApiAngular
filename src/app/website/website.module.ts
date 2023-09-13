@@ -22,7 +22,7 @@ import { AppAuthCallbackComponent } from './components/app-auth-callback/app-aut
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
-import { UserComponent } from './components/user/user.component';
+import { UserComponent } from './pages/user/user.component';
 // import { PipeMsToMinutesPipe } from './modulos/shared/pipes/pipes/pipe-ms-to-minutes.pipe';
 // import { ColorByImagePipe } from './modulos/shared/pipes/pipes/color-by-image.pipe';
 // import { CategoriasAllComponent } from './pages/categorias-all/categorias-all.component';

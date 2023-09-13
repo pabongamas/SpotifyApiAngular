@@ -6,7 +6,6 @@
     background-color: #181818;
     display: flex;
     flex-direction: column;
-    padding: 15px;
     border-radius: 10px;
     transition: background-color .3s ease;
     grid-gap: 5px;
@@ -35,11 +34,11 @@
     text-decoration: underline;
 }
 
-@media screen and (min-width: 20em) and (max-width: 30em){
-   .albumContFull{
-    padding: 30px;
-   }  
-}
+// @media screen and (min-width: 20em) and (max-width: 30em){
+//    .albumContFull{
+//     padding: 30px;
+//    }
+// }
 .viewTrack,.viewArtist{
     color: #fff;
     text-decoration: none;
