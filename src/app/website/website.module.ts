@@ -13,7 +13,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { NavComponent } from './components/nav/nav.component';
 // import { HomeComponent } from './pages/home/home.component';
 // import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
-import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
+// import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
 // import { TracksComponent } from './modulos/shared/components/tracks/tracks.component';
 // import { TrackComponent } from './modulos/shared/components/track/track.component';
 // import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artists-top-tracks.component';
@@ -32,7 +32,7 @@ import { UserComponent } from './components/user/user.component';
 // import { PlaylistsComponent } from './modulos/shared/components/playlists/playlists.component';
 // import { PlaylistComponent } from './modulos/shared/components/playlist/playlist.component';
 import { PlaylistByIdComponent } from './pages/playlist-by-id/playlist-by-id.component';
-import { DiscographyArtistByIDComponent } from './pages/discography-artist-by-id/discography-artist-by-id.component';
+// import { DiscographyArtistByIDComponent } from './pages/discography-artist-by-id/discography-artist-by-id.component';
 import { TopTracksUserComponent } from './components/top-tracks-user/top-tracks-user.component';
 import { TopTrackUserViewComponent } from './pages/top-track-user-view/top-track-user-view.component';
 import { TopArtistsUserComponent } from './components/top-artists-user/top-artists-user.component';
@@ -51,7 +51,7 @@ import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-us
     NavComponent,
     // HomeComponent,
     // ArtistbyidComponent,
-    AlbumbyidComponent,
+    // AlbumbyidComponent,
     // TracksComponent,
     // TrackComponent,
     // ArtistsTopTracksComponent,
@@ -67,7 +67,7 @@ import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-us
     // PlaylistsComponent,
     // PlaylistComponent,
     // PlaylistByIdComponent,
-    DiscographyArtistByIDComponent,
+    // DiscographyArtistByIDComponent,
     TopTracksUserComponent,
     TopTrackUserViewComponent,
     TopArtistsUserComponent,

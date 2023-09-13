@@ -76,25 +76,40 @@ const routes: Routes = [
         ),
         canActivate: [authGuard],
       },
+      {
+        path: 'album',
+        loadChildren: () =>
+        import('./pages/albumbyid/albumbyid.module').then(
+          (m) => m.AlbumbyidModule
+        ),
+        canActivate: [authGuard],
+      },
+      // {
+      //   path: 'artist/:id/discography/:type',
+      //   component: DiscographyArtistByIDComponent,
+      //   canActivate: [authGuard],
+      // },
+      {
+        path:'artist/:id/discography',
+        loadChildren: () =>
+        import('./pages/discography-artist-by-id/discography-artist-by-id.module').then(
+          (m) => m.DiscographyArtistByIdModule
+        ),
+        canActivate: [authGuard],
+      },
       // {
       //   path: 'artist/:id',
       //   component: ArtistbyidComponent,
       //   canActivate: [authGuard],
       // },
-      {
-        path: 'album/:id',
-        component: AlbumbyidComponent,
-        canActivate: [authGuard],
-      },
+      // {
+      //   path: 'album/:id',
+      //   component: AlbumbyidComponent,
+      //   canActivate: [authGuard],
+      // },
 
       { path: 'callbackAuth', component: AppAuthCallbackComponent },
       { path: 'user/:id', component: UserComponent, canActivate: [authGuard] },
-
-      {
-        path: 'artist/:id/discography/:type',
-        component: DiscographyArtistByIDComponent,
-        canActivate: [authGuard],
-      },
       {
         path: 'user/:id/top/tracks/time_range/:range',
         component: TopTrackUserViewComponent,

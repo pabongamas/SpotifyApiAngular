@@ -15,6 +15,9 @@ import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artis
 import { PipeMsToMinutesPipe } from './pipes/pipes/pipe-ms-to-minutes.pipe';
 import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
 
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AlbumComponent,
@@ -33,6 +36,8 @@ import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
   imports: [
     CommonModule,
     SharedRoutingModule,
+    MatMenuModule,
+    MatIconModule
   ],
   exports: [
     AlbumsComponent,
@@ -45,7 +50,9 @@ import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
     TrackComponent,
     ArtistsTopTracksComponent,
     PipeMsToMinutesPipe,
-    ColorByImagePipe
+    ColorByImagePipe,
+    MatMenuModule,
+    MatIconModule
   ],
 })
 export class SharedModule {}

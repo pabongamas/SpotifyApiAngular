@@ -121,7 +121,7 @@ export class DiscographyArtistByIDComponent {
         this.optionMenuActive='Recopilatorios';
       }
     }
-    
+
     const parametros = {
       include_groups: this.type,
       offset:this.offset,
