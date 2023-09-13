@@ -16,23 +16,12 @@ import { AppAuthCallbackComponent } from './components/app-auth-callback/app-aut
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
-import { PlaylistByIdComponent } from './pages/playlist-by-id/playlist-by-id.component';
-import { TopTrackUserViewComponent } from './pages/top-track-user-view/top-track-user-view.component';
-import { TopArtistUserViewComponent } from './pages/top-artist-user-view/top-artist-user-view.component';
-import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-user.component';
-
-
-
-
 
 @NgModule({
   declarations: [
     LayoutComponent,
     NavComponent,
     AppAuthCallbackComponent,
-    TopTrackUserViewComponent,
-    TopArtistUserViewComponent,
-    PlaylistByUserComponent,
   ],
   imports: [
     CommonModule,FormsModule, ReactiveFormsModule,

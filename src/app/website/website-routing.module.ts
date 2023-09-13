@@ -93,21 +93,6 @@ const routes: Routes = [
         ),
         canActivate: [authGuard],
       },
-      {
-        path: 'user/:id/top/tracks/time_range/:range',
-        component: TopTrackUserViewComponent,
-        canActivate: [authGuard],
-      },
-      {
-        path: 'user/:id/top/artists/time_range/:range',
-        component: TopArtistUserViewComponent,
-        canActivate: [authGuard],
-      },
-      {
-        path: 'user/:id/playlists',
-        component: PlaylistByUserComponent,
-        canActivate: [authGuard],
-      },
     ],
   },
 ];
