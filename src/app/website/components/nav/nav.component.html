@@ -4,7 +4,7 @@
       <ul class="font-sans">
         <div
           class="flex alignCenter gridGap5"
-          *ngIf="tokenNav != null; else elseNavBlock"
+          *ngIf="tokenNav != null&& tokenNav!==undefined; else elseNavBlock"
         >
           <li class="text-ColorSpot logoApp" [routerLink]="['/home']">
             SpotifyAPI

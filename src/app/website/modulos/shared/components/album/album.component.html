@@ -1,27 +1,31 @@
 <div [routerLink]="['/album',album.id]" class="albumContFull p-3 sm:p-3 md:p-4">
-    <div>
-        <img class="imgAlbum w-full" src="{{album.images[0].url}}">
-    </div>
-    <div class="descAlbum">
-        <span class="nameAlbum ">{{album.name}}</span>
+  <div>
+    <img class="imgAlbum w-full" src="{{album.images[0].url}}">
+  </div>
+  <div>
+    <div class="descAlbum relative z-10 max-w-full inline-block align-middle">
+      <span class="nameAlbum text-ellipsis overflow-hidden whitespace-nowrap w-full">{{album.name}}</span>
     </div>
     <ng-container *ngIf="viewDiscography===false;else blockViewDiscography">
-        <div class="descArtist">
-            <div class=" gap-1">
-                <ng-container  *ngFor="let artist of album.artists;let last = last">
-                    <span class="viewArtist" [routerLink]="['/artist',artist.id]" >{{artist.name}}</span>
-                    <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
-                </ng-container>
-            </div>
-            <!-- <a [routerLink]="['/artist',album.artists[0].id]" class="nameArtist" *ngIf="album.artists.length>0">{{album.artists[0].name}}</a> -->
-            <!-- *ngIf="product.images.length>0" [img]="product.images[0]" -->
+      <div class="descArtist">
+        <div class=" gap-1">
+          <ng-container *ngFor="let artist of album.artists;let last = last">
+            <span class="viewArtist" [routerLink]="['/artist',artist.id]">{{artist.name}}</span>
+            <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>
+          </ng-container>
         </div>
+        <!-- <a [routerLink]="['/artist',album.artists[0].id]" class="nameArtist" *ngIf="album.artists.length>0">{{album.artists[0].name}}</a> -->
+        <!-- *ngIf="product.images.length>0" [img]="product.images[0]" -->
+      </div>
     </ng-container>
     <ng-template #blockViewDiscography>
-        <div class="descArtist">
-            <span class="year">{{album.release_date|date:'yyyy'}}</span>
-            <span class="type">{{album.type|titlecase}}</span>
-        </div>
+      <div class="descArtist">
+        <span class="year">{{album.release_date|date:'yyyy'}}</span>
+        <span class="type">{{album.type|titlecase}}</span>
+      </div>
     </ng-template>
+
+  </div>
+
 
 </div>
