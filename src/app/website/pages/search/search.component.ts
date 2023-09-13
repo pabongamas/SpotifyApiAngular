@@ -15,11 +15,17 @@ import { switchMap } from 'rxjs';
 export class SearchComponent implements OnInit {
   dataSource = new DataSourceAlbums();
   dataAlbums: itemsAlbum[] = [];
-
   typeSearch: string[] = ['album', 'playlist', 'artist', 'track'];
   input = new FormControl('', { nonNullable: true });
-  constructor(private searchServiceService: SearchServiceService) {}
+  constructor(private searchServiceService: SearchServiceService,
+    ) {
+    }
   ngOnInit(): void {
+    this.searchServiceService.dataAlbumsSearch$.subscribe((data) => {
+      // Actualiza la vista con los datos almacenados
+      this.dataAlbums = data;
+      this.dataSource.init(this.dataAlbums);
+    });
     this.input.valueChanges.pipe(
       debounceTime(300),
       switchMap((value) => {
@@ -34,6 +40,7 @@ export class SearchComponent implements OnInit {
       if(data){
         this.dataAlbums = data.albums.items;
         this.dataSource.init(this.dataAlbums);
+        this.searchServiceService.setDataAlbumsSearch(this.dataAlbums);
       }
     });
   }

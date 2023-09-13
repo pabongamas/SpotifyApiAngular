@@ -12,12 +12,15 @@ import { retry, catchError, map } from 'rxjs/operators';
 import { TokenAuthServiceService } from '../../services/token-auth-service.service';
 import { checkToken } from '../../interceptors/token.interceptor';
 import { searchModel } from 'src/app/website/models/search.model';
+import { itemsAlbum } from 'src/app/website/models/itemsAlbum.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchServiceService {
+  private dataSubjectAlbumsSearch = new BehaviorSubject<itemsAlbum[]>([]);
 
+  public dataAlbumsSearch$ = this.dataSubjectAlbumsSearch.asObservable();
   constructor(
     private http: HttpClient,
     private tokenAuthServiceService: TokenAuthServiceService
@@ -38,4 +41,8 @@ export class SearchServiceService {
       context: checkToken(),
     });
   }
+  setDataAlbumsSearch(data: itemsAlbum[]) {
+    this.dataSubjectAlbumsSearch.next(data);
+  }
+
 }
