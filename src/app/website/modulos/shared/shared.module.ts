@@ -12,6 +12,10 @@ import { PlaylistComponent } from './components/playlist/playlist.component';
 import { TracksComponent } from './components/tracks/tracks.component';
 import { TrackComponent } from './components/track/track.component';
 import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artists-top-tracks.component';
+import { TopTracksUserComponent } from './components/top-tracks-user/top-tracks-user.component';
+import { TopArtistsUserComponent } from './components/top-artists-user/top-artists-user.component';
+import { ArtistsComponent } from './components/artists/artists.component';
+import { ArtistComponent } from './components/artist/artist.component';
 import { PipeMsToMinutesPipe } from './pipes/pipes/pipe-ms-to-minutes.pipe';
 import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
 
@@ -31,6 +35,10 @@ import { QuicklinkModule } from 'ngx-quicklink';
     TracksComponent,
     TrackComponent,
     ArtistsTopTracksComponent,
+    ArtistsComponent,
+    ArtistComponent,
+    TopArtistsUserComponent,
+    TopTracksUserComponent,
     PipeMsToMinutesPipe,
     ColorByImagePipe
   ],
@@ -50,6 +58,10 @@ import { QuicklinkModule } from 'ngx-quicklink';
     TracksComponent,
     TrackComponent,
     ArtistsTopTracksComponent,
+    ArtistsComponent,
+    ArtistComponent,
+    TopArtistsUserComponent,
+    TopTracksUserComponent,
     PipeMsToMinutesPipe,
     ColorByImagePipe,
     MatMenuModule,

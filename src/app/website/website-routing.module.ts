@@ -15,6 +15,7 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
+      { path: 'callbackAuth', component: AppAuthCallbackComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       {
         path: 'home',
@@ -84,8 +85,14 @@ const routes: Routes = [
         ),
         canActivate: [authGuard],
       },
-      { path: 'callbackAuth', component: AppAuthCallbackComponent },
-      { path: 'user/:id', component: UserComponent, canActivate: [authGuard] },
+      {
+        path: 'user',
+        loadChildren: () =>
+        import('./pages/user/user.module').then(
+          (m) => m.UserModule
+        ),
+        canActivate: [authGuard],
+      },
       {
         path: 'user/:id/top/tracks/time_range/:range',
         component: TopTrackUserViewComponent,
