@@ -1,6 +1,6 @@
 <div [routerLink]="['/album',album.id]" class="albumContFull">
     <div>
-        <img class="imgAlbum" src="{{album.images[0].url}}">
+        <img class="imgAlbum w-full" src="{{album.images[0].url}}">
     </div>
     <div class="descAlbum">
         <span class="nameAlbum ">{{album.name}}</span>
@@ -23,5 +23,5 @@
             <span class="type">{{album.type|titlecase}}</span>
         </div>
     </ng-template>
-    
+
 </div>

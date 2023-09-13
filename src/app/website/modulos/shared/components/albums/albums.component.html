@@ -1,4 +1,4 @@
-<div class="albums--grid">    
+<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-8 p-15  gap-3.5">
     <app-album-page [viewDiscography]="viewDiscography" [album]="album" *ngFor="let album of dataalbums"></app-album-page>
 </div>
 <div class="divBtnLoadMoreNewRealeses flexAlignCenter justifyCenter pb-8"  *ngIf="dataalbums!==undefined&&dataalbums.length>0 && dataalbums.length<totalElementsData">

@@ -3,17 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { authGuard } from './../guards/auth.guard';
 
-import { HomeComponent } from './pages/home/home.component';
-import { ArtistbyidComponent } from './pages/artistbyid/artistbyid.component';
-import { AlbumbyidComponent } from './pages/albumbyid/albumbyid.component';
-import { NewReleasesAlbumComponent } from './pages/new-releases-album/new-releases-album.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AppAuthCallbackComponent } from './components/app-auth-callback/app-auth-callback.component';
 import { UserComponent } from './components/user/user.component';
-import { CategoriasAllComponent } from './pages/categorias-all/categorias-all.component';
-import { CategorebyidComponent } from './pages/categorebyid/categorebyid.component';
-// import { PlaylistByIdComponent } from './pages/playlist-by-id/playlist-by-id.component';
-import { DiscographyArtistByIDComponent } from './pages/discography-artist-by-id/discography-artist-by-id.component';
 import { TopTrackUserViewComponent } from './pages/top-track-user-view/top-track-user-view.component';
 import { TopArtistUserViewComponent } from './pages/top-artist-user-view/top-artist-user-view.component';
 import { PlaylistByUserComponent } from './pages/playlist-by-user/playlist-by-user.component';
@@ -77,19 +69,6 @@ const routes: Routes = [
         canActivate: [authGuard],
       },
       {
-        path: 'album',
-        loadChildren: () =>
-        import('./pages/albumbyid/albumbyid.module').then(
-          (m) => m.AlbumbyidModule
-        ),
-        canActivate: [authGuard],
-      },
-      // {
-      //   path: 'artist/:id/discography/:type',
-      //   component: DiscographyArtistByIDComponent,
-      //   canActivate: [authGuard],
-      // },
-      {
         path:'artist/:id/discography',
         loadChildren: () =>
         import('./pages/discography-artist-by-id/discography-artist-by-id.module').then(
@@ -97,17 +76,14 @@ const routes: Routes = [
         ),
         canActivate: [authGuard],
       },
-      // {
-      //   path: 'artist/:id',
-      //   component: ArtistbyidComponent,
-      //   canActivate: [authGuard],
-      // },
-      // {
-      //   path: 'album/:id',
-      //   component: AlbumbyidComponent,
-      //   canActivate: [authGuard],
-      // },
-
+      {
+        path: 'album',
+        loadChildren: () =>
+        import('./pages/albumbyid/albumbyid.module').then(
+          (m) => m.AlbumbyidModule
+        ),
+        canActivate: [authGuard],
+      },
       { path: 'callbackAuth', component: AppAuthCallbackComponent },
       { path: 'user/:id', component: UserComponent, canActivate: [authGuard] },
       {
