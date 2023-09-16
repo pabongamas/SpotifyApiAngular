@@ -1,28 +1,40 @@
 <div class="h-full">
-    <div class="pt-20 p-3">
-      <div class="flex flex-col gap-2 sticky z-10 top-16">
-        <div class=" gap-2 rounded-500Br bg-buttonSearch focus:border-blue-400 flex items-center w-full md:w-2/4 lg:w-3/12 sm:w-full  text p-4 placeholder-shown:border-gray-500">
-          <mat-icon
-            class="text-ColorSpot"
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="search"
-          ></mat-icon>
-          <input
-            placeholder="¿Que quieres escuchar ?"
-            class=" flex-grow  focus:outline-none bg-buttonSearch text-white text-lg  "
-            [formControl]="input"
-            type="search"
-            name=""
-            id=""
-          />
-        </div>
+  <div class="pt-20 p-3">
+    <div class="flex flex-col gap-2 sticky z-10 top-16">
+      <div
+        class="gap-2 rounded-500Br bg-buttonSearch focus:border-blue-400 flex items-center w-full md:w-2/4 lg:w-3/12 sm:w-full text p-4 placeholder-shown:border-gray-500"
+      >
+        <mat-icon
+          class="text-ColorSpot"
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="search"
+        ></mat-icon>
+        <input
+          placeholder="¿Que quieres escuchar ?"
+          class="flex-grow focus:outline-none bg-buttonSearch text-white text-lg"
+          [formControl]="input"
+          type="search"
+          name=""
+          id=""
+        />
       </div>
     </div>
-    <div class="contNewRelease" *ngIf="dataSource.data.getValue().length>0">
-      <div class="title">
-          <span class="font-sans">Álbumes</span>
-      </div>
-      <app-albums  [totalElementsData]="dataAlbums.length" [dataalbums]="dataAlbums"></app-albums>
   </div>
+  <div class="contNewRelease" *ngIf="dataSource.data.getValue().length > 0">
+    <div class="title">
+      <span class="font-sans">Álbumes</span>
+    </div>
+    <app-albums
+      [totalElementsData]="dataAlbums.length"
+      [dataalbums]="dataAlbums"
+    ></app-albums>
+  </div>
+  <div class="contNewRelease" *ngIf="dataSourceArtists.data.getValue().length > 0">
+    <div class="title">
+      <span class="font-sans">Artistas</span>
+    </div>
+    <app-artists [isSearch]="true" [dataArtist]="dataArtists" ></app-artists>
+  </div>
+ 
 </div>

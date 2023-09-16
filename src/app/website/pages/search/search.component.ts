@@ -3,9 +3,10 @@ import { SearchServiceService } from '../../../services/search/search-service.se
 import { FormControl } from '@angular/forms';
 import { debounceTime, of } from 'rxjs';
 import { DataSourceAlbums } from './data-sourceAlbums';
-import { albumsModel } from '../../models/albums.model';
 import { itemsAlbum } from '../../models/itemsAlbum.model';
+import { itemsArtists } from '../../models/itemsArtists.model';
 import { switchMap } from 'rxjs';
+import { DataSourceArtists } from './data-sourceArtists';
 
 @Component({
   selector: 'app-search',
@@ -14,18 +15,26 @@ import { switchMap } from 'rxjs';
 })
 export class SearchComponent implements OnInit {
   dataSource = new DataSourceAlbums();
+  dataSourceArtists=new DataSourceArtists();
+
   dataAlbums: itemsAlbum[] = [];
+  dataArtists:itemsArtists[]=[];
   typeSearch: string[] = ['album', 'playlist', 'artist', 'track'];
   input = new FormControl('', { nonNullable: true });
+
   constructor(private searchServiceService: SearchServiceService,
     ) {
     }
   ngOnInit(): void {
     this.searchServiceService.dataAlbumsSearch$.subscribe((data) => {
-      // Actualiza la vista con los datos almacenados
       this.dataAlbums = data;
       this.dataSource.init(this.dataAlbums);
     });
+    this.searchServiceService.dataArtistsSearch$.subscribe((data) => {
+      this.dataArtists = data;
+      this.dataSourceArtists.init(this.dataArtists);
+    });
+    
     this.input.valueChanges.pipe(
       debounceTime(300),
       switchMap((value) => {
@@ -39,8 +48,12 @@ export class SearchComponent implements OnInit {
     ).subscribe((data) => {
       if(data){
         this.dataAlbums = data.albums.items;
+        this.dataArtists=data.artists.items;
+
         this.dataSource.init(this.dataAlbums);
+        this.dataSourceArtists.init(this.dataArtists);
         this.searchServiceService.setDataAlbumsSearch(this.dataAlbums);
+        this.searchServiceService.setDataArtistsSearch(this.dataArtists);
       }
     });
   }

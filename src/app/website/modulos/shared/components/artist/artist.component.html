@@ -1,6 +1,6 @@
 <div [routerLink]="['/artist',artist.id]" class="artistContFull">
     <div class="contImgArtist">
-        <img class="imgArtist" src="{{artist.images[0].url}}">
+        <img class="imgArtist" [src]="artist.images[0]?.url || 'assets/img/logoSpot.png'">
     </div>
     <div class="descArtist pt-3">
         <span class="nameArtist ">{{artist.name}}</span>

@@ -1,7 +1,8 @@
 import {albumsModel} from './albums.model';
+import { artistsModel } from './artists.model';
 export interface searchModel{
   albums:albumsModel,
-  artists:{},
+  artists:artistsModel,
   playlist:{},
   tracks:{}
 }

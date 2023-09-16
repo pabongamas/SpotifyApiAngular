@@ -7,4 +7,5 @@ import { Component ,Input} from '@angular/core';
 })
 export class ArtistsComponent {
   @Input() dataArtist:any;
+  @Input() isSearch:boolean|null=false;
 }

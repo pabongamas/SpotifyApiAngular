@@ -13,14 +13,17 @@ import { TokenAuthServiceService } from '../../services/token-auth-service.servi
 import { checkToken } from '../../interceptors/token.interceptor';
 import { searchModel } from 'src/app/website/models/search.model';
 import { itemsAlbum } from 'src/app/website/models/itemsAlbum.model';
+import { itemsArtists } from 'src/app/website/models/itemsArtists.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchServiceService {
   private dataSubjectAlbumsSearch = new BehaviorSubject<itemsAlbum[]>([]);
+  private dataSubjectArtistSearch = new BehaviorSubject<itemsArtists[]>([]);
 
   public dataAlbumsSearch$ = this.dataSubjectAlbumsSearch.asObservable();
+  public dataArtistsSearch$ = this.dataSubjectArtistSearch.asObservable();
   constructor(
     private http: HttpClient,
     private tokenAuthServiceService: TokenAuthServiceService
@@ -36,7 +39,6 @@ export class SearchServiceService {
     if(types){
       params+="&type="+types;
     }
-    console.log(checkToken());
     return this.http.get<searchModel>(`${this.urlApi}/search${params}`,  {
       context: checkToken(),
     });
@@ -44,5 +46,9 @@ export class SearchServiceService {
   setDataAlbumsSearch(data: itemsAlbum[]) {
     this.dataSubjectAlbumsSearch.next(data);
   }
+  setDataArtistsSearch(data: itemsArtists[]) {
+    this.dataSubjectArtistSearch.next(data);
+  }
+
 
 }
