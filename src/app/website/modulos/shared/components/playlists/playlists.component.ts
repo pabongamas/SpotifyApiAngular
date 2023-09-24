@@ -10,6 +10,7 @@ export class PlaylistsComponent {
   @Input() totalElements:any;
   @Input() isDataSource:boolean=false;
   @Output() eventEmitPlaylists: EventEmitter<any> = new EventEmitter();
+  @Input() isSearch:boolean|null=false;
 
  
 

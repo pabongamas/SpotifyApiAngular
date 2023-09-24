@@ -1,6 +1,6 @@
 <div  [routerLink]="['/playlist',playlist.id]" class="playlistContFull">
     <div class="contImgPlaylist">
-        <img class="imgPlaylist" src="{{playlist.images[0].url}}">
+        <img class="imgPlaylist"  [src]="playlist.images[0]?.url || 'assets/img/logoSpot.png'">
     </div>
     <div class="descPlaylist">
         <span class="namePlaylist ">{{playlist.name}}</span>

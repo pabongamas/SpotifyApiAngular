@@ -30,11 +30,26 @@
       [dataalbums]="dataAlbums"
     ></app-albums>
   </div>
-  <div class="contNewRelease" *ngIf="dataSourceArtists.data.getValue().length > 0">
+  <div
+    class="contNewRelease"
+    *ngIf="dataSourceArtists.data.getValue().length > 0"
+  >
     <div class="title">
       <span class="font-sans">Artistas</span>
     </div>
-    <app-artists [isSearch]="true" [dataArtist]="dataArtists" ></app-artists>
+    <app-artists [isSearch]="true" [dataArtist]="dataArtists"></app-artists>
   </div>
- 
+  <div
+    class="contNewRelease"
+    *ngIf="dataSourcePlaylists.data.getValue().length > 0">
+    <div>
+      <div class="title">
+        <span class="font-sans">Playlists</span>
+      </div>
+      <app-playlists
+        [playlists]="dataPlaylists"
+        [isSearch]="true"
+      ></app-playlists>
+    </div>
+  </div>
 </div>
