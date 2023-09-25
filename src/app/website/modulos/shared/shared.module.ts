@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule,NgOptimizedImage } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { AlbumComponent } from './components/album/album.component';
@@ -46,7 +46,8 @@ import { QuicklinkModule } from 'ngx-quicklink';
     CommonModule,
     SharedRoutingModule,
     MatMenuModule,
-    MatIconModule,QuicklinkModule
+    MatIconModule,QuicklinkModule,
+    NgOptimizedImage
   ],
   exports: [
     AlbumsComponent,

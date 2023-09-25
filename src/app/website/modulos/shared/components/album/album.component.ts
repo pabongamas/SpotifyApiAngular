@@ -19,7 +19,7 @@ export class AlbumComponent implements OnInit {
   //   description:''
   // };
   @Input() album:any;
-  
+
   constructor() { }
 
   ngOnInit(): void {

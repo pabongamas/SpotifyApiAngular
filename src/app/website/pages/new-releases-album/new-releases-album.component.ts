@@ -16,7 +16,7 @@ export class NewReleasesAlbumComponent implements OnInit {
   ) { }
   newRealeses:any[]=[];
   offset=0;
-  limit=40;
+  limit=50;
   totalElements:number=0;
   ngOnInit(): void {
   if(this.TokenAuthServiceService.getToken()!==null){

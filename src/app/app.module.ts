@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewReleasesAlbumComponent } from './website/pages/new-releases-album/new-releases-album.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { NgOptimizedImage } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { QuicklinkModule } from 'ngx-quicklink';
     BrowserAnimationsModule,
     HttpClientModule,
     FontAwesomeModule,
-    QuicklinkModule
+    QuicklinkModule,
+    NgOptimizedImage
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}
