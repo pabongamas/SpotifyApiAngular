@@ -1,6 +1,6 @@
 <div [routerLink]="['/categorie',categorie.id]" class="categorieContFull">
     <div class="contImgCategorie">
-        <img class="imgCategorie" src="{{categorie.icons[0].url}}">
+        <img class="imgCategorie" [ngSrc]="categorie.icons[0].url" width="100" height="100">
     </div>
     <div class="descCategorie mt-2">
         <span class="nameCategorie ">{{categorie.name}}</span>

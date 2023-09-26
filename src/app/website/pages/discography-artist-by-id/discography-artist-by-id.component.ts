@@ -105,7 +105,6 @@ export class DiscographyArtistByIDComponent {
     this.showOptionsDiscographyFlag = !this.showOptionsDiscographyFlag;
   }
   switchOption(type: string) {
-    console.log(type);
     this.offset=0;
     this.totalElements=0;
     if(type==='all'){
