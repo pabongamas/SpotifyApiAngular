@@ -36,11 +36,11 @@ export class UserComponent implements OnInit {
   };
   limit:number=5;
   offset:number=0;
-  limitArtist:number=7;
+  limitArtist:number=8;
   offsetArtist:number=0;
   topTracksUserTotal:number=0;
   topArtistsUserTotal:number=0;
-  limitPlaylist:number=7;
+  limitPlaylist:number=8;
   offsetPlaylist:number=0;
   idUserLogin:string|null|undefined=null;
   ngOnInit(): void {

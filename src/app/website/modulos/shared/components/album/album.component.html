@@ -4,11 +4,11 @@
   </div>
   <div>
     <div class="descAlbum relative z-10 max-w-full inline-block align-middle">
-      <span class="nameAlbum text-ellipsis overflow-hidden whitespace-nowrap w-full">{{album.name}}</span>
+      <div class="nameAlbum text-ellipsis overflow-hidden whitespace-nowrap w-full">{{album.name}}</div>
     </div>
     <ng-container *ngIf="viewDiscography===false;else blockViewDiscography">
       <div class="descArtist">
-        <div class=" gap-1">
+        <div class=" gap-1 text-ellipsis overflow-hidden whitespace-nowrap w-full viewArtist">
           <ng-container *ngFor="let artist of album.artists;let last = last">
             <span class="viewArtist" [routerLink]="['/artist',artist.id]">{{artist.name}}</span>
             <ng-container *ngIf="!last"><span class="viewArtist">, </span></ng-container>

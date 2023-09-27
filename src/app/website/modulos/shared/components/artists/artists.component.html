@@ -1,13 +1,13 @@
     <!-- <div  class="artists--grid" *ngIf="dataArtist!==undefined && dataArtist.items!==undefined;">
       <app-artist [artist]="artist" *ngFor="let artist of dataArtist.items"></app-artist>
     </div> -->
- 
+
 
     <div  [ngSwitch]="isSearch">
-      <div class="artists--grid" *ngSwitchCase="false">
+      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-8 p-15 gap-3.5 " *ngSwitchCase="false">
         <app-artist [artist]="artist" *ngFor="let artist of dataArtist.items"></app-artist>
       </div>
-      <div class="artists--grid" *ngSwitchCase="true">
+      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-8 p-15 gap-3.5" *ngSwitchCase="true">
         <app-artist [artist]="artist" *ngFor="let artist of dataArtist"></app-artist>
       </div>
     </div>
