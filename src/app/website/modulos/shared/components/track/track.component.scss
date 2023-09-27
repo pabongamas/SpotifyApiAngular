@@ -1,6 +1,7 @@
 .contTrack{
     display: flex;
-    grid-template-columns: [index] 16px [first] 4fr [last] minmax(120px,1fr);
+    grid-template-columns: [index] 16px [first] 50px [second] 4fr [last] minmax(120px,1fr);
+    // grid-template-columns: [index] 16px [first] 4fr [last] minmax(120px,1fr);
     grid-gap: 16px;
     display: grid;
     padding: 15px;
@@ -13,7 +14,8 @@
 }
 .contTrackPlaylist{
     display: flex;
-    grid-template-columns: [index] 16px [first] 3fr [second] 1fr [third] 1fr;
+    grid-template-columns: [index] 16px [first] 50px [second] 3fr [third] 1fr [last] 1fr;
+    // grid-template-columns: [index] 16px [first] 3fr [second] 1fr [third] 1fr;
     grid-gap: 16px;
     display: grid;
     padding: 15px;

@@ -9,6 +9,13 @@
                   </ng-template>
                 </div>
             </div>
+            <div class="flex items-center justify-center">
+              <div>
+                <picture>
+                  <img [src]="track.album.images[2].url">
+                </picture>
+              </div>
+            </div>
             <div class="flexAlignCenter">
                 <div class="flexDirCol">
                     <a class="viewTrack" href="">{{track.name}}</a>
@@ -38,6 +45,13 @@
                       <span>{{indexTrack}}</span>
                     </ng-template>
                   </div>
+            </div>
+            <div>
+              <div>
+                <picture>
+                  <img [src]="track.track.album.images[2].url">
+                </picture>
+              </div>
             </div>
             <div class="flexAlignCenter">
                 <div class="flexDirCol">
@@ -74,6 +88,13 @@
                 <span>{{indexTrack}}</span>
               </ng-template>
             </div>
+        </div>
+        <div class="flex items-center justify-center">
+          <div>
+            <picture>
+              <img [src]="track.album.images[2].url">
+            </picture>
+          </div>
         </div>
         <div class="flexAlignCenter">
             <div class="flexDirCol">
