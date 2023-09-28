@@ -1,0 +1,13 @@
+<!-- <button (click)="play()">Play</button>
+<button (click)="pause()">Pause</button>
+<button (click)="stop()">Stop</button> -->
+<div *ngIf="!isPlaying; else otroContenido">
+  <!-- Contenido que se muestra si mostrarContenido es true -->
+<fa-icon  (click)="play()"class="text-xl cursor-pointer"    [icon]="faPlay"  matTooltip="Reproducir"></fa-icon>
+
+</div>
+
+<ng-template #otroContenido>
+  <!-- Contenido que se muestra si mostrarContenido es false -->
+  <fa-icon  (click)="stop()"class="text-xl cursor-pointer"    [icon]="faCompactDisc"  matTooltip="Reproduciendo"></fa-icon>
+</ng-template>

@@ -16,5 +16,14 @@ export class TrackComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  showAudioPlayer = false;
+
+  loadAudioPlayer() {
+    this.showAudioPlayer = true;
+  }
+
+  unloadAudioPlayer() {
+    this.showAudioPlayer = false;
+  }
 
 }

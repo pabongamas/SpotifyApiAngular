@@ -14,6 +14,8 @@ import { TrackComponent } from './components/track/track.component';
 import { ArtistsTopTracksComponent } from './components/artists-top-tracks/artists-top-tracks.component';
 import { TopTracksUserComponent } from './components/top-tracks-user/top-tracks-user.component';
 import { TopArtistsUserComponent } from './components/top-artists-user/top-artists-user.component';
+import { AudioPlayerComponent } from './components/audio-player/audio-player.component';
+
 import { ArtistsComponent } from './components/artists/artists.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { PipeMsToMinutesPipe } from './pipes/pipes/pipe-ms-to-minutes.pipe';
@@ -22,6 +24,7 @@ import { ColorByImagePipe } from './pipes/pipes/color-by-image.pipe';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -40,14 +43,16 @@ import { QuicklinkModule } from 'ngx-quicklink';
     TopArtistsUserComponent,
     TopTracksUserComponent,
     PipeMsToMinutesPipe,
-    ColorByImagePipe
+    ColorByImagePipe,
+    AudioPlayerComponent,
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
     MatMenuModule,
     MatIconModule,QuicklinkModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FontAwesomeModule
   ],
   exports: [
     AlbumsComponent,
