@@ -1,7 +1,7 @@
 <ng-container *ngIf="!isTrackByUser;else blockIsTrackByUser" >
   <ng-container *ngIf="!esPlaylist;else blockPlaylist">
     <div class="contTracks" *ngIf="dataTracks!==undefined && dataTracks.items!==undefined;else elseBlock">
-        <app-track [track]="track" *ngFor="let track of dataTracks.items"></app-track>
+        <app-track [loadedTracksByAlbum]="loadedTracksByAlbum" [track]="track" *ngFor="let track of dataTracks.items"></app-track>
     </div>
     <!-- esto es para cuando las canciones se envien directamente en el array y no toda la coolecion e informacion del artista , se puede entender
     con el funcionamiento de los componentes de album por artista ,que utiliza el dataTracks.item porque se envia toda la data del artista, y la de solo

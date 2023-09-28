@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="flex items-center justify-center">
-              <div>
+              <div *ngIf="!loadedTracksByAlbum">
                 <picture>
                   <img [src]="track.album.images[2].url">
                 </picture>

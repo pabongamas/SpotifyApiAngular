@@ -10,6 +10,7 @@ export class TracksComponent implements OnInit {
   @Input() esPlaylist:boolean=false;
   @Input() isTrackByUser:boolean=false;
   @Input() pageArtist:boolean=false;
+  @Input() loadedTracksByAlbum:boolean=false;
   constructor() { }
 
   ngOnInit(): void {
